@@ -1,0 +1,36 @@
+version: 1
+vaults:
+    -
+        fsPath: operating-systems
+        name: operating-systems
+    -
+        fsPath: dev-ops
+        name: dev-ops
+    -
+        fsPath: programming
+        name: programming
+    -
+        fsPath: vault
+        name: vault
+useFMTitle: true
+useNoteTitleForLink: true
+noAutoCreateOnDefinition: true
+noLegacyNoteRef: true
+site:
+    copyAssets: true
+    siteHierarchies:
+        - root
+    siteRootDir: docs
+    usePrettyRefs: true
+    title: Dendron
+    description: Personal knowledge space
+    duplicateNoteBehavior:
+        action: useVault
+        payload:
+            - vault
+            - programming
+            - dev-ops
+            - operating-systems
+    siteUrl: https://mzavaletavargas.github.io
+    assetsPrefix: test
+initializeRemoteVaults: true

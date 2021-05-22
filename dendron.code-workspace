@@ -1,0 +1,47 @@
+{
+    "folders": [
+        {
+            "path": "operating-systems",
+            "name": "operating-systems"
+        },
+        {
+            "path": "dev-ops",
+            "name": "dev-ops"
+        },
+        {
+            "path": "programming",
+            "name": "programming"
+        },
+        {
+            "path": "vault",
+            "name": "vault"
+        }
+    ],
+    "settings": {
+        "dendron.rootDir": ".",
+        "files.autoSave": "onFocusChange",
+        "pasteImage.path": "${currentFileDir}/assets/images",
+        "pasteImage.prefix": "/",
+        "markdown-preview-enhanced.enableWikiLinkSyntax": true,
+        "markdown-preview-enhanced.wikiLinkFileExtension": ".md",
+        "editor.snippetSuggestions": "inline",
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggest.showSnippets": true,
+        "editor.tabCompletion": "on"
+    },
+    "extensions": {
+        "recommendations": [
+            "dendron.dendron-paste-image",
+            "dendron.dendron-markdown-shortcuts",
+            "dendron.dendron-markdown-preview-enhanced",
+            "dendron.dendron-markdown-links",
+            "github.github-vscode-theme"
+        ],
+        "unwantedRecommendations": [
+            "dendron.dendron-markdown-notes",
+            "shd101wyy.markdown-preview-enhanced",
+            "kortina.vscode-markdown-notes",
+            "mushan.vscode-paste-image"
+        ]
+    }
+}
