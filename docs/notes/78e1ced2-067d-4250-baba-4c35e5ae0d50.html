@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Worker Threads - Dendron</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://mzavaletavargas.github.io/test/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://mzavaletavargas.github.io/test/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://mzavaletavargas.github.io/test/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://mzavaletavargas.github.io/test/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://mzavaletavargas.github.io/notes/78e1ced2-067d-4250-baba-4c35e5ae0d50.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mzavaletavargas.github.io/notes/78e1ced2-067d-4250-baba-4c35e5ae0d50.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://mzavaletavargas.github.ioundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://mzavaletavargas.github.io/notes/78e1ced2-067d-4250-baba-4c35e5ae0d50.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://mzavaletavargas.github.ioundefined">
+
+
+  <meta property="og:title" content="Worker Threads - Dendron" />
+  <meta name="twitter:title" content="Worker Threads - Dendron" />
+  
+</head>
+
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://mzavaletavargas.github.io/test" class="site-title lh-tight">
+  Dendron
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Dendron" aria-label="Search Dendron" autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test">Homepage</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8.html">Programming</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/ce6e9d6f-33bc-4eb6-aa8d-773740ff1a16.html">JavaScript</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/dec2b4d3-ff94-4735-8797-0a65986de197.html">Node.js</a></li><li class="breadcrumb-nav-list-item">Worker Threads</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        
+        
+
+        
+
+        
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Worker Threads">
+    
+    <meta itemprop="datePublished" content="2021-05-22T13:39:52+00:00">
+    <meta itemprop="dateModified" content="2021-05-22T13:40:07+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="worker-threads"><a aria-hidden="true" class="anchor-heading" href="#worker-threads"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Worker Threads</h1>
+<h2 id="why"><a aria-hidden="true" class="anchor-heading" href="#why"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Why?</h2>
+<p>Intesive cpu work, like compression.</p>
+<h2 id="what-should-i-use-child_process-worker-threads"><a aria-hidden="true" class="anchor-heading" href="#what-should-i-use-child_process-worker-threads"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>What should I use: Child_process, worker Threads</h2>
+<p>Explained : <a href="https://blog.logrocket.com/node-js-multithreading-what-are-worker-threads-and-why-do-they-matter-48ab102f8b10">https://blog.logrocket.com/node-js-multithreading-what-are-worker-threads-and-why-do-they-matter-48ab102f8b10</a></p>
+<p>Worker threads: <a href="https://nodejs.org/api/worker_threads.html">https://nodejs.org/api/worker_threads.html</a>
+Child Process: <a href="https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options">https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options</a></p>
+<h2 id="code"><a aria-hidden="true" class="anchor-heading" href="#code"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Code</h2>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span>
+  <span class="token maybe-class-name">Worker</span><span class="token punctuation">,</span>
+  isMainThread<span class="token punctuation">,</span>
+  parentPort<span class="token punctuation">,</span>
+  workerData<span class="token punctuation">,</span>
+<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"worker_threads"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> w <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Worker</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token punctuation">{</span> workerData<span class="token operator">:</span> <span class="token keyword null nil">null</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+w<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">"message"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+w<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">"error"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+w<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">"exit"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Child on <code>path</code></p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span> parentPort <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"worker_threads"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// do something</span>
+
+parentPort<span class="token punctuation">.</span><span class="token method function property-access">postMessage</span><span class="token punctuation">(</span><span class="token string">"notify parent"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="thread-pool"><a aria-hidden="true" class="anchor-heading" href="#thread-pool"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Thread pool</h2>
+<p>Is nice to have a thread poll, this library manage it for you
+<a href="https://github.com/watson/worker-threads-pool">https://github.com/watson/worker-threads-pool</a></p>
+<p>General
+<a href="https://gobyexample.com/worker-pools">https://gobyexample.com/worker-pools</a></p>
+<h2 id="concurrent-work"><a aria-hidden="true" class="anchor-heading" href="#concurrent-work"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Concurrent work</h2>
+<p><a href="https://medium.com/@piotrkarpaa/async-await-and-parallel-code-in-node-js-6de6501eea48%5C">https://medium.com/@piotrkarpaa/async-await-and-parallel-code-in-node-js-6de6501eea48\</a>
+<a href="https://medium.com/platformer-blog/node-js-concurrency-with-async-await-and-promises-b4c4ae8f4510">https://medium.com/platformer-blog/node-js-concurrency-with-async-await-and-promises-b4c4ae8f4510</a></p>
+<h2 id="child-process"><a aria-hidden="true" class="anchor-heading" href="#child-process"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>child Process</h2>
+<p><a href="https://medium.com/the-guild/getting-to-know-nodes-child-process-module-8ed63038f3fa">https://medium.com/the-guild/getting-to-know-nodes-child-process-module-8ed63038f3fa</a></p>
+<p><a href="https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a">https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a</a></p>
+<h2 id="aditional-information"><a aria-hidden="true" class="anchor-heading" href="#aditional-information"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Aditional Information</h2>
+<p><a href="https://medium.com/dailyjs/threads-in-node-10-5-0-a-practical-intro-3b85a0a3c953">https://medium.com/dailyjs/threads-in-node-10-5-0-a-practical-intro-3b85a0a3c953</a>
+<a href="https://medium.com/lazy-engineering/node-worker-threads-b57a32d84845">https://medium.com/lazy-engineering/node-worker-threads-b57a32d84845</a>
+<a href="https://nodejs.org/en/docs/guides/dont-block-the-event-loop/">https://nodejs.org/en/docs/guides/dont-block-the-event-loop/</a></p><span id="navId" data="78e1ced2-067d-4250-baba-4c35e5ae0d50"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+        <div class="thumbs feedback_trigger right-bottom"></div>
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+
+</body>
+</html>

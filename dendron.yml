@@ -1,6 +1,24 @@
 version: 1
 vaults:
     -
+        fsPath: infrastructure
+        name: infrastructure
+    -
+        fsPath: books
+        name: books
+    -
+        fsPath: computer-science
+        name: computer-science
+    -
+        fsPath: networking
+        name: networking
+    -
+        fsPath: databases
+        name: databases
+    -
+        fsPath: personal-growth
+        name: personal-growth
+    -
         fsPath: operating-systems
         name: operating-systems
     -
@@ -31,6 +49,12 @@ site:
             - programming
             - dev-ops
             - operating-systems
-    siteUrl: https://mzavaletavargas.github.io
+            - personal-growth
+            - databases
+            - networking
+            - computer-science
+            - books
+            - infrastructure
+    siteUrl: 'https://mzavaletavargas.github.io'
     assetsPrefix: test
 initializeRemoteVaults: true

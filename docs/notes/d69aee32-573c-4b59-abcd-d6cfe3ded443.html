@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
   
-  <title>This page has not yet sprouted - Dendron</title>
+  <title>Clusters - Dendron</title>
   
 
   <link
@@ -42,22 +42,22 @@
 <meta name="description" content="Personal knowledge space">
 <meta name="author" content="">
 
-<link rel="canonical" href="https://mzavaletavargas.github.io/notes/403.html">
+<link rel="canonical" href="https://mzavaletavargas.github.io/notes/d69aee32-573c-4b59-abcd-d6cfe3ded443.html">
 
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://mzavaletavargas.github.io/notes/403.html">
+<meta property="og:url" content="https://mzavaletavargas.github.io/notes/d69aee32-573c-4b59-abcd-d6cfe3ded443.html">
 <meta property="og:description" content="Personal knowledge space">
 <meta property="og:image" content="https://mzavaletavargas.github.ioundefined">
 
 <meta name="twitter:card" content="summary">
 
-<meta name="twitter:url" content="https://mzavaletavargas.github.io/notes/403.html">
+<meta name="twitter:url" content="https://mzavaletavargas.github.io/notes/d69aee32-573c-4b59-abcd-d6cfe3ded443.html">
 <meta name="twitter:description" content="Personal knowledge space">
 <meta name="twitter:image" content="https://mzavaletavargas.github.ioundefined">
 
 
-  <meta property="og:title" content="This page has not yet sprouted - Dendron" />
-  <meta name="twitter:title" content="This page has not yet sprouted - Dendron" />
+  <meta property="og:title" content="Clusters - Dendron" />
+  <meta name="twitter:title" content="Clusters - Dendron" />
   
 </head>
 
@@ -130,6 +130,10 @@
     <div id="main-content-wrap" class="main-content-wrap">
       
         
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test">Homepage</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8.html">Programming</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/ce6e9d6f-33bc-4eb6-aa8d-773740ff1a16.html">JavaScript</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/dec2b4d3-ff94-4735-8797-0a65986de197.html">Node.js</a></li><li class="breadcrumb-nav-list-item">Clusters</li></ol>
+          </nav>
+        
       
       <div id="main-content" class="main-content" role="main">
 
@@ -160,10 +164,10 @@
 <div id="main" role="main">
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="This page has not yet sprouted">
+    <meta itemprop="headline" content="Clusters">
     
-    <meta itemprop="datePublished" content="2021-05-23T20:10:19+00:00">
-    <meta itemprop="dateModified" content="2021-05-23T20:10:19+00:00">
+    <meta itemprop="datePublished" content="2021-05-22T13:15:25+00:00">
+    <meta itemprop="dateModified" content="2021-05-22T13:16:41+00:00">
 
     <div class="page__inner-wrap">
 
@@ -173,9 +177,93 @@
 
         
 
-        <h1 id="this-page-has-not-yet-sprouted"><a aria-hidden="true" class="anchor-heading" href="#this-page-has-not-yet-sprouted"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>This page has not yet sprouted</h1>
-<p><a href="https://dendron.so/">Dendron</a> (the tool used to generate this site) lets authors selective publish content. You will see this page whenever you click on a link to an unpublished page</p>
-<p><img src="/test/https://foundation-prod-assetspublic53c57cce-8cpvgjldwysl.s3-us-west-2.amazonaws.com/assets/images/not-sprouted.png"></p><span id="navId" data="403"></span>
+        <h1 id="clusters"><a aria-hidden="true" class="anchor-heading" href="#clusters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Clusters</h1>
+<h2 id="pm2"><a aria-hidden="true" class="anchor-heading" href="#pm2"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PM2</h2>
+<ul>
+<li>Process Manager</li>
+<li>Forever alive</li>
+<li>Monitorin</li>
+<li>Load Balancer</li>
+<li>Centralized Logs</li>
+<li>Not optimal compared with native approachs</li>
+</ul>
+<h3 id="installation"><a aria-hidden="true" class="anchor-heading" href="#installation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Installation</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g pm2
+
+</code></pre>
+<h3 id="usefull-comands"><a aria-hidden="true" class="anchor-heading" href="#usefull-comands"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Usefull Comands</h3>
+<pre class="language-bash"><code class="language-bash">pm2 start index.js // Start the app, restart <span class="token keyword">if</span> needed.
+
+pm2 <span class="token function">ls</span>  // show the current apps available
+pm2 stop app // Stop app
+pm2 delete app // Remove the app
+
+pm2 monit // Show the process list, global logs, and <span class="token function">more</span>
+pm2 log // centralized logs
+pm2 start index.js -i max // Create a cluster with all CPUS
+
+</code></pre>
+<p>More: <a href="https://devhints.io/pm2">https://devhints.io/pm2</a></p>
+<h2 id="cluster-module"><a aria-hidden="true" class="anchor-heading" href="#cluster-module"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Cluster Module</h2>
+<p>Node.js allows to create child processes to use multiple CPU cores and handle multiple tasks in parallel.
+It uses by the default the round-robin distribution to distribute connections across the workers.</p>
+<p>Example: <a href="https://stackabuse.com/setting-up-a-node-js-cluster/">Setting up a Node.js Cluster
+</a></p>
+<p>master.js</p>
+<pre class="language-javacript"><code class="language-javacript">const cluster = require('cluster');
+const os = require('os')
+
+if (cluster.isMaster) {
+ console.log(`Master running on pid: ${process.pid}`)
+
+ for (let i = 0; i &#x3C; os.cpus().length; i++) {
+   cluster.fork();
+ }
+
+ cluster.on('exit', (worker, code, signal) => {
+   if (code != 0 &#x26;&#x26; !worker.exitedAfterDisconnect) {
+     	console.log(`Worker ${worker.id}
+crashed, starting a new one`);
+     cluster.fork();
+   }
+ })
+} else {
+ require('./child')
+}
+</code></pre>
+<p>child.js</p>
+<pre class="language-javacript"><code class="language-javacript">const http = require('http');
+
+const server = http.createServer((req, res) => {
+ if ( req.url === '/') {
+   // blocking
+   for (let i = 0; i &#x3C; 100000000; i++) { }
+   setTimeout(() => {
+     res.end('okay');
+   }, 0)
+ } else {
+   res.end()
+ }
+});
+
+server.listen(8080, () => {
+ console.log(`Child Server running on pid: ${process.pid}`)
+});
+
+setTimeout(() => {
+ process.exit(1) // death by random timeout
+}, Math.random() * 20000);
+</code></pre>
+<h2 id="aditional-information"><a aria-hidden="true" class="anchor-heading" href="#aditional-information"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Aditional Information</h2>
+<ul>
+<li><a href="https://nodejs.org/api/cluster.html">https://nodejs.org/api/cluster.html</a></li>
+<li><a href="https://github.com/mcollina/autocannon">https://github.com/mcollina/autocannon</a></li>
+<li><a href="https://flaviocopes.com/node-request-data/">https://flaviocopes.com/node-request-data/</a></li>
+<li><a href="https://medium.com/tech-tajawal/clustering-in-nodejs-utilizing-multiple-processor-cores-75d78aeb0f4f">https://medium.com/tech-tajawal/clustering-in-nodejs-utilizing-multiple-processor-cores-75d78aeb0f4f</a></li>
+<li><a href="https://medium.com/the-andela-way/scaling-out-with-node-clusters-1dca4a39a2a">https://medium.com/the-andela-way/scaling-out-with-node-clusters-1dca4a39a2a</a></li>
+<li><a href="https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a">https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a</a></li>
+<li><a href="http://www.acuriousanimal.com/2017/08/12/understanding-the-nodejs-cluster-module.html">http://www.acuriousanimal.com/2017/08/12/understanding-the-nodejs-cluster-module.html</a></li>
+</ul><span id="navId" data="d69aee32-573c-4b59-abcd-d6cfe3ded443"></span>
 
                 
       </section>

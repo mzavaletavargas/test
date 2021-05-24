@@ -1,6 +1,30 @@
 {
     "folders": [
         {
+            "path": "infrastructure",
+            "name": "infrastructure"
+        },
+        {
+            "path": "books",
+            "name": "books"
+        },
+        {
+            "path": "computer-science",
+            "name": "computer-science"
+        },
+        {
+            "path": "networking",
+            "name": "networking"
+        },
+        {
+            "path": "databases",
+            "name": "databases"
+        },
+        {
+            "path": "personal-growth",
+            "name": "personal-growth"
+        },
+        {
             "path": "operating-systems",
             "name": "operating-systems"
         },

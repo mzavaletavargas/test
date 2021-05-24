@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
   
-  <title>This page has not yet sprouted - Dendron</title>
+  <title>Security - Dendron</title>
   
 
   <link
@@ -42,22 +42,22 @@
 <meta name="description" content="Personal knowledge space">
 <meta name="author" content="">
 
-<link rel="canonical" href="https://mzavaletavargas.github.io/notes/403.html">
+<link rel="canonical" href="https://mzavaletavargas.github.io/notes/c796d05d-8deb-489d-bb95-495b5376558a.html">
 
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://mzavaletavargas.github.io/notes/403.html">
+<meta property="og:url" content="https://mzavaletavargas.github.io/notes/c796d05d-8deb-489d-bb95-495b5376558a.html">
 <meta property="og:description" content="Personal knowledge space">
 <meta property="og:image" content="https://mzavaletavargas.github.ioundefined">
 
 <meta name="twitter:card" content="summary">
 
-<meta name="twitter:url" content="https://mzavaletavargas.github.io/notes/403.html">
+<meta name="twitter:url" content="https://mzavaletavargas.github.io/notes/c796d05d-8deb-489d-bb95-495b5376558a.html">
 <meta name="twitter:description" content="Personal knowledge space">
 <meta name="twitter:image" content="https://mzavaletavargas.github.ioundefined">
 
 
-  <meta property="og:title" content="This page has not yet sprouted - Dendron" />
-  <meta name="twitter:title" content="This page has not yet sprouted - Dendron" />
+  <meta property="og:title" content="Security - Dendron" />
+  <meta name="twitter:title" content="Security - Dendron" />
   
 </head>
 
@@ -130,6 +130,10 @@
     <div id="main-content-wrap" class="main-content-wrap">
       
         
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test">Homepage</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8.html">Programming</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/ce6e9d6f-33bc-4eb6-aa8d-773740ff1a16.html">JavaScript</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/dec2b4d3-ff94-4735-8797-0a65986de197.html">Node.js</a></li><li class="breadcrumb-nav-list-item">Security</li></ol>
+          </nav>
+        
       
       <div id="main-content" class="main-content" role="main">
 
@@ -160,10 +164,10 @@
 <div id="main" role="main">
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="This page has not yet sprouted">
+    <meta itemprop="headline" content="Security">
     
-    <meta itemprop="datePublished" content="2021-05-23T20:10:19+00:00">
-    <meta itemprop="dateModified" content="2021-05-23T20:10:19+00:00">
+    <meta itemprop="datePublished" content="2021-05-22T13:34:53+00:00">
+    <meta itemprop="dateModified" content="2021-05-22T13:38:50+00:00">
 
     <div class="page__inner-wrap">
 
@@ -173,9 +177,51 @@
 
         
 
-        <h1 id="this-page-has-not-yet-sprouted"><a aria-hidden="true" class="anchor-heading" href="#this-page-has-not-yet-sprouted"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>This page has not yet sprouted</h1>
-<p><a href="https://dendron.so/">Dendron</a> (the tool used to generate this site) lets authors selective publish content. You will see this page whenever you click on a link to an unpublished page</p>
-<p><img src="/test/https://foundation-prod-assetspublic53c57cce-8cpvgjldwysl.s3-us-west-2.amazonaws.com/assets/images/not-sprouted.png"></p><span id="navId" data="403"></span>
+        <h1 id="security"><a aria-hidden="true" class="anchor-heading" href="#security"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Security</h1>
+<h2 id="avoid-80-port"><a aria-hidden="true" class="anchor-heading" href="#avoid-80-port"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Avoid 80 port</h2>
+<p>Avoid running our Node.js app on port 80
+In most cases is not a good idea to start our app on port 80.</p>
+<h3 id="why"><a aria-hidden="true" class="anchor-heading" href="#why"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Why?</h3>
+<p>On linux environments root access is needed to use the ports &#x3C;= 1024</p>
+<h3 id="what-is-the-main-problem"><a aria-hidden="true" class="anchor-heading" href="#what-is-the-main-problem"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>What is the main problem?</h3>
+<p>We are exposed, attackers can find the way to run commands for them using root privileges.</p>
+<p>Posible Solutions:</p>
+<p>A reverse proxy like nginx</p>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Nginx</span></div>
+<a href="https://mzavaletavargas.github.io/test/notes/5eb04dc2-7759-4fa7-845a-48043ffe2382.html" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="conclusion"><a aria-hidden="true" class="anchor-heading" href="#conclusion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Conclusion</h2>
+<p>NGINX: Definitely solve more of the issues regarding to security, cache, ssl, load balancing, reverse proxy and so on. Is a great option to be used combined with PM2 or Cluster Module</p>
+<h2 id="aditional-information"><a aria-hidden="true" class="anchor-heading" href="#aditional-information"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Aditional Information</h2>
+<p><a href="https://github.com/mzavaletavargas/going-live">https://github.com/mzavaletavargas/going-live</a></p>
+</div></div><p></p><p></p>
+<h1 id="aditional-information-1"><a aria-hidden="true" class="anchor-heading" href="#aditional-information-1"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Aditional information</h1>
+<ul>
+<li>
+<p><a href="http://www.nikola-breznjak.com/blog/javascript/nodejs/using-nginx-as-a-reverse-proxy-in-front-of-your-node-js-application/">http://www.nikola-breznjak.com/blog/javascript/nodejs/using-nginx-as-a-reverse-proxy-in-front-of-your-node-js-application/</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/16770673/using-node-js-only-vs-using-node-js-with-apache-nginx">https://stackoverflow.com/questions/16770673/using-node-js-only-vs-using-node-js-with-apache-nginx</a></p>
+</li>
+<li>
+<p><a href="https://www.reddit.com/r/node/comments/2rjsty/why_not_run_on_port_80/">https://www.reddit.com/r/node/comments/2rjsty/why_not_run_on_port_80/</a></p>
+</li>
+<li>
+<p><a href="https://blog.risingstack.com/node-js-security-tips/">https://blog.risingstack.com/node-js-security-tips/</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode">https://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode</a></p>
+</li>
+<li>
+<p><a href="https://hashnode.com/post/10-things-you-shouldnt-do-while-running-nodejs-in-production-cisab2fyu0s9oth5341faywcw">https://hashnode.com/post/10-things-you-shouldnt-do-while-running-nodejs-in-production-cisab2fyu0s9oth5341faywcw</a></p>
+</li>
+</ul><span id="navId" data="c796d05d-8deb-489d-bb95-495b5376558a"></span>
 
                 
       </section>
