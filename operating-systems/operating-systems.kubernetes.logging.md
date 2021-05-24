@@ -1,0 +1,106 @@
+---
+id: bb0aabc9-d22e-4f1d-905d-96853fd3f8f7
+title: Kubernetes Logging
+desc: ''
+updated: 1621702961234
+created: 1621702944254
+---
+
+# [SPIKE] Kubernetes Logging
+
+Spike about logging from Kubernetes to other services. Check wich tools, tendencies, compatibility.
+
+## Podcast
+
+[Fluent Bit: Lightweight Logging for Cloud Native Applications - Eduardo Silva](https://open.spotify.com/episode/3DvlI6SBdTn7yAd4UoNc4K?si=puy9i7eUTjiFTBIyqFbk_A)
+
+[Logging with Loki](https://open.spotify.com/episode/6pKuVLowNYLshWA4DjXIw9?si=DUmeWZZ9RwizoIFlvHmszw)
+
+[Building Datadog with Alexis Le Quoc](https://open.spotify.com/episode/66pNYv1filMAlVTdRg2qHe?si=EHQvzEJ1QYa0GM6vektMEA)
+
+* [Transcript](https://softwareengineeringdaily.com/wp-content/uploads/2018/04/SED575-Building-Datadog.pdf)
+
+[Monitoring Kubernetes  With LLan Rabinobitch](https://open.spotify.com/episode/7rVsxtJ3GKS1MQWZQeXc07?si=9w5w5HgVRHqvhe9yhRIzlg)
+
+## Blogs
+
+[Application Logging Simplified in Kubernetes ](https://medium.com/hashmapinc/application-logging-simplified-in-kubernetes-part-1-5ba603a1744b)
+
+[Fluent bit with data dog ](https://www.datadoghq.com/blog/fluentbit-integration-announcement/)
+
+[Fluent bit kubernets ](https://echorand.me/posts/fluentbit-kubernetes/)
+
+## Data Collector
+
+Is important for getting information and redirected to a service like datadog, elasticsearch etc.
+
+Some options:
+
+* Fluentd pod: https://hub.docker.com/r/fluent/fluentd/
+* Fluent Bit: https://fluentbit.io/
+* Loki: https://github.com/grafana/loki
+
+I tried Fluent bit and it's working great, collecting information from every pod as deamon set. A DeamonSet let's you get information inside every pod, without affecting performance too much.
+
+### Fluent Bit
+
+Tutorial for kubernetes: https://docs.fluentbit.io/manual/installation/kubernetes
+
+```bash
+$ kubectl create namespace logging
+$ kubectl create -f https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/fluent-bit-service-account.yaml
+$ kubectl create -f https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/fluent-bit-role.yaml
+$ kubectl create -f https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/fluent-bit-role-binding.yaml
+```
+
+important to consider `Match` wich is related with the tags that you defined as `Input` 
+
+```yaml
+$ config_map.yaml
+
+output-datadog.conf: |
+[OUTPUT]
+  Name        datadog
+  Match       backend
+  apikey      ${FLUENT_DATADOG_API_KEY}
+  dd_service  backend
+  dd_tags     container:backend, env:staging
+  dd_source         fluent-bit
+  dd_message_key    log_processed
+```
+
+DeamonSet generic 
+
+```
+$ kubectl create -f https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/output/elasticsearch/fluent-bit-configmap.yaml
+```
+
+
+
+## Logging 
+
+Prometheus vs Datadog: https://www.bluematador.com/blog/how-to-monitor-your-kubernetes-cluster-prometheus-vs-datadog
+
+Datadog
+
+## Roadblocks
+
+* Input and ouputs references didn't match
+
+## Ideas
+
+Elasticseach like hammer for a spike
+
+Loki focus on logs and it's like prometheus. compared with elasticsearch that focus on any kind of data that you store.
+
+
+
+## References
+
+* https://www.youtube.com/watch?v=B2IS-XS-cc0 [Fluent Bit explained | Fluent Bit vs Fluentd] [TechWorld with Nana]
+* https://docs.fluentbit.io/manual/pipeline/outputs/datadog
+* https://www.datadoghq.com/blog/fluentbit-integration-announcement/
+* https://docs.datadoghq.com/integrations/fluentbit/
+* https://dev.to/amitsaha/how-to-set-up-log-forwarding-in-a-kubernetes-cluster-using-fluent-bit-3bgk
+* https://github.com/DataDog/trace-examples/blob/98626d924f82666de60d6b2d6a65d87eebebdff1/opentelemetry/k8s-collector.yml#L181
+

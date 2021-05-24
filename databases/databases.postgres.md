@@ -1,0 +1,37 @@
+---
+id: 83ea6a26-e3cd-4214-b35d-26c04710621e
+title: Postgres
+desc: ""
+updated: 1621707184618
+created: 1621706876486
+---
+
+## General Overview
+
+1. https://aws.amazon.com/rds/
+
+2. https://www.enterprisedb.com/download-postgresql-binaries
+
+3. https://severalnines.com/database-blog/benchmarking-managed-postgresql-cloud-solutions-part-one-amazon-aurora
+
+4. https://severalnines.com/database-blog/performance-cheat-sheet-postgresql
+
+5. https://severalnines.com/database-blog/architecture-and-tuning-memory-postgresql-databases
+
+6. https://www.datadoghq.com/blog/100x-faster-postgres-performance-by-changing-1-line/
+
+7. https://thoughtbot.com/blog/advanced-postgres-performance-tips
+
+8. https://aws.amazon.com/getting-started/tutorials/create-connect-postgresql-db/
+
+## Performance
+
+1. https://www.postgresql.org/docs/12/pgbench.html
+
+2. https://severalnines.com/blog/benchmarking-postgresql-performance
+
+3. https://aws.amazon.com/rds/aurora/?nc=sn&loc=1
+
+4. https://severalnines.com/database-blog/benchmarking-managed-postgresql-cloud-solutions-part-two-amazon-rds
+
+5. https://www.datadoghq.com/

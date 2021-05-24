@@ -1,0 +1,138 @@
+---
+id: 5eb04dc2-7759-4fa7-845a-48043ffe2382
+title: Nginx
+desc: ""
+updated: 1621707866008
+created: 1621707712304
+---
+
+## What is it?
+
+NGINX is a web server which can also be used as a reverse proxy, software load balancer, mail proxy and HTTP cache.
+
+Nginx uses an asynchronous event-driven approach, rather than threads, to handle requests.[22] Nginx's modular event-driven architecture can provide more predictable performance under high loads.
+
+Definition by: https://en.wikipedia.org/wiki/Nginx
+
+http://nginx.org/en/docs/beginners_guide.html
+
+## Why do we need this web server?
+
+- Higher performance serving static files
+- SSL/TLS termination
+- Be a first layer for security.
+
+https://www.nginx.com/resources/glossary/application-server-vs-web-server/
+[When using node.js, do you still need Nginx or Apache?](https://www.quora.com/When-using-node-js-do-you-still-need-Nginx-or-Apache)
+
+### Avoid running our Node.js app on port 80
+
+On linux environments root access is needed to use the ports <= 1024
+
+We are exposed, attackers can find the way to run commands for them using root privileges.
+
+Use a web server that has reverse proxy instead, in other words use NGINX.
+
+## Reverse proxy
+
+Reverse Proxy get all the incoming request, do a bunch of operations for us, and response back to the client.
+
+[Use NGINX as a Reverse Proxy](https://www.linode.com/docs/web-servers/nginx/use-nginx-reverse-proxy/)
+
+[Jenkins with NGINX - Reverse proxy with https](https://medium.com/@sportans300/nginx-reverse-proxy-with-https-466daa4da4fc)
+
+## Load Balancer
+
+Distributes workload among our servers preventing overloading, continue serving to clients even if one of the nodes shut down, increase server capacity.
+
+Comparation load balancer performance, cluster module, iptables, nginx
+https://medium.com/@fermads/node-js-process-load-balancing-comparing-cluster-iptables-and-nginx-6746aaf38272
+
+https://github.com/fermads/node.js-process-load-balancing
+
+[How to load Balancing NodeJs apps using Nginx?](http://nginx.org/en/docs/beginners_guide.html)
+
+```
+Reverse proxy servers and load balancers are components in a client-server computing architecture. Both act as intermediaries in the communication between the clients and servers, performing functions that improve efficiency. They can be implemented as dedicated, purpose-built devices, but increasingly in modern web architectures they are software applications that run on commodity hardware.
+```
+
+## Differences
+
+[What is a Reverse Proxy vs. Load Balancer?](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
+
+### Algorithm
+
+Basic Round robin Scheduling
+https://en.wikipedia.org/wiki/Round-robin_scheduling
+
+## Example with Node
+
+```json
+...
+http {
+  ...
+    upstream http_servers {
+       server 127.0.0.1:8081;
+       server 127.0.0.1:8082;
+       server 127.0.0.1:8083;
+       server 127.0.0.1:8084;
+     }
+     …
+     server {
+       listen: 8080
+       server_name  localhost;
+       …
+       …
+location / {
+   	  proxy_set_header   X-Real-IP $remote_addr;
+  proxy_set_header   Host      $http_host;
+  proxy_pass         http://http_servers;
+}
+       }
+}
+```
+
+master.js
+
+```javascript
+const cp = require("child_process");
+const os = require("os");
+
+console.log(`Master running 
+  on pid: ${process.pid}`);
+
+for (let i = 0; i < os.cpus().length; i++) {
+  cp.fork(`./child`, { env: { id: i + 1 } });
+}
+```
+
+child.js
+
+```javascript
+const http = require("http");
+const port = 808 + process.env.id;
+
+const server = http.createServer((req, res) => {
+  if (req.url === "/") {
+    // blocking
+    for (let i = 0; i < 100000000; i++) {}
+    setTimeout(() => {
+      res.end("okay");
+    }, 0);
+  } else {
+    res.end();
+  }
+});
+
+server.listen(port, () => {
+  console.log(`Child Server on port: ${port}, pid: ${process.pid}`);
+});
+```
+
+## Conclusion
+
+NGINX: Definitely solve more of the issues regarding to security, cache, ssl, load balancing, reverse proxy and so on. Is a great option to be used combined with PM2 or Cluster Module
+
+## Aditional Information
+
+https://github.com/mzavaletavargas/going-live
