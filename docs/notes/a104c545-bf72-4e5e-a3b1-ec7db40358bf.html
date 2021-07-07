@@ -38,6 +38,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1" />
    
+   
   
 <meta name="description" content="Personal knowledge space">
 <meta name="author" content="">
@@ -167,7 +168,7 @@
     <meta itemprop="headline" content="Kubernetes">
     
     <meta itemprop="datePublished" content="2021-05-22T12:03:21+00:00">
-    <meta itemprop="dateModified" content="2021-05-22T12:03:21+00:00">
+    <meta itemprop="dateModified" content="2021-05-25T23:13:28+00:00">
 
     <div class="page__inner-wrap">
 
@@ -178,10 +179,18 @@
         
 
         <h1 id="kubernetes"><a aria-hidden="true" class="anchor-heading" href="#kubernetes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Kubernetes</h1>
+<h2 id="gotchas"><a aria-hidden="true" class="anchor-heading" href="#gotchas"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Gotchas</h2>
+<p>port forward from internal ip insede network, for example: Access to an RDS that k8s network has access only.</p>
+<p><a href="https://hub.docker.com/r/marcnuri/port-forward">https://hub.docker.com/r/marcnuri/port-forward</a></p>
+<pre class="language-bash"><code class="language-bash">kubectl run --env <span class="token assign-left variable">REMOTE_HOST</span><span class="token operator">=</span>rds-host-ip --env <span class="token assign-left variable">REMOTE_PORT</span><span class="token operator">=</span><span class="token number">5432</span> --env <span class="token assign-left variable">LOCAL_PORT</span><span class="token operator">=</span><span class="token number">25432</span> --port <span class="token number">5432</span> --image marcnuri/port-forward test-port-forward
+
+kubectl port-forward test-port-forward <span class="token number">5432</span>:25432
+</code></pre>
 <hr>
 <h2 id="children"><a aria-hidden="true" class="anchor-heading" href="#children"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Children</h2>
 <ol>
 <li><a href="https://mzavaletavargas.github.io/test/notes/bb0aabc9-d22e-4f1d-905d-96853fd3f8f7.html">Kubernetes Logging</a></li>
+<li><a href="https://mzavaletavargas.github.io/test/notes/c747004d-6ec4-4475-a696-fac341c1a707.html">Team Collaboration</a></li>
 </ol><span id="navId" data="a104c545-bf72-4e5e-a3b1-ec7db40358bf"></span>
 
                 
