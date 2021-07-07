@@ -5,7 +5,7 @@ desc: ""
 updated: 1621709268301
 created: 1621709263959
 ---
-
+macr
 Add multiple github account, same machine to avoid conflicts when pushing or pulling repositories
 
 ```bash
