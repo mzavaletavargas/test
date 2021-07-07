@@ -1,6 +1,9 @@
 version: 1
 vaults:
     -
+        fsPath: architecture
+        name: architecture
+    -
         fsPath: health
         name: health
     -
@@ -59,6 +62,14 @@ site:
             - books
             - infrastructure
             - health
+            - architecture
     siteUrl: 'https://mzavaletavargas.github.io'
     assetsPrefix: test
 initializeRemoteVaults: true
+journal:
+    dailyDomain: daily
+    name: journal
+    dateFormat: y.MM.dd
+    addBehavior: childOfDomain
+    firstDayOfWeek: 1
+dendronVersion: 0.49.0
