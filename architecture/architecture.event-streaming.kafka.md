@@ -6,3 +6,6 @@ updated: 1625624471921
 created: 1625624471921
 ---
 
+## Summary
+
+![](/assets/images/kafka-summary.png)
