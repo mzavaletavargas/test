@@ -1,6 +1,9 @@
 version: 1
 vaults:
     -
+        fsPath: health
+        name: health
+    -
         fsPath: infrastructure
         name: infrastructure
     -
@@ -55,6 +58,7 @@ site:
             - computer-science
             - books
             - infrastructure
+            - health
     siteUrl: 'https://mzavaletavargas.github.io'
     assetsPrefix: test
 initializeRemoteVaults: true

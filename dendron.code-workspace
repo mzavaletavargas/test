@@ -1,6 +1,10 @@
 {
     "folders": [
         {
+            "path": "health",
+            "name": "health"
+        },
+        {
             "path": "infrastructure",
             "name": "infrastructure"
         },
