@@ -7,6 +7,12 @@ created: 1621703001520
 stub: false
 ---
 
+# Kubernetes
+
+## Working dev environments
+
+https://kubernetes.io/blog/2018/05/01/developing-on-kubernetes/
+
 ## Gotchas
 
 port forward from internal ip insede network, for example: Access to an RDS that k8s network has access only.

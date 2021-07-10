@@ -2,7 +2,7 @@
 id: 1769ba5b-d9f2-4564-8a8e-a4c4f32169c7
 title: Devspace
 desc: ""
-updated: 1622780785538
+updated: 1625873307295
 created: 1622780489289
 ---
 
@@ -108,6 +108,67 @@ For debugging with docker we have to setup the following configuration on 'launc
         },
     ]
 }
+```
+
+## Config file sample
+
+```yaml
+version: v1beta10
+images:
+  app:
+    image: image:debug-tag
+    dockerfile: ./Dockerfile
+    build:
+      disabled: true
+    # cmd: ['npm', 'run', 'start:debug']
+
+deployments:
+  - name: app
+    kubectl:
+      manifests:
+        - ./manifests/microservice-template.yml
+
+# `dev` only applies when you run `devspace dev`
+dev:
+  logs:
+    showLast: 200
+    sync: true
+
+  ports:
+    - imageName: app # Select the Pod that runs our `app` image
+      forward:
+        - port: 3000
+        - port: 9229
+
+
+  open:
+    - url: http://localhost:3000
+
+  # `dev.sync` configures a file sync between our Pods in k8s and your local project files
+  sync:
+    - imageName: app # Select the Pod that runs our `app` image
+      initialSync: preferRemote
+      disableDownload: true
+      excludePaths:
+        - .git/
+      uploadExcludePaths:
+        - Dockerfile
+        - Dockerfile.dev
+        - node_modules/
+commands:
+  - name: ingress
+    command: 'kubectl apply -f manifests/ingress.yml'
+  - name: create-configmap
+    command: 'kubectl create configmap backend-config --from-env-file=hapi.properties'
+  - name: delete-configmap
+    command: 'kubectl delete configmap backend-config'
+
+profiles:
+  - name: production
+      patches:
+      - op: remove
+        path: images.app.build.disabled
+
 ```
 
 ## FAQs
