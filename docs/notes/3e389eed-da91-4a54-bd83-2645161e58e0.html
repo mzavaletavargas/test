@@ -10,16 +10,16 @@
 
   <link
     rel="shortcut icon"
-    href="https://mzavaletavargas.github.io/test/favicon.ico"
+    href="https://mzavaletavargas.github.io/wiki/favicon.ico"
     type="image/x-icon"
   />
   <link
     rel="stylesheet"
-    href="https://mzavaletavargas.github.io/test/assets/css/just-the-docs-default.css"
+    href="https://mzavaletavargas.github.io/wiki/assets/css/just-the-docs-default.css"
   />
   <script
     type="text/javascript"
-    src="https://mzavaletavargas.github.io/test/assets/js/just-the-docs.js"
+    src="https://mzavaletavargas.github.io/wiki/assets/js/just-the-docs.js"
   ></script>
   <link
     rel="stylesheet"
@@ -33,7 +33,7 @@
   />
   <script
     type="text/javascript"
-    src="https://mzavaletavargas.github.io/test/assets/js/vendor/lunr.min.js"
+    src="https://mzavaletavargas.github.io/wiki/assets/js/vendor/lunr.min.js"
   ></script>
   
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -100,7 +100,7 @@
 
     <div class="side-bar">
       <div class="site-header">
-        <a href="https://mzavaletavargas.github.io/test" class="site-title lh-tight">
+        <a href="https://mzavaletavargas.github.io/wiki" class="site-title lh-tight">
   Dendron
 
  </a>
@@ -132,7 +132,7 @@
       
         
           <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test">Homepage</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/8a285efb-1044-43b2-b86f-904ad3bf48fc.html">Databases</a></li><li class="breadcrumb-nav-list-item">Dynamodb</li></ol>
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/wiki">Homepage</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/wiki/notes/8a285efb-1044-43b2-b86f-904ad3bf48fc.html">Databases</a></li><li class="breadcrumb-nav-list-item">Dynamodb</li></ol>
           </nav>
         
       
@@ -188,8 +188,8 @@
 <li><a href="https://theburningmonk.com/2019/03/understanding-the-scaling-behaviour-of-dynamodb-ondemand-tables/">understanding-scaling-behaviour</a></li>
 </ul>
 <h2 id="basics"><a aria-hidden="true" class="anchor-heading" href="#basics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Basics</h2>
-<p><img src="/test/./assets/images/image-20191124220520552.png" alt="image-20191124220520552"></p>
-<p><img src="/test/./assets/images/image-20191124222012419.png" alt="image-20191124222012419"></p>
+<p><img src="/wiki/./assets/images/image-20191124220520552.png" alt="image-20191124220520552"></p>
+<p><img src="/wiki/./assets/images/image-20191124222012419.png" alt="image-20191124222012419"></p>
 <h2 id="tables"><a aria-hidden="true" class="anchor-heading" href="#tables"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Tables</h2>
 <ul>
 <li>name.other or name_other name convention</li>
@@ -216,7 +216,7 @@
 </li>
 </ul>
 <h2 id="consistency-model"><a aria-hidden="true" class="anchor-heading" href="#consistency-model"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Consistency Model</h2>
-<p><img src="/test/./assets/images/image-20191124223816308.png" alt="image-20191124223816308"></p>
+<p><img src="/wiki/./assets/images/image-20191124223816308.png" alt="image-20191124223816308"></p>
 <p>Dynamo read consistency can be</p>
 <ul>
 <li>
@@ -238,7 +238,7 @@
 <p>depends on provisioned capacity</p>
 </li>
 <li>
-<p><img src="/test/./assets/images/image-20191124225317460.png" alt="image-20191124225317460"></p>
+<p><img src="/wiki/./assets/images/image-20191124225317460.png" alt="image-20191124225317460"></p>
 </li>
 <li>
 <p>Not be deleted if is modified</p>
@@ -256,13 +256,13 @@
 </li>
 </ul>
 <h2 id="should-you-use-dynamodb"><a aria-hidden="true" class="anchor-heading" href="#should-you-use-dynamodb"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Should you use DynamoDB</h2>
-<p><img src="/test/./assets/images/decision-tree.png" alt="deicision Tree"></p>
+<p><img src="/wiki/./assets/images/decision-tree.png" alt="deicision Tree"></p>
 <h2 id="best-practices"><a aria-hidden="true" class="anchor-heading" href="#best-practices"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Best Practices</h2>
 <ul>
 <li>Consistent Hashing ?</li>
 </ul>
 <h3 id="partition-cases"><a aria-hidden="true" class="anchor-heading" href="#partition-cases"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Partition cases</h3>
-<p><img src="/test/./assets/images/image-20191126143924334.png" alt="image-20191126143924334"></p>
+<p><img src="/wiki/./assets/images/image-20191126143924334.png" alt="image-20191126143924334"></p>
 <p>More database size will need to modify the provision capacity.</p>
 <p>Is recommended to move data base on frecuency, so we can have tables that store data wi less R/W capacity yhan others. This can be a cost bases solution.</p>
 <p>Present an example of migration to have the provition capacity and then lower it down.
@@ -275,13 +275,13 @@ When doing that since there was created many partitions during the migration pro
 <p>filters are made after the data was getted</p>
 <p>max local secondary indexes: 5</p>
 <p>global seco</p>
-<p><img src="/test/./assets/images/image-20191126153939760.png" alt="image-20191126153939760"></p>
+<p><img src="/wiki/./assets/images/image-20191126153939760.png" alt="image-20191126153939760"></p>
 <h3 id="hot-keys-or-partitions"><a aria-hidden="true" class="anchor-heading" href="#hot-keys-or-partitions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Hot keys or Partitions</h3>
 <p>Hot keys: when certain keys has information that is going to use data from 1 partition often thatn others for example when we get recent data.</p>
 <p>We can move recent data to other table.</p>
 <p>or use DAX as cache</p>
 <h3 id="design-patterns"><a aria-hidden="true" class="anchor-heading" href="#design-patterns"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Design patterns</h3>
-<p><img src="/test/./assets/images/image-20191126171249941.png" alt="image-20191126171249941"></p>
+<p><img src="/wiki/./assets/images/image-20191126171249941.png" alt="image-20191126171249941"></p>
 <h2 id="summary"><a aria-hidden="true" class="anchor-heading" href="#summary"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Summary</h2>
 <p>DynamoDB offers a bunch of features that you can use to start an application with minimal set up. Worry less about scaling, sharding, and put your application running in short time. Also you are in AWS Ecosystem that can bring many benefits. For large-scale applications, there is some things to take into consideration.</p>
 <ul>

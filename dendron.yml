@@ -52,7 +52,7 @@ site:
       - health
       - architecture
   siteUrl: "https://mzavaletavargas.github.io"
-  assetsPrefix: test
+  assetsPrefix: wiki
 initializeRemoteVaults: true
 journal:
   dailyDomain: daily
