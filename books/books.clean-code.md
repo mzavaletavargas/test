@@ -2,7 +2,7 @@
 id: edda0772-ac78-404b-853a-81349ec06775
 title: Clean Code
 desc: ""
-updated: 1621818365540
+updated: 1625894135341
 created: 1621818337378
 ---
 
@@ -29,3 +29,5 @@ Conclusion : choosing good names for variables , methods , functions or classes 
 ## References
 
 https://drive.google.com/open?id=1sWaU96HGZbKzT-WDiUli8YlqZ-fO4RXF
+
+![[dendron://programming/programming]]

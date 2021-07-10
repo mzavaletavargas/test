@@ -2,13 +2,19 @@
 id: 1jbRVY0JFbGa9TIoXNoOk
 title: Kafka
 desc: ""
-updated: 1625627900794
+updated: 1625891101076
 created: 1625624471921
 ---
 
 ## Kafka Summary
 
-![](assets/images/kafka-summary.png)
+![](/assets/images/2021-07-09-23-25-02.png)
+
+## Getting started
+
+### Client
+
+### Event Broker
 
 Useful Links:
 
