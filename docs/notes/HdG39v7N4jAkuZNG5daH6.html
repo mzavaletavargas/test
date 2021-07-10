@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
   
-  <title>Kafka - Dendron</title>
+  <title>Microservices - Dendron</title>
   
 
   <link
@@ -43,22 +43,22 @@
 <meta name="description" content="Personal knowledge space">
 <meta name="author" content="">
 
-<link rel="canonical" href="https://mzavaletavargas.github.io/notes/1jbRVY0JFbGa9TIoXNoOk.html">
+<link rel="canonical" href="https://mzavaletavargas.github.io/notes/HdG39v7N4jAkuZNG5daH6.html">
 
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://mzavaletavargas.github.io/notes/1jbRVY0JFbGa9TIoXNoOk.html">
+<meta property="og:url" content="https://mzavaletavargas.github.io/notes/HdG39v7N4jAkuZNG5daH6.html">
 <meta property="og:description" content="Personal knowledge space">
 <meta property="og:image" content="https://mzavaletavargas.github.ioundefined">
 
 <meta name="twitter:card" content="summary">
 
-<meta name="twitter:url" content="https://mzavaletavargas.github.io/notes/1jbRVY0JFbGa9TIoXNoOk.html">
+<meta name="twitter:url" content="https://mzavaletavargas.github.io/notes/HdG39v7N4jAkuZNG5daH6.html">
 <meta name="twitter:description" content="Personal knowledge space">
 <meta name="twitter:image" content="https://mzavaletavargas.github.ioundefined">
 
 
-  <meta property="og:title" content="Kafka - Dendron" />
-  <meta name="twitter:title" content="Kafka - Dendron" />
+  <meta property="og:title" content="Microservices - Dendron" />
+  <meta name="twitter:title" content="Microservices - Dendron" />
   
 </head>
 
@@ -132,7 +132,7 @@
       
         
           <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test">Homepage</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/QYW64J8o1q-RZUAWNuBVz.html">Architecture</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/jdAb3SyghdXYGX2mD8yST.html">Event Streaming</a></li><li class="breadcrumb-nav-list-item">Kafka</li></ol>
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test">Homepage</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/QYW64J8o1q-RZUAWNuBVz.html">Architecture</a></li><li class="breadcrumb-nav-list-item">Microservices</li></ol>
           </nav>
         
       
@@ -165,10 +165,10 @@
 <div id="main" role="main">
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Kafka">
+    <meta itemprop="headline" content="Microservices">
     
-    <meta itemprop="datePublished" content="2021-07-06T21:21:11+00:00">
-    <meta itemprop="dateModified" content="2021-07-09T23:25:01+00:00">
+    <meta itemprop="datePublished" content="2021-07-09T23:29:49+00:00">
+    <meta itemprop="dateModified" content="2021-07-10T00:08:14+00:00">
 
     <div class="page__inner-wrap">
 
@@ -178,96 +178,9 @@
 
         
 
-        <h1 id="kafka"><a aria-hidden="true" class="anchor-heading" href="#kafka"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Kafka</h1>
-<h2 id="kafka-summary"><a aria-hidden="true" class="anchor-heading" href="#kafka-summary"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Kafka Summary</h2>
-<p><img src="/test/assets/images/2021-07-09-23-25-02.png"></p>
-<h2 id="getting-started"><a aria-hidden="true" class="anchor-heading" href="#getting-started"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Getting started</h2>
-<h3 id="client"><a aria-hidden="true" class="anchor-heading" href="#client"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Client</h3>
-<h3 id="event-broker"><a aria-hidden="true" class="anchor-heading" href="#event-broker"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Event Broker</h3>
-<p>Useful Links:</p>
-<ul>
-<li>
-<p><a href="https://smartbear.com/blog/introducing-apache-kafka-event-driven-architecture/">Introducing Apache Kafka &#x26; Event-Driven Architecture Support in ReadyAPI</a></p>
-</li>
-<li>
-<p><a href="https://martinfowler.com/articles/201701-event-driven.html">What do you mean by “Event-Driven”?</a></p>
-</li>
-<li>
-<p><a href="http://www.grahambrooks.com/event-driven-architecture/patterns/stateful-event-pattern/">Graham Brooks - Event-Carried State Transfer Pattern</a></p>
-</li>
-<li>
-<p><a href="https://www.reactivemanifesto.org/">The Reactive Manifesto</a><a href="https://www.reactivemanifesto.org/">https://www.reactivemanifesto.org/</a></p>
-</li>
-<li>
-<p><a href="https://tanzu.vmware.com/content/blog/introduction-to-event-driven-architecture-and-apache-kafka">Introduction to event driven architecture and apache Kafka</a></p>
-</li>
-<li>
-<p><a href="https://medium.com/swlh/monolith-to-event-driven-microservices-with-apache-kafka-6e4abe171cbb">Monolith to Event-Driven Microservices with Apache Kafka</a></p>
-</li>
-<li>
-<p><a href="https://www.confluent.io/blog/apache-kafka-for-service-architectures/">Apache kafka for service architectures</a></p>
-</li>
-<li>
-<p><a href="https://dzone.com/articles/microservices-event-driven-architecture-and-kafka">Microservices Event Drive Architecture and Kafka</a></p>
-</li>
-<li>
-<p><a href="https://www.upsolver.com/blog/apache-kafka-event-driven-architecture-streaming">Apache Kafka: Event-Driven Architecture &#x26; Streaming | Upsolver</a></p>
-</li>
-<li>
-<p><a href="https://aws.amazon.com/event-driven-architecture/">Event-Driven Architecture</a></p>
-</li>
-<li>
-<p><a href="https://developer.ibm.com/depmodels/microservices/articles/eda-and-microservices-architecture-best-practices/">Architectural considerations for event-driven microservices-based systems</a></p>
-</li>
-<li>
-<p><a href="https://hackernoon.com/best-practices-for-event-driven-microservice-architecture-e034p21lk">Best Practices for Event-Driven Microservice Architecture | Hacker Noon</a></p>
-</li>
-<li>
-<p><a href="https://kafka.apache.org/intro">Apache Kafka</a></p>
-</li>
-<li>
-<p><a href="https://hackernoon.com/best-practices-for-event-driven-microservice-architecture-e034p21lk">Best Practices for Event-Driven Microservice Architecture | Hacker Noon</a></p>
-</li>
-<li>
-<p><a href="https://dzone.com/articles/microservices-event-driven-architecture-and-kafka">Microservices, Event-Driven Architecture and Kafka - DZone Microservices</a></p>
-</li>
-<li>
-<p><a href="https://cloud.google.com/eventarc/docs/event-driven-architectures">Event-driven architectures  |  Eventarc  |  Google Cloud</a></p>
-</li>
-<li>
-<p><a href="https://www.upsolver.com/blog/apache-kafka-event-driven-architecture-streaming">Apache Kafka: Event-Driven Architecture &#x26; Streaming | Upsolver</a></p>
-</li>
-<li>
-<p><a href="https://www.confluent.io/blog/building-a-microservices-ecosystem-with-kafka-streams-and-ksql/">Building a microservice ecosystem with kafka streams and ksql</a></p>
-</li>
-<li>
-<p><a href="https://drive.google.com/drive/folders/1KxzaxAvUlB19TiTyiiJ3lXLEJqb98Bkb?usp=sharing">https://drive.google.com/drive/folders/1KxzaxAvUlB19TiTyiiJ3lXLEJqb98Bkb?usp=sharing</a></p>
-</li>
-</ul>
-<p>Video Sources:</p>
-<ul>
-<li>
-<p><a href="https://www.youtube.com/watch?v=BsojaA1XnpM">2. Motivations and Customer Use Cases | Apache Kafka® Fundamentals</a></p>
-</li>
-<li>
-<p><a href="https://www.youtube.com/watch?v=UbNoL5tJEjc">Apache Kafka 101: Kafka Streams</a></p>
-</li>
-<li>
-<p><a href="https://www.youtube.com/watch?v=r9ydV0Y0duo">Running Kafka in Kubernetes</a></p>
-</li>
-</ul>
-<p>Books:</p>
-<ul>
-<li><a href="https://assets.confluent.io/m/7a91acf41502a75e/original/20180328-EB-Confluent_Designing_Event_Driven_Systems.pdf?mkt_tok=NTgyLVFIWC0yNjIAAAF9-ZJZvumVzmluUDM4rS_TvHIw_VlZxB-KatWTh49ZTlT5QRtk_B3xn2SZCijsBmOghXEKp-BFF8Ptqi5mZTB3sJ_APhPq804zzvCTbryDcCDM">https://assets.confluent.io/m/7a91acf41502a75e/original/20180328-EB-Confluent_Designing_Event_Driven_Systems.pdf?mkt_tok=NTgyLVFIWC0yNjIAAAF9-ZJZvumVzmluUDM4rS_TvHIw_VlZxB-KatWTh49ZTlT5QRtk_B3xn2SZCijsBmOghXEKp-BFF8Ptqi5mZTB3sJ_APhPq804zzvCTbryDcCDM</a></li>
-</ul>
-<p>Courses:</p>
-<ul>
-<li><a href="https://www.udemy.com/course/microservices-with-node-js-and-reac">https://www.udemy.com/course/microservices-with-node-js-and-reac</a></li>
-</ul>
-<p>Podcasts</p>
-<ul>
-<li><a href="https://open.spotify.com/episode/4YP0UmfrywDDIY2iecnB3k?si=tf9KktgPRiuiV2kDMCtCcw&#x26;context=spotify%3Ashow%3A7wiqsiW1Le4h2nKZMAShW8&#x26;dl_branch=1">https://open.spotify.com/episode/4YP0UmfrywDDIY2iecnB3k?si=tf9KktgPRiuiV2kDMCtCcw&#x26;context=spotify%3Ashow%3A7wiqsiW1Le4h2nKZMAShW8&#x26;dl_branch=1</a></li>
-</ul><span id="navId" data="1jbRVY0JFbGa9TIoXNoOk"></span>
+        <h1 id="microservices"><a aria-hidden="true" class="anchor-heading" href="#microservices"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Microservices</h1>
+<h1 id="microservices-1"><a aria-hidden="true" class="anchor-heading" href="#microservices-1"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Microservices</h1>
+<p><img src="/test/assets/images/2021-07-10-00-08-11.png"></p><span id="navId" data="HdG39v7N4jAkuZNG5daH6"></span>
 
                 
       </section>
