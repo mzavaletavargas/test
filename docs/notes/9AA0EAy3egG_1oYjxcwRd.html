@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
   
-  <title>Git - Dendron</title>
+  <title>Codebuild - Dendron</title>
   
 
   <link
@@ -43,22 +43,22 @@
 <meta name="description" content="Personal knowledge space">
 <meta name="author" content="">
 
-<link rel="canonical" href="https://mzavaletavargas.github.io/notes/d5277a54-dcf8-40a1-9c67-a58d3ab9794c.html">
+<link rel="canonical" href="https://mzavaletavargas.github.io/notes/9AA0EAy3egG_1oYjxcwRd.html">
 
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://mzavaletavargas.github.io/notes/d5277a54-dcf8-40a1-9c67-a58d3ab9794c.html">
+<meta property="og:url" content="https://mzavaletavargas.github.io/notes/9AA0EAy3egG_1oYjxcwRd.html">
 <meta property="og:description" content="Personal knowledge space">
 <meta property="og:image" content="https://mzavaletavargas.github.ioundefined">
 
 <meta name="twitter:card" content="summary">
 
-<meta name="twitter:url" content="https://mzavaletavargas.github.io/notes/d5277a54-dcf8-40a1-9c67-a58d3ab9794c.html">
+<meta name="twitter:url" content="https://mzavaletavargas.github.io/notes/9AA0EAy3egG_1oYjxcwRd.html">
 <meta name="twitter:description" content="Personal knowledge space">
 <meta name="twitter:image" content="https://mzavaletavargas.github.ioundefined">
 
 
-  <meta property="og:title" content="Git - Dendron" />
-  <meta name="twitter:title" content="Git - Dendron" />
+  <meta property="og:title" content="Codebuild - Dendron" />
+  <meta name="twitter:title" content="Codebuild - Dendron" />
   
 </head>
 
@@ -132,7 +132,7 @@
       
         
           <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test">Homepage</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8.html">Programming</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/b9f47610-404c-4b38-9f3b-6b4b83f53e7a.html">Collaborative</a></li><li class="breadcrumb-nav-list-item">Git</li></ol>
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test">Homepage</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/9bb7282d-4ab7-4792-b0c5-43f293c296e1.html">Infrastructure</a></li><li class="breadcrumb-nav-list-item"><a href="https://mzavaletavargas.github.io/test/notes/1785ee31-4624-447e-93de-f6d699edb153.html">Aws</a></li><li class="breadcrumb-nav-list-item">Codebuild</li></ol>
           </nav>
         
       
@@ -165,10 +165,10 @@
 <div id="main" role="main">
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Git">
+    <meta itemprop="headline" content="Codebuild">
     
-    <meta itemprop="datePublished" content="2021-05-22T13:46:18+00:00">
-    <meta itemprop="dateModified" content="2021-05-22T13:47:39+00:00">
+    <meta itemprop="datePublished" content="2021-07-09T18:32:17+00:00">
+    <meta itemprop="dateModified" content="2021-07-09T21:05:07+00:00">
 
     <div class="page__inner-wrap">
 
@@ -178,14 +178,21 @@
 
         
 
-        <h1 id="git"><a aria-hidden="true" class="anchor-heading" href="#git"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Git</h1>
-<hr>
-<h2 id="children"><a aria-hidden="true" class="anchor-heading" href="#children"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Children</h2>
-<ol>
-<li><a href="https://mzavaletavargas.github.io/test/notes/RQG3FjKttG4YVbGmhnwO9.html">Gitflow</a></li>
-<li><a href="https://mzavaletavargas.github.io/test/notes/533f3444-2b18-41f0-9284-c31d87eedd08.html">Multiple Accounts</a></li>
-<li><a href="https://mzavaletavargas.github.io/test/notes/5ffa1381-0b01-4656-8ad8-1a226133dec7.html">Squash</a></li>
-</ol><span id="navId" data="d5277a54-dcf8-40a1-9c67-a58d3ab9794c"></span>
+        <h1 id="codebuild"><a aria-hidden="true" class="anchor-heading" href="#codebuild"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Codebuild</h1>
+<h1 id="aws-codebuild"><a aria-hidden="true" class="anchor-heading" href="#aws-codebuild"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AWS Codebuild</h1>
+<p>Getting version number from file:</p>
+<pre class="language-bash"><code class="language-bash"> - <span class="token assign-left variable">NPM_VERSION</span><span class="token operator">=</span>v-<span class="token variable"><span class="token variable">$(</span><span class="token function">cat</span> package.json <span class="token operator">|</span> <span class="token function">grep</span> version <span class="token operator">|</span> <span class="token function">head</span> -1 <span class="token operator">|</span> <span class="token function">awk</span> -F<span class="token string">":"</span> <span class="token string">'{print $2}'</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/[\ ",]//g'</span><span class="token variable">)</span></span>
+</code></pre>
+<h2 id="related"><a aria-hidden="true" class="anchor-heading" href="#related"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Related</h2>
+<p><img src="/test/assets/images/2021-07-09-21-05-11.png" alt="Node Pipeline Architecture"></p>
+<p><a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html">Build specification reference for CodeBuild - AWS CodeBuild</a>
+<a href="https://docs.aws.amazon.com/codebuild/latest/userguide/available-runtimes.html">Available runtimes - AWS CodeBuild</a></p>
+<h2 id="terraform"><a aria-hidden="true" class="anchor-heading" href="#terraform"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Terraform</h2>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/codedeploy_app">https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/codedeploy_app</a></p>
+<h2 id="github-webhooks"><a aria-hidden="true" class="anchor-heading" href="#github-webhooks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Github webhooks</h2>
+<p><a href="https://docs.aws.amazon.com/codebuild/latest/userguide/github-webhook.html">https://docs.aws.amazon.com/codebuild/latest/userguide/github-webhook.html</a></p>
+<h2 id="docs"><a aria-hidden="true" class="anchor-heading" href="#docs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>docs</h2>
+<p><a href="https://docs.aws.amazon.com/codebuild/latest/userguide/codebuild-user.pdf">https://docs.aws.amazon.com/codebuild/latest/userguide/codebuild-user.pdf</a></p><span id="navId" data="9AA0EAy3egG_1oYjxcwRd"></span>
 
                 
       </section>
