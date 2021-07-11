@@ -51,7 +51,7 @@ site:
       - infrastructure
       - health
       - architecture
-  siteUrl: "https://mzavaletavargas.github.io"
+  siteUrl: "https://wiki.gustavozavaleta.com"
   assetsPrefix: wiki
 initializeRemoteVaults: true
 journal:
