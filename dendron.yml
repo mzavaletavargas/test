@@ -52,7 +52,7 @@ site:
       - health
       - architecture
   siteUrl: "https://wiki.gustavozavaleta.com"
-  assetsPrefix: wiki
+  # assetsPrefix:
 initializeRemoteVaults: true
 journal:
   dailyDomain: daily
