@@ -5,5 +5,8 @@
   "license": "MIT",
   "dependencies": {
     "@dendronhq/dendron-11ty": "^1.49.0"
+  },
+  "scripts": {
+    "pre-publish": "echo $(cat personal-style.css) >> docs/assets/css/just-the-docs-default.css"
   }
 }

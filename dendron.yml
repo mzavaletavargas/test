@@ -34,7 +34,7 @@ site:
     - root
   siteRootDir: docs
   usePrettyRefs: true
-  title: Gustavo Wiki
+  title: Gustavo's Wiki
   description: Personal knowledge space
   duplicateNoteBehavior:
     action: useVault
