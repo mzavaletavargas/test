@@ -2,7 +2,7 @@
 id: 3e389eed-da91-4a54-bd83-2645161e58e0
 title: Dynamodb
 desc: ""
-updated: 1621709603139
+updated: 1626054210304
 created: 1621709312456
 ---
 
@@ -19,6 +19,7 @@ created: 1621709312456
 ![image-20191124220520552](/assets/images/image-20191124220520552.png)
 
 ![image-20191124222012419](/assets/images/image-20191124222012419.png)
+![](/assets/images/2021-07-09-23-25-02.png)
 
 ## Tables
 
