@@ -16,9 +16,9 @@ created: 1621709312456
 
 ## Basics
 
-![image-20191124220520552](./assets/images/image-20191124220520552.png)
+![image-20191124220520552](/assets/images/image-20191124220520552.png)
 
-![image-20191124222012419](./assets/images/image-20191124222012419.png)
+![image-20191124222012419](/assets/images/image-20191124222012419.png)
 
 ## Tables
 
@@ -41,7 +41,7 @@ created: 1621709312456
 
 ## Consistency Model
 
-![image-20191124223816308](./assets/images/image-20191124223816308.png)
+![image-20191124223816308](/assets/images/image-20191124223816308.png)
 
 Dynamo read consistency can be
 
@@ -61,7 +61,7 @@ RCUs WCUs
 
 - depends on provisioned capacity
 
-- ![image-20191124225317460](./assets/images/image-20191124225317460.png)
+- ![image-20191124225317460](/assets/images/image-20191124225317460.png)
 
 - Not be deleted if is modified
 
@@ -77,7 +77,7 @@ Hashing algorithm
 
 ## Should you use DynamoDB
 
-![deicision Tree](./assets/images/decision-tree.png)
+![deicision Tree](/assets/images/decision-tree.png)
 
 ## Best Practices
 
@@ -85,7 +85,7 @@ Hashing algorithm
 
 ### Partition cases
 
-![image-20191126143924334](./assets/images/image-20191126143924334.png)
+![image-20191126143924334](/assets/images/image-20191126143924334.png)
 
 More database size will need to modify the provision capacity.
 
@@ -110,7 +110,7 @@ max local secondary indexes: 5
 
 global seco
 
-![image-20191126153939760](./assets/images/image-20191126153939760.png)
+![image-20191126153939760](/assets/images/image-20191126153939760.png)
 
 ### Hot keys or Partitions
 
@@ -122,7 +122,7 @@ or use DAX as cache
 
 ### Design patterns
 
-![image-20191126171249941](./assets/images/image-20191126171249941.png)
+![image-20191126171249941](/assets/images/image-20191126171249941.png)
 
 ## Summary
 
