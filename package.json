@@ -7,6 +7,6 @@
     "@dendronhq/dendron-11ty": "^1.49.0"
   },
   "scripts": {
-    "pre-publish": "echo $(cat personal-style.css) >> docs/assets/css/just-the-docs-default.css"
+    "publish": "echo $(cat personal-style.css) >> docs/assets/css/just-the-docs-default.css && git add . && git commit -m \"publish website\" && git push origin master"
   }
 }

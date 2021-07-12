@@ -6,4 +6,8 @@ updated: 1625947233213
 created: 1621701645107
 ---
 
-# Welcome to my wiki.
+## Welcome to my wiki.
+
+This is my personal wiki page, where I put ideas diagrams, where I'm researching a topic, you may not found elaborated articles, just notes that I took at some point when studying.
+
+[Back to mi website](http://gustavozavaleta.com)

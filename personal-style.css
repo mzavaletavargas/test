@@ -8,6 +8,11 @@ body {
   border-right: 0;
 }
 
+.main-header,
+.site-header {
+  border-bottom: 0;
+}
+
 tr,
 th,
 td,
