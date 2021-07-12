@@ -8793,7 +8793,7 @@ figcaption > code:after,
 td > code:before,
 td > code:after {
   letter-spacing: -0.2em;
-  content: " ";
+  content: " ";
   /* non-breaking space*/
 }
 
