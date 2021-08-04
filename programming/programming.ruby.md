@@ -2,7 +2,7 @@
 id: bwExY6uB9XB2qOHI
 title: Ruby
 desc: ""
-updated: 1626280934231
+updated: 1628090541547
 created: 1626189055674
 ---
 
@@ -10,9 +10,15 @@ created: 1626189055674
 
 ### Basics
 
-[Download Ruby](https://www.ruby-lang.org/en/downloads/)
+Start here to get your hands dirty creating your first gem
+[Make your own gem - RubyGems Guides](https://guides.rubygems.org/make-your-own-gem/#introduction)[Download Ruby](https://www.ruby-lang.org/en/downloads/)
+
 [RubyGems Basics - RubyGems Guides](https://guides.rubygems.org/rubygems-basics/)
 [Ruby Object Oriented Programming - Techotopia](https://www.techotopia.com/index.php/Ruby_Object_Oriented_Programming)
+
+### Gemfile vs Gemspec
+
+[Gemfile vs Gemspec](https://medium.com/@divya.n/gemfile-vs-gemspec-ee72512da246)
 
 ### Error handling
 
@@ -94,6 +100,28 @@ Other options: [dry-rb/dry-container](https://github.com/dry-rb/dry-container)
 
 [seattlerb/minitest](https://github.com/seattlerb/minitest)
 
+[How do I stub things in MiniTest?](https://stackoverflow.com/questions/7211086/how-do-i-stub-things-in-minitest)
+
+https://www.rubydoc.info/gems/minitest/5.13.0/Minitest/Mock#expect-instance_method
+
+[LifeCycles hooks minitest](https://www.rubydoc.info/gems/minitest/5.13.0/Minitest/Test/LifecycleHooks)
+
+[Assert throws](https://docs.ruby-lang.org/en/2.1.0/MiniTest/Assertions.html#method-i-assert_throws)
+
+[Mocking and Stubbing with the Minitest Framework](https://medium.com/@gilroman/mocking-and-stubbing-with-the-minitest-framework-6c8b1b9e8cc2)
+
+### Linting
+
+Rubocop a good tool for analizing code and formatting
+
+[GitHub - rubocop/rubocop: A Ruby static code analyzer and formatter, based on the community Ruby style guide.](https://github.com/rubocop/rubocop)
+
+Installation: https://docs.rubocop.org/rubocop/index.html
+
+### VS code extensions
+
+[The Best VS Code Extensions for Anyone Working in Ruby](https://betterprogramming.pub/code-like-a-pro-tooling-to-supercharge-vs-code-for-ruby-bf2ae61df5e3)
+
 ### return vs put
 
 Source: [Learning Ruby methods and how you should use them](https://launchschool.com/books/ruby/read/methods)
@@ -115,6 +143,10 @@ def add_three(number)
 end
 ```
 
+### String replacement
+
+https://www.techotopia.com/index.php/Ruby_String_Replacement,_Substitution_and_Insertion
+
 ### Publish gems
 
 [Publishing your gem - RubyGems Guides](https://guides.rubygems.org/publishing/)
@@ -128,3 +160,4 @@ Options => https://gemfury.com/
 [String interpolation | Ruby for Beginners](http://ruby-for-beginners.rubymonstas.org/bonus/string_interpolation.html)
 [Ruby - Methods - Tutorialspoint](https://www.tutorialspoint.com/ruby/ruby_methods.htm)
 [Learning Ruby methods and how you should use them](https://launchschool.com/books/ruby/read/methods)
+[Ruby Arrays Cheat Sheet | ShortcutFoo](https://www.shortcutfoo.com/app/dojos/ruby-arrays/cheatsheet)

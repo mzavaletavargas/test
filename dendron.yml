@@ -1,63 +1,80 @@
 version: 1
 vaults:
-  - fsPath: architecture
-    name: architecture
-  - fsPath: health
-    name: health
-  - fsPath: infrastructure
-    name: infrastructure
-  - fsPath: books
-    name: books
-  - fsPath: computer-science
-    name: computer-science
-  - fsPath: networking
-    name: networking
-  - fsPath: databases
-    name: databases
-  - fsPath: personal-growth
-    name: personal-growth
-  - fsPath: operating-systems
-    name: operating-systems
-  - fsPath: dev-ops
-    name: dev-ops
-  - fsPath: programming
-    name: programming
-  - fsPath: vault
-    name: vault
+    -
+        fsPath: architecture
+        name: architecture
+    -
+        fsPath: health
+        name: health
+    -
+        fsPath: infrastructure
+        name: infrastructure
+    -
+        fsPath: books
+        name: books
+    -
+        fsPath: computer-science
+        name: computer-science
+    -
+        fsPath: networking
+        name: networking
+    -
+        fsPath: databases
+        name: databases
+    -
+        fsPath: personal-growth
+        name: personal-growth
+    -
+        fsPath: operating-systems
+        name: operating-systems
+    -
+        fsPath: dev-ops
+        name: dev-ops
+    -
+        fsPath: programming
+        name: programming
+    -
+        fsPath: vault
+        name: vault
 useFMTitle: true
 useNoteTitleForLink: true
 noAutoCreateOnDefinition: true
 noLegacyNoteRef: true
 site:
-  copyAssets: true
-  siteHierarchies:
-    - root
-  siteRootDir: docs
-  usePrettyRefs: true
-  title: Gustavo's Wiki
-  description: Personal knowledge space
-  duplicateNoteBehavior:
-    action: useVault
-    payload:
-      - vault
-      - programming
-      - dev-ops
-      - operating-systems
-      - personal-growth
-      - databases
-      - networking
-      - computer-science
-      - books
-      - infrastructure
-      - health
-      - architecture
-  siteUrl: "https://wiki.gustavozavaleta.com"
-  # assetsPrefix:
+    copyAssets: true
+    siteHierarchies:
+        - root
+    siteRootDir: docs
+    usePrettyRefs: true
+    title: Gustavo's Wiki
+    description: Personal knowledge space
+    duplicateNoteBehavior:
+        action: useVault
+        payload:
+            - vault
+            - programming
+            - dev-ops
+            - operating-systems
+            - personal-growth
+            - databases
+            - networking
+            - computer-science
+            - books
+            - infrastructure
+            - health
+            - architecture
+    siteUrl: 'https://wiki.gustavozavaleta.com'
 initializeRemoteVaults: true
 journal:
-  dailyDomain: daily
-  name: journal
-  dateFormat: y.MM.dd
-  addBehavior: childOfDomain
-  firstDayOfWeek: 1
-dendronVersion: 0.49.0
+    dailyDomain: daily
+    name: journal
+    dateFormat: y.MM.dd
+    addBehavior: childOfDomain
+    firstDayOfWeek: 1
+dendronVersion: 0.52.0
+dev:
+    previewV2Enabled: false
+scratch:
+    name: scratch
+    dateFormat: y.MM.dd.HHmmss
+    addBehavior: asOwnDomain
