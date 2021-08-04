@@ -2,7 +2,7 @@
 id: RrrexBaG2ydBnKa9
 title: Lambda
 desc: ""
-updated: 1627928091902
+updated: 1628091510972
 created: 1627923171051
 ---
 
@@ -49,3 +49,16 @@ end
 
 When setting up your lambda use `my_function.hanlder`
 Choose the right [ruby version](https://docs.aws.amazon.com/lambda/latest/dg/lambda-ruby.html)
+
+## AWS SDK to connect to vault using IAM role
+
+Using vault-ruby : https://github.com/hashicorp/vault-ruby
+
+```ruby
+  provider_chain = Aws::CredentialProviderChain.new
+  credentials = provider_chain.resolve
+  secret_auth = Vault.auth.aws_iam(
+    "my-role",
+    credentials
+  )
+```
