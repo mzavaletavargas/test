@@ -264,9 +264,9 @@ select {
  *    `input` and others.
  */
 button,
-html input[type=button],
-input[type=reset],
-input[type=submit] {
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
@@ -305,8 +305,8 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-input[type=checkbox],
-input[type=radio] {
+input[type="checkbox"],
+input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -318,8 +318,8 @@ input[type=radio] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -328,7 +328,7 @@ input[type=number]::-webkit-outer-spin-button {
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
  *    (include `-moz` to future-proof).
  */
-input[type=search] {
+input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   -moz-box-sizing: content-box;
@@ -342,8 +342,8 @@ input[type=search] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-input[type=search]::-webkit-search-cancel-button,
-input[type=search]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -417,7 +417,8 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica, roboto, noto, "segoe ui", arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
+    roboto, noto, "segoe ui", arial, sans-serif;
   font-size: inherit;
   line-height: 1.4;
   color: #5c5962;
@@ -470,7 +471,10 @@ a:not([class]) {
   background-size: 1px 1px;
 }
 a:not([class]):hover {
-  background-image: linear-gradient(rgba(114, 83, 237, 0.45) 0%, rgba(114, 83, 237, 0.45) 100%);
+  background-image: linear-gradient(
+    rgba(114, 83, 237, 0.45) 0%,
+    rgba(114, 83, 237, 0.45) 100%
+  );
   background-size: 1px 1px;
 }
 
@@ -535,7 +539,7 @@ hr {
 }
 @media (min-width: 66.5rem) {
   .main {
-    margin-left: calc( (100% - 1064px) / 2 + 264px );
+    margin-left: calc((100% - 1064px) / 2 + 264px);
   }
 }
 
@@ -588,8 +592,8 @@ hr {
 }
 @media (min-width: 66.5rem) {
   .site-nav,
-.site-header,
-.site-footer {
+  .site-header,
+  .site-footer {
     width: 264px;
   }
 }
@@ -667,11 +671,20 @@ hr {
   }
 }
 .site-title:hover {
-  background-image: linear-gradient(-90deg, #ebedf5 0%, rgba(235, 237, 245, 0.8) 80%, rgba(235, 237, 245, 0) 100%);
+  background-image: linear-gradient(
+    -90deg,
+    #ebedf5 0%,
+    rgba(235, 237, 245, 0.8) 80%,
+    rgba(235, 237, 245, 0) 100%
+  );
 }
 
 .site-button:hover {
-  background-image: linear-gradient(-90deg, #ebedf5 0%, rgba(235, 237, 245, 0.8) 100%);
+  background-image: linear-gradient(
+    -90deg,
+    #ebedf5 0%,
+    rgba(235, 237, 245, 0.8) 100%
+  );
 }
 
 body {
@@ -955,8 +968,14 @@ body {
   font-weight: 600;
   text-decoration: none;
 }
-.nav-list .nav-list-item .nav-list-link:hover, .nav-list .nav-list-item .nav-list-link.active {
-  background-image: linear-gradient(-90deg, #ebedf5 0%, rgba(235, 237, 245, 0.8) 80%, rgba(235, 237, 245, 0) 100%);
+.nav-list .nav-list-item .nav-list-link:hover,
+.nav-list .nav-list-item .nav-list-link.active {
+  background-image: linear-gradient(
+    -90deg,
+    #ebedf5 0%,
+    rgba(235, 237, 245, 0.8) 80%,
+    rgba(235, 237, 245, 0) 100%
+  );
 }
 .nav-list .nav-list-item .nav-list-expander {
   position: absolute;
@@ -980,7 +999,11 @@ body {
   }
 }
 .nav-list .nav-list-item .nav-list-expander:hover {
-  background-image: linear-gradient(-90deg, #ebedf5 0%, rgba(235, 237, 245, 0.8) 100%);
+  background-image: linear-gradient(
+    -90deg,
+    #ebedf5 0%,
+    rgba(235, 237, 245, 0.8) 100%
+  );
 }
 .nav-list .nav-list-item .nav-list-expander svg {
   transform: rotate(90deg);
@@ -1078,7 +1101,7 @@ h1,
 }
 @media (min-width: 31.25rem) {
   h1,
-.text-alpha {
+  .text-alpha {
     font-size: 36px !important;
   }
 }
@@ -1089,7 +1112,7 @@ h2,
 }
 @media (min-width: 31.25rem) {
   h2,
-.text-beta {
+  .text-beta {
     font-size: 24px !important;
     line-height: 1.25;
   }
@@ -1101,7 +1124,7 @@ h3,
 }
 @media (min-width: 31.25rem) {
   h3,
-.text-gamma {
+  .text-gamma {
     font-size: 18px !important;
   }
 }
@@ -1115,7 +1138,7 @@ h4,
 }
 @media (min-width: 31.25rem) {
   h4,
-.text-delta {
+  .text-delta {
     font-size: 12px !important;
   }
 }
@@ -1127,7 +1150,7 @@ h5,
 }
 @media (min-width: 31.25rem) {
   h5,
-.text-epsilon {
+  .text-epsilon {
     font-size: 14px !important;
   }
 }
@@ -1139,7 +1162,7 @@ h6,
 }
 @media (min-width: 31.25rem) {
   h6,
-.text-zeta {
+  .text-zeta {
     font-size: 12px !important;
   }
 }
@@ -1187,7 +1210,7 @@ h6,
 }
 @media (min-width: 31.25rem) {
   .label,
-.label-blue {
+  .label-blue {
     font-size: 12px !important;
   }
 }
@@ -1236,17 +1259,24 @@ h6,
   outline: none;
   box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.25);
 }
-.btn:focus:hover, .btn.selected:focus {
+.btn:focus:hover,
+.btn.selected:focus {
   box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.25);
 }
-.btn:hover, .btn.zeroclipboard-is-hover {
+.btn:hover,
+.btn.zeroclipboard-is-hover {
   color: #6a4aec;
 }
-.btn:hover, .btn:active, .btn.zeroclipboard-is-hover, .btn.zeroclipboard-is-active {
+.btn:hover,
+.btn:active,
+.btn.zeroclipboard-is-hover,
+.btn.zeroclipboard-is-active {
   text-decoration: none;
   background-color: #f4f4f4;
 }
-.btn:active, .btn.selected, .btn.zeroclipboard-is-active {
+.btn:active,
+.btn.selected,
+.btn.zeroclipboard-is-active {
   background-color: #efefef;
   background-image: none;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -1254,7 +1284,10 @@ h6,
 .btn.selected:hover {
   background-color: #cfcfcf;
 }
-.btn:disabled, .btn:disabled:hover, .btn.disabled, .btn.disabled:hover {
+.btn:disabled,
+.btn:disabled:hover,
+.btn.disabled,
+.btn.disabled:hover {
   color: rgba(102, 102, 102, 0.5);
   cursor: default;
   background-color: rgba(229, 229, 229, 0.5);
@@ -1267,7 +1300,10 @@ h6,
   background: transparent;
   box-shadow: inset 0 0 0 2px #e6e1e8;
 }
-.btn-outline:hover, .btn-outline:active, .btn-outline.zeroclipboard-is-hover, .btn-outline.zeroclipboard-is-active {
+.btn-outline:hover,
+.btn-outline:active,
+.btn-outline.zeroclipboard-is-hover,
+.btn-outline.zeroclipboard-is-active {
   color: #6341eb;
   text-decoration: none;
   background-color: transparent;
@@ -1278,7 +1314,8 @@ h6,
   outline: none;
   box-shadow: inset 0 0 0 2px #5c5962, 0 0 0 3px rgba(0, 0, 255, 0.25);
 }
-.btn-outline:focus:hover, .btn-outline.selected:focus {
+.btn-outline:focus:hover,
+.btn-outline.selected:focus {
   box-shadow: inset 0 0 0 2px #5c5962;
 }
 
@@ -1288,12 +1325,15 @@ h6,
   background-image: linear-gradient(#6f55d5, #5739ce);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.12);
 }
-.btn-primary:hover, .btn-primary.zeroclipboard-is-hover {
+.btn-primary:hover,
+.btn-primary.zeroclipboard-is-hover {
   color: #fff;
   background-color: #5132cb;
   background-image: linear-gradient(#6549d2, #5132cb);
 }
-.btn-primary:active, .btn-primary.selected, .btn-primary.zeroclipboard-is-active {
+.btn-primary:active,
+.btn-primary.selected,
+.btn-primary.zeroclipboard-is-active {
   background-color: #4f31c6;
   background-image: none;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -1308,12 +1348,15 @@ h6,
   background-image: linear-gradient(#6f55d5, #5739ce);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.12);
 }
-.btn-purple:hover, .btn-purple.zeroclipboard-is-hover {
+.btn-purple:hover,
+.btn-purple.zeroclipboard-is-hover {
   color: #fff;
   background-color: #5132cb;
   background-image: linear-gradient(#6549d2, #5132cb);
 }
-.btn-purple:active, .btn-purple.selected, .btn-purple.zeroclipboard-is-active {
+.btn-purple:active,
+.btn-purple.selected,
+.btn-purple.zeroclipboard-is-active {
   background-color: #4f31c6;
   background-image: none;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -1328,12 +1371,15 @@ h6,
   background-image: linear-gradient(#4593fb, #227efa);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.12);
 }
-.btn-blue:hover, .btn-blue.zeroclipboard-is-hover {
+.btn-blue:hover,
+.btn-blue.zeroclipboard-is-hover {
   color: #fff;
   background-color: #1878fa;
   background-image: linear-gradient(#368afa, #1878fa);
 }
-.btn-blue:active, .btn-blue.selected, .btn-blue.zeroclipboard-is-active {
+.btn-blue:active,
+.btn-blue.selected,
+.btn-blue.zeroclipboard-is-active {
   background-color: #1375f9;
   background-image: none;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -1348,12 +1394,15 @@ h6,
   background-image: linear-gradient(#13cc95, #10ac7d);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.12);
 }
-.btn-green:hover, .btn-green.zeroclipboard-is-hover {
+.btn-green:hover,
+.btn-green.zeroclipboard-is-hover {
   color: #fff;
   background-color: #0fa276;
   background-image: linear-gradient(#12be8b, #0fa276);
 }
-.btn-green:active, .btn-green.selected, .btn-green.zeroclipboard-is-active {
+.btn-green:active,
+.btn-green.selected,
+.btn-green.zeroclipboard-is-active {
   background-color: #0f9e73;
   background-image: none;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -1507,7 +1556,8 @@ h6,
   padding-bottom: 0.25rem;
   padding-left: 0.75rem;
 }
-.search-result:hover, .search-result.active {
+.search-result:hover,
+.search-result.active {
   background-color: #ebedf5;
 }
 
@@ -1739,7 +1789,7 @@ td {
 }
 @media (min-width: 31.25rem) {
   th,
-td {
+  td {
     font-size: 14px !important;
   }
 }
@@ -8093,11 +8143,11 @@ figure.highlight code {
 }
 @media print {
   .site-footer,
-.site-button,
-#edit-this-page,
-#back-to-top,
-.site-nav,
-.main-header {
+  .site-button,
+  #edit-this-page,
+  #back-to-top,
+  .site-nav,
+  .main-header {
     display: none !important;
   }
 
@@ -8160,7 +8210,8 @@ figure.highlight code {
 /* ==========================================================================
    MIXINS
    ========================================================================== */
-button:focus, a:focus {
+button:focus,
+a:focus {
   /* Default*/
   outline: thin dotted #6f777d;
   /* Webkit*/
@@ -8244,11 +8295,13 @@ button:focus, a:focus {
 .sidebar h5,
 .sidebar h6 {
   margin-bottom: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+    "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
 }
 .sidebar p,
 .sidebar li {
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+    "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
   font-size: 0.75em;
   line-height: 1.5;
 }
@@ -8364,7 +8417,8 @@ button:focus, a:focus {
 }
 
 .sidebar .author__name {
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+    "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
   font-size: 1em;
 }
 
@@ -8382,7 +8436,8 @@ button:focus, a:focus {
   position: relative;
   display: table-cell;
   vertical-align: middle;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+    "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
   z-index: 20;
   position: relative;
   cursor: pointer;
@@ -8537,7 +8592,7 @@ iframe {
 
 .portal-container {
   overscroll-behavior: contain;
-  border: 1px solid #C2DFE3;
+  border: 1px solid #c2dfe3;
   border-radius: 8px;
   margin-bottom: 24px;
   padding: 10px;
@@ -8550,10 +8605,10 @@ iframe {
 .portal-container:hover {
   transform: translateY(-3px);
   box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.15);
-  border: 1px solid #9DB8BF;
+  border: 1px solid #9db8bf;
 }
 .portal-container .portal-head {
-  border-bottom: 1px solid #C2DFE3;
+  border-bottom: 1px solid #c2dfe3;
   padding: 12px;
 }
 .portal-container .portal-head .portal-backlink {
@@ -8574,15 +8629,19 @@ iframe {
 }
 .portal-container .portal-head .portal-backlink .portal-title {
   font-size: 14px;
-  color: #9DB8BF;
+  color: #9db8bf;
 }
-.portal-container .portal-head .portal-backlink .portal-title .portal-text-title {
+.portal-container
+  .portal-head
+  .portal-backlink
+  .portal-title
+  .portal-text-title {
   font-weight: 700;
-  color: #5C6D73;
+  color: #5c6d73;
 }
 .portal-container .portal-head .portal-backlink .portal-arrow {
   font-size: 14px;
-  color: #9DB8BF;
+  color: #9db8bf;
 }
 .portal-container .portal-head .portal-backlink .portal-arrow:hover {
   opacity: 0.5;
@@ -8613,7 +8672,7 @@ iframe {
 }
 .portal-container .portal-parent .portal-parent-text {
   padding: 0.75;
-  color: #5C6D73;
+  color: #5c6d73;
   z-index: 40;
 }
 .portal-container .portal-parent .portal-iframe {
@@ -8622,7 +8681,7 @@ iframe {
 }
 
 .portal-quote-text {
-  background-color: #C2DFE3;
+  background-color: #c2dfe3;
   color: #373737;
 }
 .portal-quote-text:hover {
@@ -8642,7 +8701,8 @@ body {
   margin: 0;
   padding: 0;
   color: #111;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+    "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
   line-height: 1.5;
 }
 body.overflow--hidden {
@@ -8658,7 +8718,8 @@ h5,
 h6 {
   margin: 2em 0 0.5em;
   line-height: 1.2;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+    "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
   font-weight: bold;
 }
 
@@ -8783,7 +8844,8 @@ td > code {
   background: #f5f6fa;
   border-radius: 4px;
 }
-p > code:before, p > code:after,
+p > code:before,
+p > code:after,
 a > code:before,
 a > code:after,
 li > code:before,
@@ -8846,7 +8908,7 @@ figure > a {
 }
 @media (min-width: 600px) {
   figure.half > a,
-figure.half > img {
+  figure.half > img {
     width: calc(50% - 0.5em);
   }
 }
@@ -8855,7 +8917,7 @@ figure.half figcaption {
 }
 @media (min-width: 600px) {
   figure.third > a,
-figure.third > img {
+  figure.third > img {
     width: calc(33.3333% - 0.5em);
   }
 }
@@ -8941,12 +9003,11 @@ a,
 tr,
 td,
 form button,
-input[type=submit],
+input[type="submit"],
 .btn,
 .highlight,
 .archive__item-teaser {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-}body { background-color: #121212 !important; } .side-bar { background: #121212; color: white; border-right: 0; } .main-header, .site-header { border-bottom: 0; } tr, th, td, .language-bash, .main, .search, #search-input-wrap, #main, #search-input, #search-results, .search-input-wrap #nav-bar { background: #121212 !important; color: white; } pre, code, .operator { background: #212b22 !important; color: white !important; text-shadow: none !important; } body a, a:visited, a:active { color: #569cd6; text-decoration: none; background-image: none !important; } .nav-list .nav-list-item .nav-list-link.active { background-image: none !important; } .search-result:hover, .search-result.active { background-color: #464646; } h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 1em; font-weight: 500; line-height: 1.25; color: white; } img { background: white; } @media (min-width: 20rem) { .search-active .search-results, .search-input-wrap { width: 25rem; } /Applications /Library /System /Users /Volumes /bin /cores /dev /etc /home /opt /private /sbin /tmp /usr /var .site-footer { display: none; } architecture/ books/ build/ computer-science/ databases/ dev-ops/ docs/ health/ infrastructure/ networking/ node_modules/ operating-systems/ personal-growth/ programming/ vault/ }
-body { background-color: #121212 !important; } .side-bar { background: #121212; color: white; border-right: 0; } .main-header, .site-header { border-bottom: 0; } tr, th, td, .language-bash, .main, .search, #search-input-wrap, #main, #search-input, #search-results, .search-input-wrap #nav-bar { background: #121212 !important; color: white; } pre, code, .operator { background: #212b22 !important; color: white !important; text-shadow: none !important; } body a, a:visited, a:active { color: #569cd6; text-decoration: none; background-image: none !important; } .nav-list .nav-list-item .nav-list-link.active { background-image: none !important; } .search-result:hover, .search-result.active { background-color: #464646; } h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 1em; font-weight: 500; line-height: 1.25; color: white; } img { background: white; } @media (min-width: 20rem) { .search-active .search-results, .search-input-wrap { width: 25rem; } /Applications /Library /Network /System /Users /Volumes /bin /cores /dev /etc /home /installer.failurerequests /net /opt /private /sbin /tmp /usr /var .site-footer { display: none; } architecture/ books/ computer-science/ databases/ dev-ops/ docs/ health/ infrastructure/ networking/ operating-systems/ personal-growth/ programming/ vault/ }
+}
 body { background-color: #121212 !important; } .side-bar { background: #121212; color: white; border-right: 0; } .main-header, .site-header { border-bottom: 0; } tr, th, td, .language-bash, .main, .search, #search-input-wrap, #main, #search-input, #search-results, .search-input-wrap #nav-bar { background: #121212 !important; color: white; } pre, code, .operator { background: #212b22 !important; color: white !important; text-shadow: none !important; } body a, a:visited, a:active { color: #569cd6; text-decoration: none; background-image: none !important; } .nav-list .nav-list-item .nav-list-link.active { background-image: none !important; } .search-result:hover, .search-result.active { background-color: #464646; } h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 1em; font-weight: 500; line-height: 1.25; color: white; } img { background: white; } @media (min-width: 20rem) { .search-active .search-results, .search-input-wrap { width: 25rem; } /Applications /Library /Network /System /Users /Volumes /bin /cores /dev /etc /home /installer.failurerequests /net /opt /private /sbin /tmp /usr /var .site-footer { display: none; } architecture/ books/ computer-science/ databases/ dev-ops/ docs/ health/ infrastructure/ networking/ operating-systems/ personal-growth/ programming/ vault/ }

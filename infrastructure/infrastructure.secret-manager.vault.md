@@ -2,11 +2,29 @@
 id: ek0wyOwdKnZslLXN92M1L
 title: Vault
 desc: ""
-updated: 1625890422146
+updated: 1626405550937
 created: 1625883934363
 ---
 
 # Vault Hashicorp
+
+## Using Vault for secrets with kubernetes, terraform
+
+more information about the chart: https://artifacthub.io/packages/helm/hashicorp/vault/0.13.0
+official : https://www.vaultproject.io/docs/platform/k8s/helm
+
+```
+  # HA mode
+  --set "server.ha.enabled=true"
+  # UI
+  kubectl port-forward vault-0 8200:8200
+  http://localhost:8200/ui/
+  # initialize and unseal vualt
+  kubectl get pods -l app.kubernetes.io/name=vault
+  kubectl exec -ti vault-0 -- vault operator init
+  ## return hey
+  # Unseal Key 1: MBFSDepD9E6whREc6Dj+k3pMaKJ6cCnCUWcySJQymObb
+```
 
 ### Injecting Secrets into Kubernetes Pods via Vault Agent Containers
 
