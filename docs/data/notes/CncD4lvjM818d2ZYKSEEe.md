@@ -1,9 +1,8 @@
-
 # Event driven Summary
 
 Relationship with microservices, event-driven architecture and kafka.
 
-![](/assets/images/2021-07-09-23-27-01.png)
+![](wiki/assets/images/2021-07-09-23-27-01.png)
 
 ## Microservices
 

@@ -1,17 +1,70 @@
-<h1 id="datadog"><a aria-hidden="true" class="anchor-heading" href="#datadog"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Datadog</h1>
-<h2 id="datadog-1"><a aria-hidden="true" class="anchor-heading" href="#datadog-1"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Datadog</h2>
-<h2 id="controlling-cost-by-using-autodiscovery"><a aria-hidden="true" class="anchor-heading" href="#controlling-cost-by-using-autodiscovery"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>controlling cost by using Autodiscovery</h2>
-<p><a href="https://github.com/DataDog/helm-charts/blob/master/charts/datadog/README.md">https://github.com/DataDog/helm-charts/blob/master/charts/datadog/README.md</a></p>
-<p>datadog.containerExclude string nil Exclude containers from the Agent Autodiscovery, as a space-sepatered list
-datadog.containerExcludeLogs string nil Exclude logs from the Agent Autodiscovery, as a space-separated list
-datadog.containerExcludeMetrics string nil Exclude metrics from the Agent Autodiscovery, as a space-separated list</p>
-<p><a href="https://docs.datadoghq.com/getting_started/tagging/unified_service_tagging/?tab=kubernetes">https://docs.datadoghq.com/getting_started/tagging/unified_service_tagging/?tab=kubernetes</a>
-<a href="https://docs.datadoghq.com/agent/cluster_agent/clusterchecks/">https://docs.datadoghq.com/agent/cluster_agent/clusterchecks/</a></p>
-<h2 id="setting-up-aws"><a aria-hidden="true" class="anchor-heading" href="#setting-up-aws"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>setting up aws</h2>
-<p><a href="https://app.datadoghq.com/account/settings#integrations/amazon-web-services">https://app.datadoghq.com/account/settings#integrations/amazon-web-services</a>
-<a href="https://app.datadoghq.com/account/settings#api">https://app.datadoghq.com/account/settings#api</a>
-<img src="/assets/images/2021-05-27-22-42-37.png"></p>
-<p>Installing the AWS Integration could increase the number of servers and Lambda functions that Datadog monitors. For more information on how this may affect your billing, visit the Billing FAQ page.
-<a href="https://docs.datadoghq.com/account_management/billing/">https://docs.datadoghq.com/account_management/billing/</a>
-Datadog uses CloudWatch APIs to monitor your AWS resources every 10 minutes. See the AWS Integration FAQ for more information.
-Enabling the AWS X-Ray integration increases the amount of Indexed Spans which can impact your bill.</p>
+<h1 id="datadog">
+  <a aria-hidden="true" class="anchor-heading" href="#datadog"
+    ><svg aria-hidden="true" viewBox="0 0 16 16">
+      <use xlink:href="#svg-link"></use></svg></a
+  >Datadog
+</h1>
+<h2 id="datadog-1">
+  <a aria-hidden="true" class="anchor-heading" href="#datadog-1"
+    ><svg aria-hidden="true" viewBox="0 0 16 16">
+      <use xlink:href="#svg-link"></use></svg></a
+  >Datadog
+</h2>
+<h2 id="controlling-cost-by-using-autodiscovery">
+  <a
+    aria-hidden="true"
+    class="anchor-heading"
+    href="#controlling-cost-by-using-autodiscovery"
+    ><svg aria-hidden="true" viewBox="0 0 16 16">
+      <use xlink:href="#svg-link"></use></svg></a
+  >controlling cost by using Autodiscovery
+</h2>
+<p>
+  <a
+    href="https://github.com/DataDog/helm-charts/blob/master/charts/datadog/README.md"
+    >https://github.com/DataDog/helm-charts/blob/master/charts/datadog/README.md</a
+  >
+</p>
+<p>
+  datadog.containerExclude string nil Exclude containers from the Agent
+  Autodiscovery, as a space-sepatered list datadog.containerExcludeLogs string
+  nil Exclude logs from the Agent Autodiscovery, as a space-separated list
+  datadog.containerExcludeMetrics string nil Exclude metrics from the Agent
+  Autodiscovery, as a space-separated list
+</p>
+<p>
+  <a
+    href="https://docs.datadoghq.com/getting_started/tagging/unified_service_tagging/?tab=kubernetes"
+    >https://docs.datadoghq.com/getting_started/tagging/unified_service_tagging/?tab=kubernetes</a
+  >
+  <a href="https://docs.datadoghq.com/agent/cluster_agent/clusterchecks/"
+    >https://docs.datadoghq.com/agent/cluster_agent/clusterchecks/</a
+  >
+</p>
+<h2 id="setting-up-aws">
+  <a aria-hidden="true" class="anchor-heading" href="#setting-up-aws"
+    ><svg aria-hidden="true" viewBox="0 0 16 16">
+      <use xlink:href="#svg-link"></use></svg></a
+  >setting up aws
+</h2>
+<p>
+  <a
+    href="https://app.datadoghq.com/account/settings#integrations/amazon-web-services"
+    >https://app.datadoghq.com/account/settings#integrations/amazon-web-services</a
+  >
+  <a href="https://app.datadoghq.com/account/settings#api"
+    >https://app.datadoghq.com/account/settings#api</a
+  >
+  <img src="wiki/assets/images/2021-05-27-22-42-37.png" />
+</p>
+<p>
+  Installing the AWS Integration could increase the number of servers and Lambda
+  functions that Datadog monitors. For more information on how this may affect
+  your billing, visit the Billing FAQ page.
+  <a href="https://docs.datadoghq.com/account_management/billing/"
+    >https://docs.datadoghq.com/account_management/billing/</a
+  >
+  Datadog uses CloudWatch APIs to monitor your AWS resources every 10 minutes.
+  See the AWS Integration FAQ for more information. Enabling the AWS X-Ray
+  integration increases the amount of Indexed Spans which can impact your bill.
+</p>

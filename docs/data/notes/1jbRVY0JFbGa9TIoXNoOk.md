@@ -1,9 +1,8 @@
-
 ## Kafka Summary
 
 ## diagram
 
-![](/assets/images/2021-07-09-23-25-02.png)
+![](wiki/assets/images/2021-07-09-23-25-02.png)
 
 ## Getting started
 

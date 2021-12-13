@@ -1,4 +1,3 @@
-
 # Vault Hashicorp
 
 ## Using Vault for secrets with kubernetes, terraform
@@ -23,7 +22,7 @@ official : https://www.vaultproject.io/docs/platform/k8s/helm
 
 ## Questions
 
-![](/assets/images/2021-07-09-23-03-59.png)
+![](wiki/assets/images/2021-07-09-23-03-59.png)
 
 1. https://www.youtube.com/watch?v=riI0B5bDkPs&t=215s
 
