@@ -1,45 +1,706 @@
-<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="icon" href="/favicon.ico"/><title>Security</title><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="description" content="Personal knowledge space"/><meta property="og:title" content="Security"/><meta property="og:description" content="Personal knowledge space"/><meta property="og:url" content="https://wiki.gustavozavaleta.com/notes/c796d05d-8deb-489d-bb95-495b5376558a/"/><meta property="og:type" content="article"/><meta property="article:published_time" content="5/22/2021"/><meta property="article:modified_time" content="5/22/2021"/><link rel="canonical" href="https://wiki.gustavozavaleta.com/notes/c796d05d-8deb-489d-bb95-495b5376558a/"/><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/f3f0453dbc0db68c.css" as="style"/><link rel="stylesheet" href="/_next/static/css/f3f0453dbc0db68c.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-378e68e29c265886.js" defer=""></script><script src="/_next/static/chunks/framework-dc33c0b5493501f0.js" defer=""></script><script src="/_next/static/chunks/main-d4b16f161e1a380a.js" defer=""></script><script src="/_next/static/chunks/pages/_app-516d9fdd8080f7c5.js" defer=""></script><script src="/_next/static/chunks/155-ae889b1b91c43319.js" defer=""></script><script src="/_next/static/chunks/pages/notes/%5Bid%5D-ebe33fbe56ae1215.js" defer=""></script><script src="/_next/static/srMamU6NDjTKDm4oc0Jnq/_buildManifest.js" defer=""></script><script src="/_next/static/srMamU6NDjTKDm4oc0Jnq/_ssgManifest.js" defer=""></script><script src="/_next/static/srMamU6NDjTKDm4oc0Jnq/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><section class="ant-layout" style="width:100%;min-height:100%"><header class="ant-layout-header" style="position:fixed;isolation:isolate;z-index:1;width:100%;border-bottom:1px solid #d4dadf;height:64px;padding:0 24px 0 2px"><div class="ant-row ant-row-center" style="max-width:992px;justify-content:space-between;margin:0 auto"><div class="ant-col"></div><div class="ant-col gutter-row ant-col-xs-0 ant-col-sm-20 ant-col-md-20 ant-col-lg-19"></div><div style="margin-left:4px;display:none;align-items:center;justify-content:center" class="ant-col ant-col-xs-4 ant-col-sm-4 ant-col-md-0 ant-col-lg-0"><span role="img" aria-label="menu" style="font-size:24px" tabindex="-1" class="anticon anticon-menu"><svg viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg></span></div></div></header><section class="ant-layout site-layout" style="margin-top:64px"><section class="ant-layout site-layout" style="flex-direction:row"><section class="ant-layout site-layout-sidebar" style="flex:0 0 auto;width:calc((100% - 992px) / 2 + 200px);min-width:200px;padding-left:calc((100% - 992px) / 2)"><aside class="ant-layout-sider ant-layout-sider-dark" style="position:fixed;overflow:auto;height:calc(100vh - 64px);flex:0 0 200px;max-width:200px;min-width:200px;width:200px"><div class="ant-layout-sider-children"></div></aside></section><section class="ant-layout side-layout-main" style="max-width:960px;display:initial"><main class="ant-layout-content main-content" role="main" style="padding:0 24px"><div class="ant-row"><div class="ant-col ant-col-24"><div class="ant-row" style="margin-left:-10px;margin-right:-10px"><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-24 ant-col-md-20"><div><h1 id="security"><a aria-hidden="true" class="anchor-heading" href="#security"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Security</h1>
-<h2 id="avoid-80-port"><a aria-hidden="true" class="anchor-heading" href="#avoid-80-port"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Avoid 80 port</h2>
-<p>Avoid running our Node.js app on port 80
-In most cases is not a good idea to start our app on port 80.</p>
-<h3 id="why"><a aria-hidden="true" class="anchor-heading" href="#why"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Why?</h3>
-<p>On linux environments root access is needed to use the ports &#x3C;= 1024</p>
-<h3 id="what-is-the-main-problem"><a aria-hidden="true" class="anchor-heading" href="#what-is-the-main-problem"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>What is the main problem?</h3>
-<p>We are exposed, attackers can find the way to run commands for them using root privileges.</p>
-<p>Posible Solutions:</p>
-<p>A reverse proxy like nginx</p>
-<p></p><p></p><div class="portal-container">
-<div class="portal-head">
-<div class="portal-backlink">
-<div class="portal-title">From <span class="portal-text-title">Nginx</span></div>
-<a href="/notes/5eb04dc2-7759-4fa7-845a-48043ffe2382" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
-</div>
-</div>
-<div id="portal-parent-anchor" class="portal-parent" markdown="1">
-<div class="portal-parent-fader-top"></div>
-<div class="portal-parent-fader-bottom"></div><h2 id="conclusion"><a aria-hidden="true" class="anchor-heading" href="#conclusion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Conclusion</h2>
-<p>NGINX: Definitely solve more of the issues regarding to security, cache, ssl, load balancing, reverse proxy and so on. Is a great option to be used combined with PM2 or Cluster Module</p>
-<h2 id="aditional-information"><a aria-hidden="true" class="anchor-heading" href="#aditional-information"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Aditional Information</h2>
-<p><a href="https://github.com/mzavaletavargas/going-live">https://github.com/mzavaletavargas/going-live</a></p>
-</div></div><p></p><p></p>
-<h1 id="aditional-information-1"><a aria-hidden="true" class="anchor-heading" href="#aditional-information-1"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Aditional information</h1>
-<ul>
-<li>
-<p><a href="http://www.nikola-breznjak.com/blog/javascript/nodejs/using-nginx-as-a-reverse-proxy-in-front-of-your-node-js-application/">http://www.nikola-breznjak.com/blog/javascript/nodejs/using-nginx-as-a-reverse-proxy-in-front-of-your-node-js-application/</a></p>
-</li>
-<li>
-<p><a href="https://stackoverflow.com/questions/16770673/using-node-js-only-vs-using-node-js-with-apache-nginx">https://stackoverflow.com/questions/16770673/using-node-js-only-vs-using-node-js-with-apache-nginx</a></p>
-</li>
-<li>
-<p><a href="https://www.reddit.com/r/node/comments/2rjsty/why_not_run_on_port_80/">https://www.reddit.com/r/node/comments/2rjsty/why_not_run_on_port_80/</a></p>
-</li>
-<li>
-<p><a href="https://blog.risingstack.com/node-js-security-tips/">https://blog.risingstack.com/node-js-security-tips/</a></p>
-</li>
-<li>
-<p><a href="https://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode">https://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode</a></p>
-</li>
-<li>
-<p><a href="https://hashnode.com/post/10-things-you-shouldnt-do-while-running-nodejs-in-production-cisab2fyu0s9oth5341faywcw">https://hashnode.com/post/10-things-you-shouldnt-do-while-running-nodejs-in-production-cisab2fyu0s9oth5341faywcw</a></p>
-</li>
-</ul></div></div><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-0 ant-col-md-4"><div><div class=""><div class="ant-anchor-wrapper" style="max-height:calc(100vh - 64px);z-index:1"><div class="ant-anchor"><div class="ant-anchor-ink"><span class="ant-anchor-ink-ball"></span></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#avoid-80-port" title="Avoid 80 port">Avoid 80 port</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#why" title="Why?">Why?</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#what-is-the-main-problem" title="What is the main problem?">What is the main problem?</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#aditional-information" title="Aditional information">Aditional information</a></div></div></div></div></div></div></div></div></div></main><div class="ant-divider ant-divider-horizontal" role="separator"></div><footer class="ant-layout-footer" style="padding:0 24px 24px"></footer></section></section></section></section></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"note":{"id":"c796d05d-8deb-489d-bb95-495b5376558a","title":"Security","vault":{"fsPath":"programming","name":"programming"},"type":"note","desc":"","links":[{"type":"ref","from":{"fname":"programming.javascript.node-js.security","id":"c796d05d-8deb-489d-bb95-495b5376558a","vaultName":"programming"},"value":"networking.nginx","position":{"start":{"line":19,"column":1,"offset":374},"end":{"line":19,"column":54,"offset":427},"indent":[]},"xvault":true,"to":{"fname":"networking.nginx","anchorHeader":"conclusion","vaultName":"networking"}}],"anchors":{"avoid-80-port":{"type":"header","text":"Avoid 80 port","value":"avoid-80-port","line":8,"column":0},"why":{"type":"header","text":"Why?","value":"why","line":13,"column":0},"what-is-the-main-problem":{"type":"header","text":"What is the main problem?","value":"what-is-the-main-problem","line":17,"column":0},"aditional-information":{"type":"header","text":"Aditional information","value":"aditional-information","line":27,"column":0}},"fname":"programming.javascript.node-js.security","updated":1621708730548,"created":1621708493720,"parent":"dec2b4d3-ff94-4735-8797-0a65986de197","children":[],"data":{},"contentHash":"bfa80d671798e325abe9e612ae7f6b65","custom":{}},"body":"\u003ch1 id=\"security\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#security\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eSecurity\u003c/h1\u003e\n\u003ch2 id=\"avoid-80-port\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#avoid-80-port\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eAvoid 80 port\u003c/h2\u003e\n\u003cp\u003eAvoid running our Node.js app on port 80\nIn most cases is not a good idea to start our app on port 80.\u003c/p\u003e\n\u003ch3 id=\"why\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#why\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eWhy?\u003c/h3\u003e\n\u003cp\u003eOn linux environments root access is needed to use the ports \u0026#x3C;= 1024\u003c/p\u003e\n\u003ch3 id=\"what-is-the-main-problem\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#what-is-the-main-problem\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eWhat is the main problem?\u003c/h3\u003e\n\u003cp\u003eWe are exposed, attackers can find the way to run commands for them using root privileges.\u003c/p\u003e\n\u003cp\u003ePosible Solutions:\u003c/p\u003e\n\u003cp\u003eA reverse proxy like nginx\u003c/p\u003e\n\u003cp\u003e\u003c/p\u003e\u003cp\u003e\u003c/p\u003e\u003cdiv class=\"portal-container\"\u003e\n\u003cdiv class=\"portal-head\"\u003e\n\u003cdiv class=\"portal-backlink\"\u003e\n\u003cdiv class=\"portal-title\"\u003eFrom \u003cspan class=\"portal-text-title\"\u003eNginx\u003c/span\u003e\u003c/div\u003e\n\u003ca href=\"/notes/5eb04dc2-7759-4fa7-845a-48043ffe2382\" class=\"portal-arrow\"\u003eGo to text \u003cspan class=\"right-arrow\"\u003e→\u003c/span\u003e\u003c/a\u003e\n\u003c/div\u003e\n\u003c/div\u003e\n\u003cdiv id=\"portal-parent-anchor\" class=\"portal-parent\" markdown=\"1\"\u003e\n\u003cdiv class=\"portal-parent-fader-top\"\u003e\u003c/div\u003e\n\u003cdiv class=\"portal-parent-fader-bottom\"\u003e\u003c/div\u003e\u003ch2 id=\"conclusion\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#conclusion\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eConclusion\u003c/h2\u003e\n\u003cp\u003eNGINX: Definitely solve more of the issues regarding to security, cache, ssl, load balancing, reverse proxy and so on. Is a great option to be used combined with PM2 or Cluster Module\u003c/p\u003e\n\u003ch2 id=\"aditional-information\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#aditional-information\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eAditional Information\u003c/h2\u003e\n\u003cp\u003e\u003ca href=\"https://github.com/mzavaletavargas/going-live\"\u003ehttps://github.com/mzavaletavargas/going-live\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e\u003c/div\u003e\u003cp\u003e\u003c/p\u003e\u003cp\u003e\u003c/p\u003e\n\u003ch1 id=\"aditional-information-1\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#aditional-information-1\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eAditional information\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"http://www.nikola-breznjak.com/blog/javascript/nodejs/using-nginx-as-a-reverse-proxy-in-front-of-your-node-js-application/\"\u003ehttp://www.nikola-breznjak.com/blog/javascript/nodejs/using-nginx-as-a-reverse-proxy-in-front-of-your-node-js-application/\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://stackoverflow.com/questions/16770673/using-node-js-only-vs-using-node-js-with-apache-nginx\"\u003ehttps://stackoverflow.com/questions/16770673/using-node-js-only-vs-using-node-js-with-apache-nginx\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://www.reddit.com/r/node/comments/2rjsty/why_not_run_on_port_80/\"\u003ehttps://www.reddit.com/r/node/comments/2rjsty/why_not_run_on_port_80/\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://blog.risingstack.com/node-js-security-tips/\"\u003ehttps://blog.risingstack.com/node-js-security-tips/\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode\"\u003ehttps://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://hashnode.com/post/10-things-you-shouldnt-do-while-running-nodejs-in-production-cisab2fyu0s9oth5341faywcw\"\u003ehttps://hashnode.com/post/10-things-you-shouldnt-do-while-running-nodejs-in-production-cisab2fyu0s9oth5341faywcw\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e","noteIndex":{"id":"23f9dc67-8303-4034-90d3-7371e6cc8996","title":"Welcome","vault":{"fsPath":"vault","name":"vault"},"type":"note","desc":"","links":[{"type":"ref","from":{"fname":"root","id":"23f9dc67-8303-4034-90d3-7371e6cc8996","vaultName":"vault"},"value":"architecture.microservices","position":{"start":{"line":14,"column":1,"offset":460},"end":{"line":14,"column":55,"offset":514},"indent":[]},"xvault":true,"to":{"fname":"architecture.microservices","vaultName":"architecture"}}],"anchors":{"personal-wiki":{"type":"header","text":"Personal wiki","value":"personal-wiki","line":8,"column":0},"content-example":{"type":"header","text":"Content Example","value":"content-example","line":18,"column":0}},"fname":"root","updated":1626063584796,"created":1621701645107,"parent":null,"children":["QYW64J8o1q-RZUAWNuBVz","yWa7opDl6kwVzYa8jBw6Y","9bb7282d-4ab7-4792-b0c5-43f293c296e1","47e06771-c344-4012-8428-07fea574a55e","dc9ce0b8-8551-4aaf-bcc8-309ad1c58b36","4ad54c56-c118-4c77-b7a7-704b6e57579c","8a285efb-1044-43b2-b86f-904ad3bf48fc","3e958243-cf77-44a4-8a90-fef2ec98ad43","28e19609-7af9-4cfe-8ea3-a7341e6709e8","d824c890-9817-49b3-ba11-36bc6c166015","9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8"],"data":{},"contentHash":"e01bd36ad387507acb1823b37e43ca12","custom":{"nav_order":0,"permalink":"/"},"body":"\n## Personal wiki\n\n\u003e This is my personal wiki page, where I put ideas diagrams, where I'm researching a topic, you may not found elaborated articles, just notes that I took at some point when studying. Some notes may be outdated, not following best practices, wrong information or you would like to contribute, email me! I'll appreciate it!\n\nMy e-mail: mzavaletavargas@gmail.com\n\nThanks!\n\n[Back to mi website](http://gustavozavaleta.com)\n\n### Content Example\n\n![[dendron://architecture/architecture.microservices]]\n"},"collectionChildren":null,"customHeadContent":null,"config":{"version":4,"useFMTitle":true,"useNoteTitleForLink":true,"site":{"copyAssets":true,"siteHierarchies":["root"],"siteRootDir":"docs","usePrettyRefs":true,"title":"Gustavo's Wiki","description":"Personal knowledge space","duplicateNoteBehavior":{"action":"useVault","payload":["vault","programming","dev-ops","operating-systems","personal-growth","databases","networking","computer-science","books","infrastructure","health","architecture"]},"siteUrl":"https://wiki.gustavozavaleta.com","siteLastModified":true,"gh_edit_branch":"main","usePrettyLinks":true,"siteNotesDir":"notes","siteFaviconPath":"favicon.ico","gh_edit_link":true,"gh_edit_link_text":"Edit this page on GitHub","gh_root":"docs/","gh_edit_view_mode":"edit","writeStubs":true,"siteIndex":"root"},"dev":{"previewV2Enabled":false,"enablePreviewV2":true},"commands":{"lookup":{"note":{"selectionMode":"extract","confirmVaultOnCreate":false,"leaveTrace":false,"bubbleUpCreateNew":true,"fuzzThreshold":0.2}},"insertNote":{"initialValue":"templates"},"insertNoteLink":{"aliasMode":"none","enableMultiSelect":false},"insertNoteIndex":{"enableMarker":false},"randomNote":{}},"workspace":{"dendronVersion":"0.72.0","vaults":[{"fsPath":"architecture","name":"architecture"},{"fsPath":"health","name":"health"},{"fsPath":"infrastructure","name":"infrastructure"},{"fsPath":"books","name":"books"},{"fsPath":"computer-science","name":"computer-science"},{"fsPath":"networking","name":"networking"},{"fsPath":"databases","name":"databases"},{"fsPath":"personal-growth","name":"personal-growth"},{"fsPath":"operating-systems","name":"operating-systems"},{"fsPath":"dev-ops","name":"dev-ops"},{"fsPath":"programming","name":"programming"},{"fsPath":"vault","name":"vault"}],"journal":{"dailyDomain":"daily","name":"journal","dateFormat":"y.MM.dd","addBehavior":"childOfDomain"},"scratch":{"name":"scratch","dateFormat":"y.MM.dd.HHmmss","addBehavior":"asOwnDomain"},"graph":{"zoomSpeed":1},"enableAutoCreateOnDefinition":false,"enableXVaultWikiLink":false,"enableRemoteVaultInit":true,"workspaceVaultSyncMode":"noCommit","enableAutoFoldFrontmatter":false,"maxPreviewsCached":10,"maxNoteLength":204800,"task":{"name":"","dateFormat":"","addBehavior":"childOfCurrent","statusSymbols":{"":" ","wip":"w","done":"x","assigned":"a","moved":"m","blocked":"b","delegated":"l","dropped":"d","pending":"y"},"prioritySymbols":{"H":"high","M":"medium","L":"low"},"todoIntegration":false,"createTaskSelectionType":"selection2link"},"enableUserTags":true,"enableHashTags":true,"enableEditorDecorations":true},"preview":{"enableFMTitle":true,"enableNoteTitleForLink":true,"enableMermaid":true,"enablePrettyRefs":true,"enableKatex":true},"mermaid":true,"useKatex":true}},"__N_SSG":true},"page":"/notes/[id]","query":{"id":"c796d05d-8deb-489d-bb95-495b5376558a"},"buildId":"srMamU6NDjTKDm4oc0Jnq","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>Security</title>
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="description" content="Personal knowledge space" />
+    <meta property="og:title" content="Security" />
+    <meta property="og:description" content="Personal knowledge space" />
+    <meta
+      property="og:url"
+      content="https://wiki.gustavozavaleta.com/notes/c796d05d-8deb-489d-bb95-495b5376558a/"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="5/22/2021" />
+    <meta property="article:modified_time" content="5/22/2021" />
+    <link
+      rel="canonical"
+      href="https://wiki.gustavozavaleta.com/notes/c796d05d-8deb-489d-bb95-495b5376558a/"
+    />
+    <meta name="next-head-count" content="14" />
+    <link
+      rel="preload"
+      href="_next/static/css/f3f0453dbc0db68c.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="_next/static/css/f3f0453dbc0db68c.css"
+      data-n-g=""
+    />
+    <noscript data-n-css=""></noscript>
+    <script
+      defer=""
+      nomodule=""
+      src="_next/static/chunks/polyfills-5cd94c89d3acac5f.js"
+    ></script>
+    <script
+      src="_next/static/chunks/webpack-378e68e29c265886.js"
+      defer=""
+    ></script>
+    <script
+      src="_next/static/chunks/framework-dc33c0b5493501f0.js"
+      defer=""
+    ></script>
+    <script
+      src="_next/static/chunks/main-d4b16f161e1a380a.js"
+      defer=""
+    ></script>
+    <script
+      src="_next/static/chunks/pages/_app-516d9fdd8080f7c5.js"
+      defer=""
+    ></script>
+    <script src="_next/static/chunks/155-ae889b1b91c43319.js" defer=""></script>
+    <script
+      src="_next/static/chunks/pages/notes/%5Bid%5D-ebe33fbe56ae1215.js"
+      defer=""
+    ></script>
+    <script
+      src="_next/static/L9maZkX7GA1Lh6KYhgL2P/_buildManifest.js"
+      defer=""
+    ></script>
+    <script
+      src="_next/static/L9maZkX7GA1Lh6KYhgL2P/_ssgManifest.js"
+      defer=""
+    ></script>
+    <script
+      src="_next/static/L9maZkX7GA1Lh6KYhgL2P/_middlewareManifest.js"
+      defer=""
+    ></script>
+  </head>
+  <body>
+    <div id="__next" data-reactroot="">
+      <section class="ant-layout" style="width: 100%; min-height: 100%">
+        <header
+          class="ant-layout-header"
+          style="
+            position: fixed;
+            isolation: isolate;
+            z-index: 1;
+            width: 100%;
+            border-bottom: 1px solid #d4dadf;
+            height: 64px;
+            padding: 0 24px 0 2px;
+          "
+        >
+          <div
+            class="ant-row ant-row-center"
+            style="
+              max-width: 992px;
+              justify-content: space-between;
+              margin: 0 auto;
+            "
+          >
+            <div class="ant-col"></div>
+            <div
+              class="
+                ant-col
+                gutter-row
+                ant-col-xs-0 ant-col-sm-20 ant-col-md-20 ant-col-lg-19
+              "
+            ></div>
+            <div
+              style="
+                margin-left: 4px;
+                display: none;
+                align-items: center;
+                justify-content: center;
+              "
+              class="
+                ant-col ant-col-xs-4 ant-col-sm-4 ant-col-md-0 ant-col-lg-0
+              "
+            >
+              <span
+                role="img"
+                aria-label="menu"
+                style="font-size: 24px"
+                tabindex="-1"
+                class="anticon anticon-menu"
+                ><svg
+                  viewBox="64 64 896 896"
+                  focusable="false"
+                  data-icon="menu"
+                  width="1em"
+                  height="1em"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"
+                  ></path></svg
+              ></span>
+            </div>
+          </div>
+        </header>
+        <section class="ant-layout site-layout" style="margin-top: 64px">
+          <section class="ant-layout site-layout" style="flex-direction: row">
+            <section
+              class="ant-layout site-layout-sidebar"
+              style="
+                flex: 0 0 auto;
+                width: calc((100% - 992px) / 2 + 200px);
+                min-width: 200px;
+                padding-left: calc((100% - 992px) / 2);
+              "
+            >
+              <aside
+                class="ant-layout-sider ant-layout-sider-dark"
+                style="
+                  position: fixed;
+                  overflow: auto;
+                  height: calc(100vh - 64px);
+                  flex: 0 0 200px;
+                  max-width: 200px;
+                  min-width: 200px;
+                  width: 200px;
+                "
+              >
+                <div class="ant-layout-sider-children"></div>
+              </aside>
+            </section>
+            <section
+              class="ant-layout side-layout-main"
+              style="max-width: 960px; display: initial"
+            >
+              <main
+                class="ant-layout-content main-content"
+                role="main"
+                style="padding: 0 24px"
+              >
+                <div class="ant-row">
+                  <div class="ant-col ant-col-24">
+                    <div
+                      class="ant-row"
+                      style="margin-left: -10px; margin-right: -10px"
+                    >
+                      <div
+                        style="padding-left: 10px; padding-right: 10px"
+                        class="ant-col ant-col-xs-24 ant-col-md-20"
+                      >
+                        <div>
+                          <h1 id="security">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#security"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Security
+                          </h1>
+                          <h2 id="avoid-80-port">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#avoid-80-port"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Avoid 80 port
+                          </h2>
+                          <p>
+                            Avoid running our Node.js app on port 80 In most
+                            cases is not a good idea to start our app on port
+                            80.
+                          </p>
+                          <h3 id="why">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#why"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Why?
+                          </h3>
+                          <p>
+                            On linux environments root access is needed to use
+                            the ports &#x3C;= 1024
+                          </p>
+                          <h3 id="what-is-the-main-problem">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#what-is-the-main-problem"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >What is the main problem?
+                          </h3>
+                          <p>
+                            We are exposed, attackers can find the way to run
+                            commands for them using root privileges.
+                          </p>
+                          <p>Posible Solutions:</p>
+                          <p>A reverse proxy like nginx</p>
+                          <p></p>
+                          <p></p>
+                          <div class="portal-container">
+                            <div class="portal-head">
+                              <div class="portal-backlink">
+                                <div class="portal-title">
+                                  From
+                                  <span class="portal-text-title">Nginx</span>
+                                </div>
+                                <a
+                                  href="/notes/5eb04dc2-7759-4fa7-845a-48043ffe2382"
+                                  class="portal-arrow"
+                                  >Go to text
+                                  <span class="right-arrow">→</span></a
+                                >
+                              </div>
+                            </div>
+                            <div
+                              id="portal-parent-anchor"
+                              class="portal-parent"
+                              markdown="1"
+                            >
+                              <div class="portal-parent-fader-top"></div>
+                              <div class="portal-parent-fader-bottom"></div>
+                              <h2 id="conclusion">
+                                <a
+                                  aria-hidden="true"
+                                  class="anchor-heading"
+                                  href="#conclusion"
+                                  ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                    <use xlink:href="#svg-link"></use></svg></a
+                                >Conclusion
+                              </h2>
+                              <p>
+                                NGINX: Definitely solve more of the issues
+                                regarding to security, cache, ssl, load
+                                balancing, reverse proxy and so on. Is a great
+                                option to be used combined with PM2 or Cluster
+                                Module
+                              </p>
+                              <h2 id="aditional-information">
+                                <a
+                                  aria-hidden="true"
+                                  class="anchor-heading"
+                                  href="#aditional-information"
+                                  ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                    <use xlink:href="#svg-link"></use></svg></a
+                                >Aditional Information
+                              </h2>
+                              <p>
+                                <a
+                                  href="https://github.com/mzavaletavargas/going-live"
+                                  >https://github.com/mzavaletavargas/going-live</a
+                                >
+                              </p>
+                            </div>
+                          </div>
+                          <p></p>
+                          <p></p>
+                          <h1 id="aditional-information-1">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#aditional-information-1"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Aditional information
+                          </h1>
+                          <ul>
+                            <li>
+                              <p>
+                                <a
+                                  href="http://www.nikola-breznjak.com/blog/javascript/nodejs/using-nginx-as-a-reverse-proxy-in-front-of-your-node-js-application/"
+                                  >http://www.nikola-breznjak.com/blog/javascript/nodejs/using-nginx-as-a-reverse-proxy-in-front-of-your-node-js-application/</a
+                                >
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                <a
+                                  href="https://stackoverflow.com/questions/16770673/using-node-js-only-vs-using-node-js-with-apache-nginx"
+                                  >https://stackoverflow.com/questions/16770673/using-node-js-only-vs-using-node-js-with-apache-nginx</a
+                                >
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                <a
+                                  href="https://www.reddit.com/r/node/comments/2rjsty/why_not_run_on_port_80/"
+                                  >https://www.reddit.com/r/node/comments/2rjsty/why_not_run_on_port_80/</a
+                                >
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                <a
+                                  href="https://blog.risingstack.com/node-js-security-tips/"
+                                  >https://blog.risingstack.com/node-js-security-tips/</a
+                                >
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                <a
+                                  href="https://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode"
+                                  >https://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode</a
+                                >
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                <a
+                                  href="https://hashnode.com/post/10-things-you-shouldnt-do-while-running-nodejs-in-production-cisab2fyu0s9oth5341faywcw"
+                                  >https://hashnode.com/post/10-things-you-shouldnt-do-while-running-nodejs-in-production-cisab2fyu0s9oth5341faywcw</a
+                                >
+                              </p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div
+                        style="padding-left: 10px; padding-right: 10px"
+                        class="ant-col ant-col-xs-0 ant-col-md-4"
+                      >
+                        <div>
+                          <div class="">
+                            <div
+                              class="ant-anchor-wrapper"
+                              style="max-height: calc(100vh - 64px); z-index: 1"
+                            >
+                              <div class="ant-anchor">
+                                <div class="ant-anchor-ink">
+                                  <span class="ant-anchor-ink-ball"></span>
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#avoid-80-port"
+                                    title="Avoid 80 port"
+                                    >Avoid 80 port</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#why"
+                                    title="Why?"
+                                    >Why?</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#what-is-the-main-problem"
+                                    title="What is the main problem?"
+                                    >What is the main problem?</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#aditional-information"
+                                    title="Aditional information"
+                                    >Aditional information</a
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </main>
+              <div
+                class="ant-divider ant-divider-horizontal"
+                role="separator"
+              ></div>
+              <footer
+                class="ant-layout-footer"
+                style="padding: 0 24px 24px"
+              ></footer>
+            </section>
+          </section>
+        </section>
+      </section>
+    </div>
+    <script id="__NEXT_DATA__" type="application/json">
+      {
+        "props": {
+          "pageProps": {
+            "note": {
+              "id": "c796d05d-8deb-489d-bb95-495b5376558a",
+              "title": "Security",
+              "vault": { "fsPath": "programming", "name": "programming" },
+              "type": "note",
+              "desc": "",
+              "links": [
+                {
+                  "type": "ref",
+                  "from": {
+                    "fname": "programming.javascript.node-js.security",
+                    "id": "c796d05d-8deb-489d-bb95-495b5376558a",
+                    "vaultName": "programming"
+                  },
+                  "value": "networking.nginx",
+                  "position": {
+                    "start": { "line": 19, "column": 1, "offset": 374 },
+                    "end": { "line": 19, "column": 54, "offset": 427 },
+                    "indent": []
+                  },
+                  "xvault": true,
+                  "to": {
+                    "fname": "networking.nginx",
+                    "anchorHeader": "conclusion",
+                    "vaultName": "networking"
+                  }
+                }
+              ],
+              "anchors": {
+                "avoid-80-port": {
+                  "type": "header",
+                  "text": "Avoid 80 port",
+                  "value": "avoid-80-port",
+                  "line": 8,
+                  "column": 0
+                },
+                "why": {
+                  "type": "header",
+                  "text": "Why?",
+                  "value": "why",
+                  "line": 13,
+                  "column": 0
+                },
+                "what-is-the-main-problem": {
+                  "type": "header",
+                  "text": "What is the main problem?",
+                  "value": "what-is-the-main-problem",
+                  "line": 17,
+                  "column": 0
+                },
+                "aditional-information": {
+                  "type": "header",
+                  "text": "Aditional information",
+                  "value": "aditional-information",
+                  "line": 27,
+                  "column": 0
+                }
+              },
+              "fname": "programming.javascript.node-js.security",
+              "updated": 1621708730548,
+              "created": 1621708493720,
+              "parent": "dec2b4d3-ff94-4735-8797-0a65986de197",
+              "children": [],
+              "data": {},
+              "contentHash": "bfa80d671798e325abe9e612ae7f6b65",
+              "custom": {}
+            },
+            "body": "\u003ch1 id=\"security\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#security\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eSecurity\u003c/h1\u003e\n\u003ch2 id=\"avoid-80-port\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#avoid-80-port\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eAvoid 80 port\u003c/h2\u003e\n\u003cp\u003eAvoid running our Node.js app on port 80\nIn most cases is not a good idea to start our app on port 80.\u003c/p\u003e\n\u003ch3 id=\"why\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#why\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eWhy?\u003c/h3\u003e\n\u003cp\u003eOn linux environments root access is needed to use the ports \u0026#x3C;= 1024\u003c/p\u003e\n\u003ch3 id=\"what-is-the-main-problem\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#what-is-the-main-problem\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eWhat is the main problem?\u003c/h3\u003e\n\u003cp\u003eWe are exposed, attackers can find the way to run commands for them using root privileges.\u003c/p\u003e\n\u003cp\u003ePosible Solutions:\u003c/p\u003e\n\u003cp\u003eA reverse proxy like nginx\u003c/p\u003e\n\u003cp\u003e\u003c/p\u003e\u003cp\u003e\u003c/p\u003e\u003cdiv class=\"portal-container\"\u003e\n\u003cdiv class=\"portal-head\"\u003e\n\u003cdiv class=\"portal-backlink\"\u003e\n\u003cdiv class=\"portal-title\"\u003eFrom \u003cspan class=\"portal-text-title\"\u003eNginx\u003c/span\u003e\u003c/div\u003e\n\u003ca href=\"/notes/5eb04dc2-7759-4fa7-845a-48043ffe2382\" class=\"portal-arrow\"\u003eGo to text \u003cspan class=\"right-arrow\"\u003e→\u003c/span\u003e\u003c/a\u003e\n\u003c/div\u003e\n\u003c/div\u003e\n\u003cdiv id=\"portal-parent-anchor\" class=\"portal-parent\" markdown=\"1\"\u003e\n\u003cdiv class=\"portal-parent-fader-top\"\u003e\u003c/div\u003e\n\u003cdiv class=\"portal-parent-fader-bottom\"\u003e\u003c/div\u003e\u003ch2 id=\"conclusion\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#conclusion\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eConclusion\u003c/h2\u003e\n\u003cp\u003eNGINX: Definitely solve more of the issues regarding to security, cache, ssl, load balancing, reverse proxy and so on. Is a great option to be used combined with PM2 or Cluster Module\u003c/p\u003e\n\u003ch2 id=\"aditional-information\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#aditional-information\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eAditional Information\u003c/h2\u003e\n\u003cp\u003e\u003ca href=\"https://github.com/mzavaletavargas/going-live\"\u003ehttps://github.com/mzavaletavargas/going-live\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e\u003c/div\u003e\u003cp\u003e\u003c/p\u003e\u003cp\u003e\u003c/p\u003e\n\u003ch1 id=\"aditional-information-1\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#aditional-information-1\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eAditional information\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"http://www.nikola-breznjak.com/blog/javascript/nodejs/using-nginx-as-a-reverse-proxy-in-front-of-your-node-js-application/\"\u003ehttp://www.nikola-breznjak.com/blog/javascript/nodejs/using-nginx-as-a-reverse-proxy-in-front-of-your-node-js-application/\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://stackoverflow.com/questions/16770673/using-node-js-only-vs-using-node-js-with-apache-nginx\"\u003ehttps://stackoverflow.com/questions/16770673/using-node-js-only-vs-using-node-js-with-apache-nginx\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://www.reddit.com/r/node/comments/2rjsty/why_not_run_on_port_80/\"\u003ehttps://www.reddit.com/r/node/comments/2rjsty/why_not_run_on_port_80/\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://blog.risingstack.com/node-js-security-tips/\"\u003ehttps://blog.risingstack.com/node-js-security-tips/\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode\"\u003ehttps://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://hashnode.com/post/10-things-you-shouldnt-do-while-running-nodejs-in-production-cisab2fyu0s9oth5341faywcw\"\u003ehttps://hashnode.com/post/10-things-you-shouldnt-do-while-running-nodejs-in-production-cisab2fyu0s9oth5341faywcw\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e",
+            "noteIndex": {
+              "id": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+              "title": "Welcome",
+              "vault": { "fsPath": "vault", "name": "vault" },
+              "type": "note",
+              "desc": "",
+              "links": [
+                {
+                  "type": "ref",
+                  "from": {
+                    "fname": "root",
+                    "id": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+                    "vaultName": "vault"
+                  },
+                  "value": "architecture.microservices",
+                  "position": {
+                    "start": { "line": 14, "column": 1, "offset": 460 },
+                    "end": { "line": 14, "column": 55, "offset": 514 },
+                    "indent": []
+                  },
+                  "xvault": true,
+                  "to": {
+                    "fname": "architecture.microservices",
+                    "vaultName": "architecture"
+                  }
+                }
+              ],
+              "anchors": {
+                "personal-wiki": {
+                  "type": "header",
+                  "text": "Personal wiki",
+                  "value": "personal-wiki",
+                  "line": 8,
+                  "column": 0
+                },
+                "content-example": {
+                  "type": "header",
+                  "text": "Content Example",
+                  "value": "content-example",
+                  "line": 18,
+                  "column": 0
+                }
+              },
+              "fname": "root",
+              "updated": 1626063584796,
+              "created": 1621701645107,
+              "parent": null,
+              "children": [
+                "QYW64J8o1q-RZUAWNuBVz",
+                "yWa7opDl6kwVzYa8jBw6Y",
+                "9bb7282d-4ab7-4792-b0c5-43f293c296e1",
+                "47e06771-c344-4012-8428-07fea574a55e",
+                "dc9ce0b8-8551-4aaf-bcc8-309ad1c58b36",
+                "4ad54c56-c118-4c77-b7a7-704b6e57579c",
+                "8a285efb-1044-43b2-b86f-904ad3bf48fc",
+                "3e958243-cf77-44a4-8a90-fef2ec98ad43",
+                "28e19609-7af9-4cfe-8ea3-a7341e6709e8",
+                "d824c890-9817-49b3-ba11-36bc6c166015",
+                "9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8"
+              ],
+              "data": {},
+              "contentHash": "e01bd36ad387507acb1823b37e43ca12",
+              "custom": { "nav_order": 0, "permalink": "/" },
+              "body": "\n## Personal wiki\n\n\u003e This is my personal wiki page, where I put ideas diagrams, where I'm researching a topic, you may not found elaborated articles, just notes that I took at some point when studying. Some notes may be outdated, not following best practices, wrong information or you would like to contribute, email me! I'll appreciate it!\n\nMy e-mail: mzavaletavargas@gmail.com\n\nThanks!\n\n[Back to mi website](http://gustavozavaleta.com)\n\n### Content Example\n\n![[dendron://architecture/architecture.microservices]]\n"
+            },
+            "collectionChildren": null,
+            "customHeadContent": null,
+            "config": {
+              "version": 4,
+              "useFMTitle": true,
+              "useNoteTitleForLink": true,
+              "site": {
+                "copyAssets": true,
+                "siteHierarchies": ["root"],
+                "siteRootDir": "docs",
+                "usePrettyRefs": true,
+                "title": "Gustavo's Wiki",
+                "description": "Personal knowledge space",
+                "duplicateNoteBehavior": {
+                  "action": "useVault",
+                  "payload": [
+                    "vault",
+                    "programming",
+                    "dev-ops",
+                    "operating-systems",
+                    "personal-growth",
+                    "databases",
+                    "networking",
+                    "computer-science",
+                    "books",
+                    "infrastructure",
+                    "health",
+                    "architecture"
+                  ]
+                },
+                "siteUrl": "https://wiki.gustavozavaleta.com",
+                "siteLastModified": true,
+                "gh_edit_branch": "main",
+                "usePrettyLinks": true,
+                "siteNotesDir": "notes",
+                "siteFaviconPath": "favicon.ico",
+                "gh_edit_link": true,
+                "gh_edit_link_text": "Edit this page on GitHub",
+                "gh_root": "docs/",
+                "gh_edit_view_mode": "edit",
+                "writeStubs": true,
+                "siteIndex": "root"
+              },
+              "dev": { "previewV2Enabled": false, "enablePreviewV2": true },
+              "commands": {
+                "lookup": {
+                  "note": {
+                    "selectionMode": "extract",
+                    "confirmVaultOnCreate": false,
+                    "leaveTrace": false,
+                    "bubbleUpCreateNew": true,
+                    "fuzzThreshold": 0.2
+                  }
+                },
+                "insertNote": { "initialValue": "templates" },
+                "insertNoteLink": {
+                  "aliasMode": "none",
+                  "enableMultiSelect": false
+                },
+                "insertNoteIndex": { "enableMarker": false },
+                "randomNote": {}
+              },
+              "workspace": {
+                "dendronVersion": "0.72.0",
+                "vaults": [
+                  { "fsPath": "architecture", "name": "architecture" },
+                  { "fsPath": "health", "name": "health" },
+                  { "fsPath": "infrastructure", "name": "infrastructure" },
+                  { "fsPath": "books", "name": "books" },
+                  { "fsPath": "computer-science", "name": "computer-science" },
+                  { "fsPath": "networking", "name": "networking" },
+                  { "fsPath": "databases", "name": "databases" },
+                  { "fsPath": "personal-growth", "name": "personal-growth" },
+                  {
+                    "fsPath": "operating-systems",
+                    "name": "operating-systems"
+                  },
+                  { "fsPath": "dev-ops", "name": "dev-ops" },
+                  { "fsPath": "programming", "name": "programming" },
+                  { "fsPath": "vault", "name": "vault" }
+                ],
+                "journal": {
+                  "dailyDomain": "daily",
+                  "name": "journal",
+                  "dateFormat": "y.MM.dd",
+                  "addBehavior": "childOfDomain"
+                },
+                "scratch": {
+                  "name": "scratch",
+                  "dateFormat": "y.MM.dd.HHmmss",
+                  "addBehavior": "asOwnDomain"
+                },
+                "graph": { "zoomSpeed": 1 },
+                "enableAutoCreateOnDefinition": false,
+                "enableXVaultWikiLink": false,
+                "enableRemoteVaultInit": true,
+                "workspaceVaultSyncMode": "noCommit",
+                "enableAutoFoldFrontmatter": false,
+                "maxPreviewsCached": 10,
+                "maxNoteLength": 204800,
+                "task": {
+                  "name": "",
+                  "dateFormat": "",
+                  "addBehavior": "childOfCurrent",
+                  "statusSymbols": {
+                    "": " ",
+                    "wip": "w",
+                    "done": "x",
+                    "assigned": "a",
+                    "moved": "m",
+                    "blocked": "b",
+                    "delegated": "l",
+                    "dropped": "d",
+                    "pending": "y"
+                  },
+                  "prioritySymbols": { "H": "high", "M": "medium", "L": "low" },
+                  "todoIntegration": false,
+                  "createTaskSelectionType": "selection2link"
+                },
+                "enableUserTags": true,
+                "enableHashTags": true,
+                "enableEditorDecorations": true
+              },
+              "preview": {
+                "enableFMTitle": true,
+                "enableNoteTitleForLink": true,
+                "enableMermaid": true,
+                "enablePrettyRefs": true,
+                "enableKatex": true
+              },
+              "mermaid": true,
+              "useKatex": true
+            }
+          },
+          "__N_SSG": true
+        },
+        "page": "/notes/[id]",
+        "query": { "id": "c796d05d-8deb-489d-bb95-495b5376558a" },
+        "buildId": "L9maZkX7GA1Lh6KYhgL2P",
+        "isFallback": false,
+        "gsp": true,
+        "scriptLoader": []
+      }
+    </script>
+  </body>
+</html>

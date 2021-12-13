@@ -1,139 +1,1166 @@
-<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="icon" href="/favicon.ico"/><title>Dynamodb</title><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="description" content="Personal knowledge space"/><meta property="og:title" content="Dynamodb"/><meta property="og:description" content="Personal knowledge space"/><meta property="og:url" content="https://wiki.gustavozavaleta.com/notes/3e389eed-da91-4a54-bd83-2645161e58e0/"/><meta property="og:type" content="article"/><meta property="article:published_time" content="5/22/2021"/><meta property="article:modified_time" content="7/12/2021"/><link rel="canonical" href="https://wiki.gustavozavaleta.com/notes/3e389eed-da91-4a54-bd83-2645161e58e0/"/><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/f3f0453dbc0db68c.css" as="style"/><link rel="stylesheet" href="/_next/static/css/f3f0453dbc0db68c.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-378e68e29c265886.js" defer=""></script><script src="/_next/static/chunks/framework-dc33c0b5493501f0.js" defer=""></script><script src="/_next/static/chunks/main-d4b16f161e1a380a.js" defer=""></script><script src="/_next/static/chunks/pages/_app-516d9fdd8080f7c5.js" defer=""></script><script src="/_next/static/chunks/155-ae889b1b91c43319.js" defer=""></script><script src="/_next/static/chunks/pages/notes/%5Bid%5D-ebe33fbe56ae1215.js" defer=""></script><script src="/_next/static/srMamU6NDjTKDm4oc0Jnq/_buildManifest.js" defer=""></script><script src="/_next/static/srMamU6NDjTKDm4oc0Jnq/_ssgManifest.js" defer=""></script><script src="/_next/static/srMamU6NDjTKDm4oc0Jnq/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><section class="ant-layout" style="width:100%;min-height:100%"><header class="ant-layout-header" style="position:fixed;isolation:isolate;z-index:1;width:100%;border-bottom:1px solid #d4dadf;height:64px;padding:0 24px 0 2px"><div class="ant-row ant-row-center" style="max-width:992px;justify-content:space-between;margin:0 auto"><div class="ant-col"></div><div class="ant-col gutter-row ant-col-xs-0 ant-col-sm-20 ant-col-md-20 ant-col-lg-19"></div><div style="margin-left:4px;display:none;align-items:center;justify-content:center" class="ant-col ant-col-xs-4 ant-col-sm-4 ant-col-md-0 ant-col-lg-0"><span role="img" aria-label="menu" style="font-size:24px" tabindex="-1" class="anticon anticon-menu"><svg viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg></span></div></div></header><section class="ant-layout site-layout" style="margin-top:64px"><section class="ant-layout site-layout" style="flex-direction:row"><section class="ant-layout site-layout-sidebar" style="flex:0 0 auto;width:calc((100% - 992px) / 2 + 200px);min-width:200px;padding-left:calc((100% - 992px) / 2)"><aside class="ant-layout-sider ant-layout-sider-dark" style="position:fixed;overflow:auto;height:calc(100vh - 64px);flex:0 0 200px;max-width:200px;min-width:200px;width:200px"><div class="ant-layout-sider-children"></div></aside></section><section class="ant-layout side-layout-main" style="max-width:960px;display:initial"><main class="ant-layout-content main-content" role="main" style="padding:0 24px"><div class="ant-row"><div class="ant-col ant-col-24"><div class="ant-row" style="margin-left:-10px;margin-right:-10px"><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-24 ant-col-md-20"><div><h1 id="dynamodb"><a aria-hidden="true" class="anchor-heading" href="#dynamodb"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Dynamodb</h1>
-<h2 id="general-overview"><a aria-hidden="true" class="anchor-heading" href="#general-overview"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>General Overview</h2>
-<ul>
-<li><a href="https://www.datadoghq.com/blog/top-dynamodb-performance-metrics/">performance-metrics</a></li>
-<li><a href="https://blog.yugabyte.com/11-things-you-wish-you-knew-before-starting-with-dynamodb/">11-things-before-start</a></li>
-<li><a href="https://read.acloud.guru/why-amazon-dynamodb-isnt-for-everyone-and-how-to-decide-when-it-s-for-you-aefc52ea9476?gi=d300d4ccd949">dynamo-is-not-for-everybody</a></li>
-<li><a href="https://blog.codebarrel.io/why-we-switched-from-dynamodb-back-to-rds-before-we-even-released-3c2ee092120c?gi=b30f9bb06d99">back-to-rds</a></li>
-<li><a href="https://theburningmonk.com/2019/03/understanding-the-scaling-behaviour-of-dynamodb-ondemand-tables/">understanding-scaling-behaviour</a></li>
-</ul>
-<h2 id="basics"><a aria-hidden="true" class="anchor-heading" href="#basics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Basics</h2>
-<p><img src="/assets/images/image-20191124220520552.png" alt="image-20191124220520552"></p>
-<p><img src="/assets/images/image-20191124222012419.png" alt="image-20191124222012419">
-<img src="/assets/images/2021-07-09-23-25-02.png"></p>
-<h2 id="tables"><a aria-hidden="true" class="anchor-heading" href="#tables"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Tables</h2>
-<ul>
-<li>name.other or name_other name convention</li>
-<li>no foreign keys on different tables</li>
-<li>tables are independents</li>
-<li>Strict ACID</li>
-</ul>
-<h2 id="data-types"><a aria-hidden="true" class="anchor-heading" href="#data-types"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Data Types</h2>
-<ul>
-<li>Scalar Types
-<ul>
-<li>String</li>
-<li>Number</li>
-<li>Boolean</li>
-<li>Binary</li>
-<li>Null</li>
-</ul>
-</li>
-<li>Document Types
-<ul>
-<li>Lists []</li>
-<li>Maps: key-values map automatically to dynamo DB JSON</li>
-</ul>
-</li>
-</ul>
-<h2 id="consistency-model"><a aria-hidden="true" class="anchor-heading" href="#consistency-model"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Consistency Model</h2>
-<p><img src="/assets/images/image-20191124223816308.png" alt="image-20191124223816308"></p>
-<p>Dynamo read consistency can be</p>
-<ul>
-<li>
-<p>Strong: most up-to-date</p>
-</li>
-<li>
-<p>Eventual: first, 50% cheaper (default)</p>
-</li>
-</ul>
-<h2 id="capacity-units"><a aria-hidden="true" class="anchor-heading" href="#capacity-units"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Capacity Units</h2>
-<p>RCUs WCUs</p>
-<p>1 partition can handle 1000 WCUs or 3000 RCUs</p>
-<h2 id="partitions"><a aria-hidden="true" class="anchor-heading" href="#partitions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Partitions</h2>
-<ul>
-<li>
-<p>up to 10 GB</p>
-</li>
-<li>
-<p>depends on provisioned capacity</p>
-</li>
-<li>
-<p><img src="/assets/images/image-20191124225317460.png" alt="image-20191124225317460"></p>
-</li>
-<li>
-<p>Not be deleted if is modified</p>
-</li>
-</ul>
-<h2 id="indexes"><a aria-hidden="true" class="anchor-heading" href="#indexes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Indexes</h2>
-<p>Hashing algorithm</p>
-<h3 id="secondary-indexes"><a aria-hidden="true" class="anchor-heading" href="#secondary-indexes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Secondary Indexes</h3>
-<ul>
-<li>
-<p>Local secondary Index</p>
-</li>
-<li>
-<p>Global secondary Index</p>
-</li>
-</ul>
-<h2 id="should-you-use-dynamodb"><a aria-hidden="true" class="anchor-heading" href="#should-you-use-dynamodb"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Should you use DynamoDB</h2>
-<p><img src="/assets/images/decision-tree.png" alt="deicision Tree"></p>
-<h2 id="best-practices"><a aria-hidden="true" class="anchor-heading" href="#best-practices"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Best Practices</h2>
-<ul>
-<li>Consistent Hashing ?</li>
-</ul>
-<h3 id="partition-cases"><a aria-hidden="true" class="anchor-heading" href="#partition-cases"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Partition cases</h3>
-<p><img src="/assets/images/image-20191126143924334.png" alt="image-20191126143924334"></p>
-<p>More database size will need to modify the provision capacity.</p>
-<p>Is recommended to move data base on frecuency, so we can have tables that store data wi less R/W capacity yhan others. This can be a cost bases solution.</p>
-<p>Present an example of migration to have the provition capacity and then lower it down.
-When doing that since there was created many partitions during the migration process and then when lowering down, we found out that the Read and Write capacity is smaller for each partititons since the provision capacity is divided in the number of partitions.</p>
-<p>Dynamodb does not allocate everything or reduce in 1 partitions. partitions will remain. Increasing our cost 6 times</p>
-<p>The best practice will be to distribute data using ´partition key to write simultanipously on dynamodb.</p>
-<h3 id="dynamodb-keys"><a aria-hidden="true" class="anchor-heading" href="#dynamodb-keys"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DynamoDb keys</h3>
-<p>Primary keys</p>
-<p>stay away scan operations</p>
-<p>filters are made after the data was getted</p>
-<p>max local secondary indexes: 5</p>
-<p>global seco</p>
-<p><img src="/assets/images/image-20191126153939760.png" alt="image-20191126153939760"></p>
-<h3 id="hot-keys-or-partitions"><a aria-hidden="true" class="anchor-heading" href="#hot-keys-or-partitions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Hot keys or Partitions</h3>
-<p>Hot keys: when certain keys has information that is going to use data from 1 partition often thatn others for example when we get recent data.</p>
-<p>We can move recent data to other table.</p>
-<p>or use DAX as cache</p>
-<h3 id="design-patterns"><a aria-hidden="true" class="anchor-heading" href="#design-patterns"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Design patterns</h3>
-<p><img src="/assets/images/image-20191126171249941.png" alt="image-20191126171249941"></p>
-<h2 id="summary"><a aria-hidden="true" class="anchor-heading" href="#summary"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Summary</h2>
-<p>DynamoDB offers a bunch of features that you can use to start an application with minimal set up. Worry less about scaling, sharding, and put your application running in short time. Also you are in AWS Ecosystem that can bring many benefits. For large-scale applications, there is some things to take into consideration.</p>
-<ul>
-<li>An really good estimation of R/W operatations for our database. In other words be able to predict concurrency and storage which impacts in the <strong>provision capacity</strong> that we need to set up at the beginning, we can modify it later but we can get into unexpected incresing in costs and slowing down every partition created since the <strong>provision capacity</strong> will be divided on each one.</li>
-<li>Be able to predict how to deal with <strong>hot keys and partitions</strong>, In case we have keys refering data that will be used often than others will end up on using a single partition instead of all tje partitions available. Increasing cost, and delay. As a solution you can "archived" some data and move it to other table, in that way you will only worry for the latest data. This startegy needs planning and play with a lot of variables.</li>
-<li>There is an alternative that Amazon provides adding a layer Using DAX, with it you can redirect incomming request in a way that can lower down the consuption of a single partition and distribute incomming R/W operations over all partitions. This alternative will increase the cost for being an aditional service.</li>
-<li>queries stron cosnistency and eventually reads</li>
-<li>index</li>
-<li>tenancy</li>
-<li>chech wiki adsk</li>
-</ul>
-<h2 id="usefull-links"><a aria-hidden="true" class="anchor-heading" href="#usefull-links"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Usefull Links</h2>
-<ul>
-<li>
-<p><a href="https://www.datadoghq.com/blog/top-dynamodb-performance-metrics/">performance-metrics</a></p>
-</li>
-<li>
-<p><a href="https://blog.yugabyte.com/11-things-you-wish-you-knew-before-starting-with-dynamodb/">11-things-before-start</a></p>
-</li>
-<li>
-<p><a href="https://read.acloud.guru/why-amazon-dynamodb-isnt-for-everyone-and-how-to-decide-when-it-s-for-you-aefc52ea9476?gi=d300d4ccd949">dynamo-is-not-for-everybody</a></p>
-</li>
-<li>
-<p><a href="https://blog.codebarrel.io/why-we-switched-from-dynamodb-back-to-rds-before-we-even-released-3c2ee092120c?gi=b30f9bb06d99">back-to-rds</a></p>
-</li>
-<li>
-<p><a href="https://theburningmonk.com/2019/03/understanding-the-scaling-behaviour-of-dynamodb-ondemand-tables/">understanding-scaling-behaviour</a></p>
-</li>
-<li>
-<p>Youtube: <a href="https://www.youtube.com/watch?v=HaEPXoXVf2k">AWS re:Invent 2018: Amazon DynamoDB Deep Dive: Advanced Design Patterns for DynamoDB (DAT401)
-</a></p>
-</li>
-</ul>
-<p>let's say that you are forced to increase the PC to handle more R/W operations during black friday and return to the previous value after that event, as a result you will end up with more partitions which is fine when the value was higher but the we can</p></div></div><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-0 ant-col-md-4"><div><div class=""><div class="ant-anchor-wrapper" style="max-height:calc(100vh - 64px);z-index:1"><div class="ant-anchor"><div class="ant-anchor-ink"><span class="ant-anchor-ink-ball"></span></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#general-overview" title="General Overview">General Overview</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#basics" title="Basics">Basics</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#tables" title="Tables">Tables</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#data-types" title="Data Types">Data Types</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#consistency-model" title="Consistency Model">Consistency Model</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#capacity-units" title="Capacity Units">Capacity Units</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#partitions" title="Partitions">Partitions</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#indexes" title="Indexes">Indexes</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#secondary-indexes" title="Secondary Indexes">Secondary Indexes</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#should-you-use-dynamodb" title="Should you use DynamoDB">Should you use DynamoDB</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#best-practices" title="Best Practices">Best Practices</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#partition-cases" title="Partition cases">Partition cases</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#dynamodb-keys" title="DynamoDb keys">DynamoDb keys</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#hot-keys-or-partitions" title="Hot keys or Partitions">Hot keys or Partitions</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#design-patterns" title="Design patterns">Design patterns</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#summary" title="Summary">Summary</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#usefull-links" title="Usefull Links">Usefull Links</a></div></div></div></div></div></div></div></div></div></main><div class="ant-divider ant-divider-horizontal" role="separator"></div><footer class="ant-layout-footer" style="padding:0 24px 24px"></footer></section></section></section></section></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"note":{"id":"3e389eed-da91-4a54-bd83-2645161e58e0","title":"Dynamodb","vault":{"fsPath":"databases","name":"databases"},"type":"note","desc":"","links":[],"anchors":{"general-overview":{"type":"header","text":"General Overview","value":"general-overview","line":8,"column":0},"basics":{"type":"header","text":"Basics","value":"basics","line":16,"column":0},"tables":{"type":"header","text":"Tables","value":"tables","line":23,"column":0},"data-types":{"type":"header","text":"Data Types","value":"data-types","line":30,"column":0},"consistency-model":{"type":"header","text":"Consistency Model","value":"consistency-model","line":42,"column":0},"capacity-units":{"type":"header","text":"Capacity Units","value":"capacity-units","line":52,"column":0},"partitions":{"type":"header","text":"Partitions","value":"partitions","line":58,"column":0},"indexes":{"type":"header","text":"Indexes","value":"indexes","line":68,"column":0},"secondary-indexes":{"type":"header","text":"Secondary Indexes","value":"secondary-indexes","line":72,"column":0},"should-you-use-dynamodb":{"type":"header","text":"Should you use DynamoDB","value":"should-you-use-dynamodb","line":78,"column":0},"best-practices":{"type":"header","text":"Best Practices","value":"best-practices","line":82,"column":0},"partition-cases":{"type":"header","text":"Partition cases","value":"partition-cases","line":86,"column":0},"dynamodb-keys":{"type":"header","text":"DynamoDb keys","value":"dynamodb-keys","line":101,"column":0},"hot-keys-or-partitions":{"type":"header","text":"Hot keys or Partitions","value":"hot-keys-or-partitions","line":115,"column":0},"design-patterns":{"type":"header","text":"Design patterns","value":"design-patterns","line":123,"column":0},"summary":{"type":"header","text":"Summary","value":"summary","line":127,"column":0},"usefull-links":{"type":"header","text":"Usefull Links","value":"usefull-links","line":139,"column":0}},"fname":"databases.dynamodb","updated":1626054210304,"created":1621709312456,"parent":"8a285efb-1044-43b2-b86f-904ad3bf48fc","children":[],"data":{},"contentHash":"558b30723d8480398d22ecf9937e1db6","custom":{}},"body":"\u003ch1 id=\"dynamodb\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#dynamodb\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eDynamodb\u003c/h1\u003e\n\u003ch2 id=\"general-overview\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#general-overview\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eGeneral Overview\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://www.datadoghq.com/blog/top-dynamodb-performance-metrics/\"\u003eperformance-metrics\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://blog.yugabyte.com/11-things-you-wish-you-knew-before-starting-with-dynamodb/\"\u003e11-things-before-start\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://read.acloud.guru/why-amazon-dynamodb-isnt-for-everyone-and-how-to-decide-when-it-s-for-you-aefc52ea9476?gi=d300d4ccd949\"\u003edynamo-is-not-for-everybody\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://blog.codebarrel.io/why-we-switched-from-dynamodb-back-to-rds-before-we-even-released-3c2ee092120c?gi=b30f9bb06d99\"\u003eback-to-rds\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://theburningmonk.com/2019/03/understanding-the-scaling-behaviour-of-dynamodb-ondemand-tables/\"\u003eunderstanding-scaling-behaviour\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"basics\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#basics\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eBasics\u003c/h2\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/image-20191124220520552.png\" alt=\"image-20191124220520552\"\u003e\u003c/p\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/image-20191124222012419.png\" alt=\"image-20191124222012419\"\u003e\n\u003cimg src=\"/assets/images/2021-07-09-23-25-02.png\"\u003e\u003c/p\u003e\n\u003ch2 id=\"tables\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#tables\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eTables\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003ename.other or name_other name convention\u003c/li\u003e\n\u003cli\u003eno foreign keys on different tables\u003c/li\u003e\n\u003cli\u003etables are independents\u003c/li\u003e\n\u003cli\u003eStrict ACID\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"data-types\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#data-types\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eData Types\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003eScalar Types\n\u003cul\u003e\n\u003cli\u003eString\u003c/li\u003e\n\u003cli\u003eNumber\u003c/li\u003e\n\u003cli\u003eBoolean\u003c/li\u003e\n\u003cli\u003eBinary\u003c/li\u003e\n\u003cli\u003eNull\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eDocument Types\n\u003cul\u003e\n\u003cli\u003eLists []\u003c/li\u003e\n\u003cli\u003eMaps: key-values map automatically to dynamo DB JSON\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"consistency-model\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#consistency-model\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eConsistency Model\u003c/h2\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/image-20191124223816308.png\" alt=\"image-20191124223816308\"\u003e\u003c/p\u003e\n\u003cp\u003eDynamo read consistency can be\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eStrong: most up-to-date\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eEventual: first, 50% cheaper (default)\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"capacity-units\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#capacity-units\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eCapacity Units\u003c/h2\u003e\n\u003cp\u003eRCUs WCUs\u003c/p\u003e\n\u003cp\u003e1 partition can handle 1000 WCUs or 3000 RCUs\u003c/p\u003e\n\u003ch2 id=\"partitions\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#partitions\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003ePartitions\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eup to 10 GB\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003edepends on provisioned capacity\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/image-20191124225317460.png\" alt=\"image-20191124225317460\"\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eNot be deleted if is modified\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"indexes\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#indexes\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eIndexes\u003c/h2\u003e\n\u003cp\u003eHashing algorithm\u003c/p\u003e\n\u003ch3 id=\"secondary-indexes\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#secondary-indexes\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eSecondary Indexes\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eLocal secondary Index\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eGlobal secondary Index\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"should-you-use-dynamodb\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#should-you-use-dynamodb\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eShould you use DynamoDB\u003c/h2\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/decision-tree.png\" alt=\"deicision Tree\"\u003e\u003c/p\u003e\n\u003ch2 id=\"best-practices\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#best-practices\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eBest Practices\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003eConsistent Hashing ?\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"partition-cases\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#partition-cases\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003ePartition cases\u003c/h3\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/image-20191126143924334.png\" alt=\"image-20191126143924334\"\u003e\u003c/p\u003e\n\u003cp\u003eMore database size will need to modify the provision capacity.\u003c/p\u003e\n\u003cp\u003eIs recommended to move data base on frecuency, so we can have tables that store data wi less R/W capacity yhan others. This can be a cost bases solution.\u003c/p\u003e\n\u003cp\u003ePresent an example of migration to have the provition capacity and then lower it down.\nWhen doing that since there was created many partitions during the migration process and then when lowering down, we found out that the Read and Write capacity is smaller for each partititons since the provision capacity is divided in the number of partitions.\u003c/p\u003e\n\u003cp\u003eDynamodb does not allocate everything or reduce in 1 partitions. partitions will remain. Increasing our cost 6 times\u003c/p\u003e\n\u003cp\u003eThe best practice will be to distribute data using ´partition key to write simultanipously on dynamodb.\u003c/p\u003e\n\u003ch3 id=\"dynamodb-keys\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#dynamodb-keys\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eDynamoDb keys\u003c/h3\u003e\n\u003cp\u003ePrimary keys\u003c/p\u003e\n\u003cp\u003estay away scan operations\u003c/p\u003e\n\u003cp\u003efilters are made after the data was getted\u003c/p\u003e\n\u003cp\u003emax local secondary indexes: 5\u003c/p\u003e\n\u003cp\u003eglobal seco\u003c/p\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/image-20191126153939760.png\" alt=\"image-20191126153939760\"\u003e\u003c/p\u003e\n\u003ch3 id=\"hot-keys-or-partitions\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#hot-keys-or-partitions\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eHot keys or Partitions\u003c/h3\u003e\n\u003cp\u003eHot keys: when certain keys has information that is going to use data from 1 partition often thatn others for example when we get recent data.\u003c/p\u003e\n\u003cp\u003eWe can move recent data to other table.\u003c/p\u003e\n\u003cp\u003eor use DAX as cache\u003c/p\u003e\n\u003ch3 id=\"design-patterns\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#design-patterns\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eDesign patterns\u003c/h3\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/image-20191126171249941.png\" alt=\"image-20191126171249941\"\u003e\u003c/p\u003e\n\u003ch2 id=\"summary\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#summary\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eSummary\u003c/h2\u003e\n\u003cp\u003eDynamoDB offers a bunch of features that you can use to start an application with minimal set up. Worry less about scaling, sharding, and put your application running in short time. Also you are in AWS Ecosystem that can bring many benefits. For large-scale applications, there is some things to take into consideration.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eAn really good estimation of R/W operatations for our database. In other words be able to predict concurrency and storage which impacts in the \u003cstrong\u003eprovision capacity\u003c/strong\u003e that we need to set up at the beginning, we can modify it later but we can get into unexpected incresing in costs and slowing down every partition created since the \u003cstrong\u003eprovision capacity\u003c/strong\u003e will be divided on each one.\u003c/li\u003e\n\u003cli\u003eBe able to predict how to deal with \u003cstrong\u003ehot keys and partitions\u003c/strong\u003e, In case we have keys refering data that will be used often than others will end up on using a single partition instead of all tje partitions available. Increasing cost, and delay. As a solution you can \"archived\" some data and move it to other table, in that way you will only worry for the latest data. This startegy needs planning and play with a lot of variables.\u003c/li\u003e\n\u003cli\u003eThere is an alternative that Amazon provides adding a layer Using DAX, with it you can redirect incomming request in a way that can lower down the consuption of a single partition and distribute incomming R/W operations over all partitions. This alternative will increase the cost for being an aditional service.\u003c/li\u003e\n\u003cli\u003equeries stron cosnistency and eventually reads\u003c/li\u003e\n\u003cli\u003eindex\u003c/li\u003e\n\u003cli\u003etenancy\u003c/li\u003e\n\u003cli\u003echech wiki adsk\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"usefull-links\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#usefull-links\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eUsefull Links\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://www.datadoghq.com/blog/top-dynamodb-performance-metrics/\"\u003eperformance-metrics\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://blog.yugabyte.com/11-things-you-wish-you-knew-before-starting-with-dynamodb/\"\u003e11-things-before-start\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://read.acloud.guru/why-amazon-dynamodb-isnt-for-everyone-and-how-to-decide-when-it-s-for-you-aefc52ea9476?gi=d300d4ccd949\"\u003edynamo-is-not-for-everybody\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://blog.codebarrel.io/why-we-switched-from-dynamodb-back-to-rds-before-we-even-released-3c2ee092120c?gi=b30f9bb06d99\"\u003eback-to-rds\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://theburningmonk.com/2019/03/understanding-the-scaling-behaviour-of-dynamodb-ondemand-tables/\"\u003eunderstanding-scaling-behaviour\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eYoutube: \u003ca href=\"https://www.youtube.com/watch?v=HaEPXoXVf2k\"\u003eAWS re:Invent 2018: Amazon DynamoDB Deep Dive: Advanced Design Patterns for DynamoDB (DAT401)\n\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003elet's say that you are forced to increase the PC to handle more R/W operations during black friday and return to the previous value after that event, as a result you will end up with more partitions which is fine when the value was higher but the we can\u003c/p\u003e","noteIndex":{"id":"23f9dc67-8303-4034-90d3-7371e6cc8996","title":"Welcome","vault":{"fsPath":"vault","name":"vault"},"type":"note","desc":"","links":[{"type":"ref","from":{"fname":"root","id":"23f9dc67-8303-4034-90d3-7371e6cc8996","vaultName":"vault"},"value":"architecture.microservices","position":{"start":{"line":14,"column":1,"offset":460},"end":{"line":14,"column":55,"offset":514},"indent":[]},"xvault":true,"to":{"fname":"architecture.microservices","vaultName":"architecture"}}],"anchors":{"personal-wiki":{"type":"header","text":"Personal wiki","value":"personal-wiki","line":8,"column":0},"content-example":{"type":"header","text":"Content Example","value":"content-example","line":18,"column":0}},"fname":"root","updated":1626063584796,"created":1621701645107,"parent":null,"children":["QYW64J8o1q-RZUAWNuBVz","yWa7opDl6kwVzYa8jBw6Y","9bb7282d-4ab7-4792-b0c5-43f293c296e1","47e06771-c344-4012-8428-07fea574a55e","dc9ce0b8-8551-4aaf-bcc8-309ad1c58b36","4ad54c56-c118-4c77-b7a7-704b6e57579c","8a285efb-1044-43b2-b86f-904ad3bf48fc","3e958243-cf77-44a4-8a90-fef2ec98ad43","28e19609-7af9-4cfe-8ea3-a7341e6709e8","d824c890-9817-49b3-ba11-36bc6c166015","9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8"],"data":{},"contentHash":"e01bd36ad387507acb1823b37e43ca12","custom":{"nav_order":0,"permalink":"/"},"body":"\n## Personal wiki\n\n\u003e This is my personal wiki page, where I put ideas diagrams, where I'm researching a topic, you may not found elaborated articles, just notes that I took at some point when studying. Some notes may be outdated, not following best practices, wrong information or you would like to contribute, email me! I'll appreciate it!\n\nMy e-mail: mzavaletavargas@gmail.com\n\nThanks!\n\n[Back to mi website](http://gustavozavaleta.com)\n\n### Content Example\n\n![[dendron://architecture/architecture.microservices]]\n"},"collectionChildren":null,"customHeadContent":null,"config":{"version":4,"useFMTitle":true,"useNoteTitleForLink":true,"site":{"copyAssets":true,"siteHierarchies":["root"],"siteRootDir":"docs","usePrettyRefs":true,"title":"Gustavo's Wiki","description":"Personal knowledge space","duplicateNoteBehavior":{"action":"useVault","payload":["vault","programming","dev-ops","operating-systems","personal-growth","databases","networking","computer-science","books","infrastructure","health","architecture"]},"siteUrl":"https://wiki.gustavozavaleta.com","siteLastModified":true,"gh_edit_branch":"main","usePrettyLinks":true,"siteNotesDir":"notes","siteFaviconPath":"favicon.ico","gh_edit_link":true,"gh_edit_link_text":"Edit this page on GitHub","gh_root":"docs/","gh_edit_view_mode":"edit","writeStubs":true,"siteIndex":"root"},"dev":{"previewV2Enabled":false,"enablePreviewV2":true},"commands":{"lookup":{"note":{"selectionMode":"extract","confirmVaultOnCreate":false,"leaveTrace":false,"bubbleUpCreateNew":true,"fuzzThreshold":0.2}},"insertNote":{"initialValue":"templates"},"insertNoteLink":{"aliasMode":"none","enableMultiSelect":false},"insertNoteIndex":{"enableMarker":false},"randomNote":{}},"workspace":{"dendronVersion":"0.72.0","vaults":[{"fsPath":"architecture","name":"architecture"},{"fsPath":"health","name":"health"},{"fsPath":"infrastructure","name":"infrastructure"},{"fsPath":"books","name":"books"},{"fsPath":"computer-science","name":"computer-science"},{"fsPath":"networking","name":"networking"},{"fsPath":"databases","name":"databases"},{"fsPath":"personal-growth","name":"personal-growth"},{"fsPath":"operating-systems","name":"operating-systems"},{"fsPath":"dev-ops","name":"dev-ops"},{"fsPath":"programming","name":"programming"},{"fsPath":"vault","name":"vault"}],"journal":{"dailyDomain":"daily","name":"journal","dateFormat":"y.MM.dd","addBehavior":"childOfDomain"},"scratch":{"name":"scratch","dateFormat":"y.MM.dd.HHmmss","addBehavior":"asOwnDomain"},"graph":{"zoomSpeed":1},"enableAutoCreateOnDefinition":false,"enableXVaultWikiLink":false,"enableRemoteVaultInit":true,"workspaceVaultSyncMode":"noCommit","enableAutoFoldFrontmatter":false,"maxPreviewsCached":10,"maxNoteLength":204800,"task":{"name":"","dateFormat":"","addBehavior":"childOfCurrent","statusSymbols":{"":" ","wip":"w","done":"x","assigned":"a","moved":"m","blocked":"b","delegated":"l","dropped":"d","pending":"y"},"prioritySymbols":{"H":"high","M":"medium","L":"low"},"todoIntegration":false,"createTaskSelectionType":"selection2link"},"enableUserTags":true,"enableHashTags":true,"enableEditorDecorations":true},"preview":{"enableFMTitle":true,"enableNoteTitleForLink":true,"enableMermaid":true,"enablePrettyRefs":true,"enableKatex":true},"mermaid":true,"useKatex":true}},"__N_SSG":true},"page":"/notes/[id]","query":{"id":"3e389eed-da91-4a54-bd83-2645161e58e0"},"buildId":"srMamU6NDjTKDm4oc0Jnq","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>Dynamodb</title>
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="description" content="Personal knowledge space" />
+    <meta property="og:title" content="Dynamodb" />
+    <meta property="og:description" content="Personal knowledge space" />
+    <meta
+      property="og:url"
+      content="https://wiki.gustavozavaleta.com/notes/3e389eed-da91-4a54-bd83-2645161e58e0/"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="5/22/2021" />
+    <meta property="article:modified_time" content="7/12/2021" />
+    <link
+      rel="canonical"
+      href="https://wiki.gustavozavaleta.com/notes/3e389eed-da91-4a54-bd83-2645161e58e0/"
+    />
+    <meta name="next-head-count" content="14" />
+    <link
+      rel="preload"
+      href="_next/static/css/f3f0453dbc0db68c.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="_next/static/css/f3f0453dbc0db68c.css"
+      data-n-g=""
+    />
+    <noscript data-n-css=""></noscript>
+    <script
+      defer=""
+      nomodule=""
+      src="_next/static/chunks/polyfills-5cd94c89d3acac5f.js"
+    ></script>
+    <script
+      src="_next/static/chunks/webpack-378e68e29c265886.js"
+      defer=""
+    ></script>
+    <script
+      src="_next/static/chunks/framework-dc33c0b5493501f0.js"
+      defer=""
+    ></script>
+    <script
+      src="_next/static/chunks/main-d4b16f161e1a380a.js"
+      defer=""
+    ></script>
+    <script
+      src="_next/static/chunks/pages/_app-516d9fdd8080f7c5.js"
+      defer=""
+    ></script>
+    <script src="_next/static/chunks/155-ae889b1b91c43319.js" defer=""></script>
+    <script
+      src="_next/static/chunks/pages/notes/%5Bid%5D-ebe33fbe56ae1215.js"
+      defer=""
+    ></script>
+    <script
+      src="_next/static/L9maZkX7GA1Lh6KYhgL2P/_buildManifest.js"
+      defer=""
+    ></script>
+    <script
+      src="_next/static/L9maZkX7GA1Lh6KYhgL2P/_ssgManifest.js"
+      defer=""
+    ></script>
+    <script
+      src="_next/static/L9maZkX7GA1Lh6KYhgL2P/_middlewareManifest.js"
+      defer=""
+    ></script>
+  </head>
+  <body>
+    <div id="__next" data-reactroot="">
+      <section class="ant-layout" style="width: 100%; min-height: 100%">
+        <header
+          class="ant-layout-header"
+          style="
+            position: fixed;
+            isolation: isolate;
+            z-index: 1;
+            width: 100%;
+            border-bottom: 1px solid #d4dadf;
+            height: 64px;
+            padding: 0 24px 0 2px;
+          "
+        >
+          <div
+            class="ant-row ant-row-center"
+            style="
+              max-width: 992px;
+              justify-content: space-between;
+              margin: 0 auto;
+            "
+          >
+            <div class="ant-col"></div>
+            <div
+              class="
+                ant-col
+                gutter-row
+                ant-col-xs-0 ant-col-sm-20 ant-col-md-20 ant-col-lg-19
+              "
+            ></div>
+            <div
+              style="
+                margin-left: 4px;
+                display: none;
+                align-items: center;
+                justify-content: center;
+              "
+              class="
+                ant-col ant-col-xs-4 ant-col-sm-4 ant-col-md-0 ant-col-lg-0
+              "
+            >
+              <span
+                role="img"
+                aria-label="menu"
+                style="font-size: 24px"
+                tabindex="-1"
+                class="anticon anticon-menu"
+                ><svg
+                  viewBox="64 64 896 896"
+                  focusable="false"
+                  data-icon="menu"
+                  width="1em"
+                  height="1em"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"
+                  ></path></svg
+              ></span>
+            </div>
+          </div>
+        </header>
+        <section class="ant-layout site-layout" style="margin-top: 64px">
+          <section class="ant-layout site-layout" style="flex-direction: row">
+            <section
+              class="ant-layout site-layout-sidebar"
+              style="
+                flex: 0 0 auto;
+                width: calc((100% - 992px) / 2 + 200px);
+                min-width: 200px;
+                padding-left: calc((100% - 992px) / 2);
+              "
+            >
+              <aside
+                class="ant-layout-sider ant-layout-sider-dark"
+                style="
+                  position: fixed;
+                  overflow: auto;
+                  height: calc(100vh - 64px);
+                  flex: 0 0 200px;
+                  max-width: 200px;
+                  min-width: 200px;
+                  width: 200px;
+                "
+              >
+                <div class="ant-layout-sider-children"></div>
+              </aside>
+            </section>
+            <section
+              class="ant-layout side-layout-main"
+              style="max-width: 960px; display: initial"
+            >
+              <main
+                class="ant-layout-content main-content"
+                role="main"
+                style="padding: 0 24px"
+              >
+                <div class="ant-row">
+                  <div class="ant-col ant-col-24">
+                    <div
+                      class="ant-row"
+                      style="margin-left: -10px; margin-right: -10px"
+                    >
+                      <div
+                        style="padding-left: 10px; padding-right: 10px"
+                        class="ant-col ant-col-xs-24 ant-col-md-20"
+                      >
+                        <div>
+                          <h1 id="dynamodb">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#dynamodb"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Dynamodb
+                          </h1>
+                          <h2 id="general-overview">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#general-overview"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >General Overview
+                          </h2>
+                          <ul>
+                            <li>
+                              <a
+                                href="https://www.datadoghq.com/blog/top-dynamodb-performance-metrics/"
+                                >performance-metrics</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="https://blog.yugabyte.com/11-things-you-wish-you-knew-before-starting-with-dynamodb/"
+                                >11-things-before-start</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="https://read.acloud.guru/why-amazon-dynamodb-isnt-for-everyone-and-how-to-decide-when-it-s-for-you-aefc52ea9476?gi=d300d4ccd949"
+                                >dynamo-is-not-for-everybody</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="https://blog.codebarrel.io/why-we-switched-from-dynamodb-back-to-rds-before-we-even-released-3c2ee092120c?gi=b30f9bb06d99"
+                                >back-to-rds</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="https://theburningmonk.com/2019/03/understanding-the-scaling-behaviour-of-dynamodb-ondemand-tables/"
+                                >understanding-scaling-behaviour</a
+                              >
+                            </li>
+                          </ul>
+                          <h2 id="basics">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#basics"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Basics
+                          </h2>
+                          <p>
+                            <img
+                              src="/assets/images/image-20191124220520552.png"
+                              alt="image-20191124220520552"
+                            />
+                          </p>
+                          <p>
+                            <img
+                              src="/assets/images/image-20191124222012419.png"
+                              alt="image-20191124222012419"
+                            />
+                            <img src="/assets/images/2021-07-09-23-25-02.png" />
+                          </p>
+                          <h2 id="tables">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#tables"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Tables
+                          </h2>
+                          <ul>
+                            <li>name.other or name_other name convention</li>
+                            <li>no foreign keys on different tables</li>
+                            <li>tables are independents</li>
+                            <li>Strict ACID</li>
+                          </ul>
+                          <h2 id="data-types">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#data-types"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Data Types
+                          </h2>
+                          <ul>
+                            <li>
+                              Scalar Types
+                              <ul>
+                                <li>String</li>
+                                <li>Number</li>
+                                <li>Boolean</li>
+                                <li>Binary</li>
+                                <li>Null</li>
+                              </ul>
+                            </li>
+                            <li>
+                              Document Types
+                              <ul>
+                                <li>Lists []</li>
+                                <li>
+                                  Maps: key-values map automatically to dynamo
+                                  DB JSON
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                          <h2 id="consistency-model">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#consistency-model"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Consistency Model
+                          </h2>
+                          <p>
+                            <img
+                              src="/assets/images/image-20191124223816308.png"
+                              alt="image-20191124223816308"
+                            />
+                          </p>
+                          <p>Dynamo read consistency can be</p>
+                          <ul>
+                            <li>
+                              <p>Strong: most up-to-date</p>
+                            </li>
+                            <li>
+                              <p>Eventual: first, 50% cheaper (default)</p>
+                            </li>
+                          </ul>
+                          <h2 id="capacity-units">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#capacity-units"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Capacity Units
+                          </h2>
+                          <p>RCUs WCUs</p>
+                          <p>1 partition can handle 1000 WCUs or 3000 RCUs</p>
+                          <h2 id="partitions">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#partitions"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Partitions
+                          </h2>
+                          <ul>
+                            <li>
+                              <p>up to 10 GB</p>
+                            </li>
+                            <li>
+                              <p>depends on provisioned capacity</p>
+                            </li>
+                            <li>
+                              <p>
+                                <img
+                                  src="/assets/images/image-20191124225317460.png"
+                                  alt="image-20191124225317460"
+                                />
+                              </p>
+                            </li>
+                            <li>
+                              <p>Not be deleted if is modified</p>
+                            </li>
+                          </ul>
+                          <h2 id="indexes">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#indexes"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Indexes
+                          </h2>
+                          <p>Hashing algorithm</p>
+                          <h3 id="secondary-indexes">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#secondary-indexes"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Secondary Indexes
+                          </h3>
+                          <ul>
+                            <li>
+                              <p>Local secondary Index</p>
+                            </li>
+                            <li>
+                              <p>Global secondary Index</p>
+                            </li>
+                          </ul>
+                          <h2 id="should-you-use-dynamodb">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#should-you-use-dynamodb"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Should you use DynamoDB
+                          </h2>
+                          <p>
+                            <img
+                              src="/assets/images/decision-tree.png"
+                              alt="deicision Tree"
+                            />
+                          </p>
+                          <h2 id="best-practices">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#best-practices"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Best Practices
+                          </h2>
+                          <ul>
+                            <li>Consistent Hashing ?</li>
+                          </ul>
+                          <h3 id="partition-cases">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#partition-cases"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Partition cases
+                          </h3>
+                          <p>
+                            <img
+                              src="/assets/images/image-20191126143924334.png"
+                              alt="image-20191126143924334"
+                            />
+                          </p>
+                          <p>
+                            More database size will need to modify the provision
+                            capacity.
+                          </p>
+                          <p>
+                            Is recommended to move data base on frecuency, so we
+                            can have tables that store data wi less R/W capacity
+                            yhan others. This can be a cost bases solution.
+                          </p>
+                          <p>
+                            Present an example of migration to have the
+                            provition capacity and then lower it down. When
+                            doing that since there was created many partitions
+                            during the migration process and then when lowering
+                            down, we found out that the Read and Write capacity
+                            is smaller for each partititons since the provision
+                            capacity is divided in the number of partitions.
+                          </p>
+                          <p>
+                            Dynamodb does not allocate everything or reduce in 1
+                            partitions. partitions will remain. Increasing our
+                            cost 6 times
+                          </p>
+                          <p>
+                            The best practice will be to distribute data using
+                            ´partition key to write simultanipously on dynamodb.
+                          </p>
+                          <h3 id="dynamodb-keys">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#dynamodb-keys"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >DynamoDb keys
+                          </h3>
+                          <p>Primary keys</p>
+                          <p>stay away scan operations</p>
+                          <p>filters are made after the data was getted</p>
+                          <p>max local secondary indexes: 5</p>
+                          <p>global seco</p>
+                          <p>
+                            <img
+                              src="/assets/images/image-20191126153939760.png"
+                              alt="image-20191126153939760"
+                            />
+                          </p>
+                          <h3 id="hot-keys-or-partitions">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#hot-keys-or-partitions"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Hot keys or Partitions
+                          </h3>
+                          <p>
+                            Hot keys: when certain keys has information that is
+                            going to use data from 1 partition often thatn
+                            others for example when we get recent data.
+                          </p>
+                          <p>We can move recent data to other table.</p>
+                          <p>or use DAX as cache</p>
+                          <h3 id="design-patterns">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#design-patterns"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Design patterns
+                          </h3>
+                          <p>
+                            <img
+                              src="/assets/images/image-20191126171249941.png"
+                              alt="image-20191126171249941"
+                            />
+                          </p>
+                          <h2 id="summary">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#summary"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Summary
+                          </h2>
+                          <p>
+                            DynamoDB offers a bunch of features that you can use
+                            to start an application with minimal set up. Worry
+                            less about scaling, sharding, and put your
+                            application running in short time. Also you are in
+                            AWS Ecosystem that can bring many benefits. For
+                            large-scale applications, there is some things to
+                            take into consideration.
+                          </p>
+                          <ul>
+                            <li>
+                              An really good estimation of R/W operatations for
+                              our database. In other words be able to predict
+                              concurrency and storage which impacts in the
+                              <strong>provision capacity</strong> that we need
+                              to set up at the beginning, we can modify it later
+                              but we can get into unexpected incresing in costs
+                              and slowing down every partition created since the
+                              <strong>provision capacity</strong> will be
+                              divided on each one.
+                            </li>
+                            <li>
+                              Be able to predict how to deal with
+                              <strong>hot keys and partitions</strong>, In case
+                              we have keys refering data that will be used often
+                              than others will end up on using a single
+                              partition instead of all tje partitions available.
+                              Increasing cost, and delay. As a solution you can
+                              "archived" some data and move it to other table,
+                              in that way you will only worry for the latest
+                              data. This startegy needs planning and play with a
+                              lot of variables.
+                            </li>
+                            <li>
+                              There is an alternative that Amazon provides
+                              adding a layer Using DAX, with it you can redirect
+                              incomming request in a way that can lower down the
+                              consuption of a single partition and distribute
+                              incomming R/W operations over all partitions. This
+                              alternative will increase the cost for being an
+                              aditional service.
+                            </li>
+                            <li>
+                              queries stron cosnistency and eventually reads
+                            </li>
+                            <li>index</li>
+                            <li>tenancy</li>
+                            <li>chech wiki adsk</li>
+                          </ul>
+                          <h2 id="usefull-links">
+                            <a
+                              aria-hidden="true"
+                              class="anchor-heading"
+                              href="#usefull-links"
+                              ><svg aria-hidden="true" viewBox="0 0 16 16">
+                                <use xlink:href="#svg-link"></use></svg></a
+                            >Usefull Links
+                          </h2>
+                          <ul>
+                            <li>
+                              <p>
+                                <a
+                                  href="https://www.datadoghq.com/blog/top-dynamodb-performance-metrics/"
+                                  >performance-metrics</a
+                                >
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                <a
+                                  href="https://blog.yugabyte.com/11-things-you-wish-you-knew-before-starting-with-dynamodb/"
+                                  >11-things-before-start</a
+                                >
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                <a
+                                  href="https://read.acloud.guru/why-amazon-dynamodb-isnt-for-everyone-and-how-to-decide-when-it-s-for-you-aefc52ea9476?gi=d300d4ccd949"
+                                  >dynamo-is-not-for-everybody</a
+                                >
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                <a
+                                  href="https://blog.codebarrel.io/why-we-switched-from-dynamodb-back-to-rds-before-we-even-released-3c2ee092120c?gi=b30f9bb06d99"
+                                  >back-to-rds</a
+                                >
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                <a
+                                  href="https://theburningmonk.com/2019/03/understanding-the-scaling-behaviour-of-dynamodb-ondemand-tables/"
+                                  >understanding-scaling-behaviour</a
+                                >
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                Youtube:
+                                <a
+                                  href="https://www.youtube.com/watch?v=HaEPXoXVf2k"
+                                  >AWS re:Invent 2018: Amazon DynamoDB Deep
+                                  Dive: Advanced Design Patterns for DynamoDB
+                                  (DAT401)
+                                </a>
+                              </p>
+                            </li>
+                          </ul>
+                          <p>
+                            let's say that you are forced to increase the PC to
+                            handle more R/W operations during black friday and
+                            return to the previous value after that event, as a
+                            result you will end up with more partitions which is
+                            fine when the value was higher but the we can
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        style="padding-left: 10px; padding-right: 10px"
+                        class="ant-col ant-col-xs-0 ant-col-md-4"
+                      >
+                        <div>
+                          <div class="">
+                            <div
+                              class="ant-anchor-wrapper"
+                              style="max-height: calc(100vh - 64px); z-index: 1"
+                            >
+                              <div class="ant-anchor">
+                                <div class="ant-anchor-ink">
+                                  <span class="ant-anchor-ink-ball"></span>
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#general-overview"
+                                    title="General Overview"
+                                    >General Overview</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#basics"
+                                    title="Basics"
+                                    >Basics</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#tables"
+                                    title="Tables"
+                                    >Tables</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#data-types"
+                                    title="Data Types"
+                                    >Data Types</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#consistency-model"
+                                    title="Consistency Model"
+                                    >Consistency Model</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#capacity-units"
+                                    title="Capacity Units"
+                                    >Capacity Units</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#partitions"
+                                    title="Partitions"
+                                    >Partitions</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#indexes"
+                                    title="Indexes"
+                                    >Indexes</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#secondary-indexes"
+                                    title="Secondary Indexes"
+                                    >Secondary Indexes</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#should-you-use-dynamodb"
+                                    title="Should you use DynamoDB"
+                                    >Should you use DynamoDB</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#best-practices"
+                                    title="Best Practices"
+                                    >Best Practices</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#partition-cases"
+                                    title="Partition cases"
+                                    >Partition cases</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#dynamodb-keys"
+                                    title="DynamoDb keys"
+                                    >DynamoDb keys</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#hot-keys-or-partitions"
+                                    title="Hot keys or Partitions"
+                                    >Hot keys or Partitions</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#design-patterns"
+                                    title="Design patterns"
+                                    >Design patterns</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#summary"
+                                    title="Summary"
+                                    >Summary</a
+                                  >
+                                </div>
+                                <div class="ant-anchor-link">
+                                  <a
+                                    class="ant-anchor-link-title"
+                                    href="#usefull-links"
+                                    title="Usefull Links"
+                                    >Usefull Links</a
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </main>
+              <div
+                class="ant-divider ant-divider-horizontal"
+                role="separator"
+              ></div>
+              <footer
+                class="ant-layout-footer"
+                style="padding: 0 24px 24px"
+              ></footer>
+            </section>
+          </section>
+        </section>
+      </section>
+    </div>
+    <script id="__NEXT_DATA__" type="application/json">
+      {
+        "props": {
+          "pageProps": {
+            "note": {
+              "id": "3e389eed-da91-4a54-bd83-2645161e58e0",
+              "title": "Dynamodb",
+              "vault": { "fsPath": "databases", "name": "databases" },
+              "type": "note",
+              "desc": "",
+              "links": [],
+              "anchors": {
+                "general-overview": {
+                  "type": "header",
+                  "text": "General Overview",
+                  "value": "general-overview",
+                  "line": 8,
+                  "column": 0
+                },
+                "basics": {
+                  "type": "header",
+                  "text": "Basics",
+                  "value": "basics",
+                  "line": 16,
+                  "column": 0
+                },
+                "tables": {
+                  "type": "header",
+                  "text": "Tables",
+                  "value": "tables",
+                  "line": 23,
+                  "column": 0
+                },
+                "data-types": {
+                  "type": "header",
+                  "text": "Data Types",
+                  "value": "data-types",
+                  "line": 30,
+                  "column": 0
+                },
+                "consistency-model": {
+                  "type": "header",
+                  "text": "Consistency Model",
+                  "value": "consistency-model",
+                  "line": 42,
+                  "column": 0
+                },
+                "capacity-units": {
+                  "type": "header",
+                  "text": "Capacity Units",
+                  "value": "capacity-units",
+                  "line": 52,
+                  "column": 0
+                },
+                "partitions": {
+                  "type": "header",
+                  "text": "Partitions",
+                  "value": "partitions",
+                  "line": 58,
+                  "column": 0
+                },
+                "indexes": {
+                  "type": "header",
+                  "text": "Indexes",
+                  "value": "indexes",
+                  "line": 68,
+                  "column": 0
+                },
+                "secondary-indexes": {
+                  "type": "header",
+                  "text": "Secondary Indexes",
+                  "value": "secondary-indexes",
+                  "line": 72,
+                  "column": 0
+                },
+                "should-you-use-dynamodb": {
+                  "type": "header",
+                  "text": "Should you use DynamoDB",
+                  "value": "should-you-use-dynamodb",
+                  "line": 78,
+                  "column": 0
+                },
+                "best-practices": {
+                  "type": "header",
+                  "text": "Best Practices",
+                  "value": "best-practices",
+                  "line": 82,
+                  "column": 0
+                },
+                "partition-cases": {
+                  "type": "header",
+                  "text": "Partition cases",
+                  "value": "partition-cases",
+                  "line": 86,
+                  "column": 0
+                },
+                "dynamodb-keys": {
+                  "type": "header",
+                  "text": "DynamoDb keys",
+                  "value": "dynamodb-keys",
+                  "line": 101,
+                  "column": 0
+                },
+                "hot-keys-or-partitions": {
+                  "type": "header",
+                  "text": "Hot keys or Partitions",
+                  "value": "hot-keys-or-partitions",
+                  "line": 115,
+                  "column": 0
+                },
+                "design-patterns": {
+                  "type": "header",
+                  "text": "Design patterns",
+                  "value": "design-patterns",
+                  "line": 123,
+                  "column": 0
+                },
+                "summary": {
+                  "type": "header",
+                  "text": "Summary",
+                  "value": "summary",
+                  "line": 127,
+                  "column": 0
+                },
+                "usefull-links": {
+                  "type": "header",
+                  "text": "Usefull Links",
+                  "value": "usefull-links",
+                  "line": 139,
+                  "column": 0
+                }
+              },
+              "fname": "databases.dynamodb",
+              "updated": 1626054210304,
+              "created": 1621709312456,
+              "parent": "8a285efb-1044-43b2-b86f-904ad3bf48fc",
+              "children": [],
+              "data": {},
+              "contentHash": "558b30723d8480398d22ecf9937e1db6",
+              "custom": {}
+            },
+            "body": "\u003ch1 id=\"dynamodb\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#dynamodb\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eDynamodb\u003c/h1\u003e\n\u003ch2 id=\"general-overview\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#general-overview\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eGeneral Overview\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://www.datadoghq.com/blog/top-dynamodb-performance-metrics/\"\u003eperformance-metrics\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://blog.yugabyte.com/11-things-you-wish-you-knew-before-starting-with-dynamodb/\"\u003e11-things-before-start\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://read.acloud.guru/why-amazon-dynamodb-isnt-for-everyone-and-how-to-decide-when-it-s-for-you-aefc52ea9476?gi=d300d4ccd949\"\u003edynamo-is-not-for-everybody\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://blog.codebarrel.io/why-we-switched-from-dynamodb-back-to-rds-before-we-even-released-3c2ee092120c?gi=b30f9bb06d99\"\u003eback-to-rds\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://theburningmonk.com/2019/03/understanding-the-scaling-behaviour-of-dynamodb-ondemand-tables/\"\u003eunderstanding-scaling-behaviour\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"basics\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#basics\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eBasics\u003c/h2\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/image-20191124220520552.png\" alt=\"image-20191124220520552\"\u003e\u003c/p\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/image-20191124222012419.png\" alt=\"image-20191124222012419\"\u003e\n\u003cimg src=\"/assets/images/2021-07-09-23-25-02.png\"\u003e\u003c/p\u003e\n\u003ch2 id=\"tables\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#tables\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eTables\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003ename.other or name_other name convention\u003c/li\u003e\n\u003cli\u003eno foreign keys on different tables\u003c/li\u003e\n\u003cli\u003etables are independents\u003c/li\u003e\n\u003cli\u003eStrict ACID\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"data-types\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#data-types\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eData Types\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003eScalar Types\n\u003cul\u003e\n\u003cli\u003eString\u003c/li\u003e\n\u003cli\u003eNumber\u003c/li\u003e\n\u003cli\u003eBoolean\u003c/li\u003e\n\u003cli\u003eBinary\u003c/li\u003e\n\u003cli\u003eNull\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eDocument Types\n\u003cul\u003e\n\u003cli\u003eLists []\u003c/li\u003e\n\u003cli\u003eMaps: key-values map automatically to dynamo DB JSON\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"consistency-model\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#consistency-model\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eConsistency Model\u003c/h2\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/image-20191124223816308.png\" alt=\"image-20191124223816308\"\u003e\u003c/p\u003e\n\u003cp\u003eDynamo read consistency can be\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eStrong: most up-to-date\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eEventual: first, 50% cheaper (default)\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"capacity-units\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#capacity-units\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eCapacity Units\u003c/h2\u003e\n\u003cp\u003eRCUs WCUs\u003c/p\u003e\n\u003cp\u003e1 partition can handle 1000 WCUs or 3000 RCUs\u003c/p\u003e\n\u003ch2 id=\"partitions\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#partitions\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003ePartitions\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eup to 10 GB\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003edepends on provisioned capacity\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/image-20191124225317460.png\" alt=\"image-20191124225317460\"\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eNot be deleted if is modified\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"indexes\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#indexes\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eIndexes\u003c/h2\u003e\n\u003cp\u003eHashing algorithm\u003c/p\u003e\n\u003ch3 id=\"secondary-indexes\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#secondary-indexes\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eSecondary Indexes\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eLocal secondary Index\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eGlobal secondary Index\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"should-you-use-dynamodb\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#should-you-use-dynamodb\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eShould you use DynamoDB\u003c/h2\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/decision-tree.png\" alt=\"deicision Tree\"\u003e\u003c/p\u003e\n\u003ch2 id=\"best-practices\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#best-practices\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eBest Practices\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003eConsistent Hashing ?\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"partition-cases\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#partition-cases\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003ePartition cases\u003c/h3\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/image-20191126143924334.png\" alt=\"image-20191126143924334\"\u003e\u003c/p\u003e\n\u003cp\u003eMore database size will need to modify the provision capacity.\u003c/p\u003e\n\u003cp\u003eIs recommended to move data base on frecuency, so we can have tables that store data wi less R/W capacity yhan others. This can be a cost bases solution.\u003c/p\u003e\n\u003cp\u003ePresent an example of migration to have the provition capacity and then lower it down.\nWhen doing that since there was created many partitions during the migration process and then when lowering down, we found out that the Read and Write capacity is smaller for each partititons since the provision capacity is divided in the number of partitions.\u003c/p\u003e\n\u003cp\u003eDynamodb does not allocate everything or reduce in 1 partitions. partitions will remain. Increasing our cost 6 times\u003c/p\u003e\n\u003cp\u003eThe best practice will be to distribute data using ´partition key to write simultanipously on dynamodb.\u003c/p\u003e\n\u003ch3 id=\"dynamodb-keys\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#dynamodb-keys\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eDynamoDb keys\u003c/h3\u003e\n\u003cp\u003ePrimary keys\u003c/p\u003e\n\u003cp\u003estay away scan operations\u003c/p\u003e\n\u003cp\u003efilters are made after the data was getted\u003c/p\u003e\n\u003cp\u003emax local secondary indexes: 5\u003c/p\u003e\n\u003cp\u003eglobal seco\u003c/p\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/image-20191126153939760.png\" alt=\"image-20191126153939760\"\u003e\u003c/p\u003e\n\u003ch3 id=\"hot-keys-or-partitions\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#hot-keys-or-partitions\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eHot keys or Partitions\u003c/h3\u003e\n\u003cp\u003eHot keys: when certain keys has information that is going to use data from 1 partition often thatn others for example when we get recent data.\u003c/p\u003e\n\u003cp\u003eWe can move recent data to other table.\u003c/p\u003e\n\u003cp\u003eor use DAX as cache\u003c/p\u003e\n\u003ch3 id=\"design-patterns\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#design-patterns\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eDesign patterns\u003c/h3\u003e\n\u003cp\u003e\u003cimg src=\"/assets/images/image-20191126171249941.png\" alt=\"image-20191126171249941\"\u003e\u003c/p\u003e\n\u003ch2 id=\"summary\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#summary\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eSummary\u003c/h2\u003e\n\u003cp\u003eDynamoDB offers a bunch of features that you can use to start an application with minimal set up. Worry less about scaling, sharding, and put your application running in short time. Also you are in AWS Ecosystem that can bring many benefits. For large-scale applications, there is some things to take into consideration.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eAn really good estimation of R/W operatations for our database. In other words be able to predict concurrency and storage which impacts in the \u003cstrong\u003eprovision capacity\u003c/strong\u003e that we need to set up at the beginning, we can modify it later but we can get into unexpected incresing in costs and slowing down every partition created since the \u003cstrong\u003eprovision capacity\u003c/strong\u003e will be divided on each one.\u003c/li\u003e\n\u003cli\u003eBe able to predict how to deal with \u003cstrong\u003ehot keys and partitions\u003c/strong\u003e, In case we have keys refering data that will be used often than others will end up on using a single partition instead of all tje partitions available. Increasing cost, and delay. As a solution you can \"archived\" some data and move it to other table, in that way you will only worry for the latest data. This startegy needs planning and play with a lot of variables.\u003c/li\u003e\n\u003cli\u003eThere is an alternative that Amazon provides adding a layer Using DAX, with it you can redirect incomming request in a way that can lower down the consuption of a single partition and distribute incomming R/W operations over all partitions. This alternative will increase the cost for being an aditional service.\u003c/li\u003e\n\u003cli\u003equeries stron cosnistency and eventually reads\u003c/li\u003e\n\u003cli\u003eindex\u003c/li\u003e\n\u003cli\u003etenancy\u003c/li\u003e\n\u003cli\u003echech wiki adsk\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"usefull-links\"\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading\" href=\"#usefull-links\"\u003e\u003csvg aria-hidden=\"true\" viewBox=\"0 0 16 16\"\u003e\u003cuse xlink:href=\"#svg-link\"\u003e\u003c/use\u003e\u003c/svg\u003e\u003c/a\u003eUsefull Links\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://www.datadoghq.com/blog/top-dynamodb-performance-metrics/\"\u003eperformance-metrics\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://blog.yugabyte.com/11-things-you-wish-you-knew-before-starting-with-dynamodb/\"\u003e11-things-before-start\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://read.acloud.guru/why-amazon-dynamodb-isnt-for-everyone-and-how-to-decide-when-it-s-for-you-aefc52ea9476?gi=d300d4ccd949\"\u003edynamo-is-not-for-everybody\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://blog.codebarrel.io/why-we-switched-from-dynamodb-back-to-rds-before-we-even-released-3c2ee092120c?gi=b30f9bb06d99\"\u003eback-to-rds\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"https://theburningmonk.com/2019/03/understanding-the-scaling-behaviour-of-dynamodb-ondemand-tables/\"\u003eunderstanding-scaling-behaviour\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eYoutube: \u003ca href=\"https://www.youtube.com/watch?v=HaEPXoXVf2k\"\u003eAWS re:Invent 2018: Amazon DynamoDB Deep Dive: Advanced Design Patterns for DynamoDB (DAT401)\n\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003elet's say that you are forced to increase the PC to handle more R/W operations during black friday and return to the previous value after that event, as a result you will end up with more partitions which is fine when the value was higher but the we can\u003c/p\u003e",
+            "noteIndex": {
+              "id": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+              "title": "Welcome",
+              "vault": { "fsPath": "vault", "name": "vault" },
+              "type": "note",
+              "desc": "",
+              "links": [
+                {
+                  "type": "ref",
+                  "from": {
+                    "fname": "root",
+                    "id": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+                    "vaultName": "vault"
+                  },
+                  "value": "architecture.microservices",
+                  "position": {
+                    "start": { "line": 14, "column": 1, "offset": 460 },
+                    "end": { "line": 14, "column": 55, "offset": 514 },
+                    "indent": []
+                  },
+                  "xvault": true,
+                  "to": {
+                    "fname": "architecture.microservices",
+                    "vaultName": "architecture"
+                  }
+                }
+              ],
+              "anchors": {
+                "personal-wiki": {
+                  "type": "header",
+                  "text": "Personal wiki",
+                  "value": "personal-wiki",
+                  "line": 8,
+                  "column": 0
+                },
+                "content-example": {
+                  "type": "header",
+                  "text": "Content Example",
+                  "value": "content-example",
+                  "line": 18,
+                  "column": 0
+                }
+              },
+              "fname": "root",
+              "updated": 1626063584796,
+              "created": 1621701645107,
+              "parent": null,
+              "children": [
+                "QYW64J8o1q-RZUAWNuBVz",
+                "yWa7opDl6kwVzYa8jBw6Y",
+                "9bb7282d-4ab7-4792-b0c5-43f293c296e1",
+                "47e06771-c344-4012-8428-07fea574a55e",
+                "dc9ce0b8-8551-4aaf-bcc8-309ad1c58b36",
+                "4ad54c56-c118-4c77-b7a7-704b6e57579c",
+                "8a285efb-1044-43b2-b86f-904ad3bf48fc",
+                "3e958243-cf77-44a4-8a90-fef2ec98ad43",
+                "28e19609-7af9-4cfe-8ea3-a7341e6709e8",
+                "d824c890-9817-49b3-ba11-36bc6c166015",
+                "9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8"
+              ],
+              "data": {},
+              "contentHash": "e01bd36ad387507acb1823b37e43ca12",
+              "custom": { "nav_order": 0, "permalink": "/" },
+              "body": "\n## Personal wiki\n\n\u003e This is my personal wiki page, where I put ideas diagrams, where I'm researching a topic, you may not found elaborated articles, just notes that I took at some point when studying. Some notes may be outdated, not following best practices, wrong information or you would like to contribute, email me! I'll appreciate it!\n\nMy e-mail: mzavaletavargas@gmail.com\n\nThanks!\n\n[Back to mi website](http://gustavozavaleta.com)\n\n### Content Example\n\n![[dendron://architecture/architecture.microservices]]\n"
+            },
+            "collectionChildren": null,
+            "customHeadContent": null,
+            "config": {
+              "version": 4,
+              "useFMTitle": true,
+              "useNoteTitleForLink": true,
+              "site": {
+                "copyAssets": true,
+                "siteHierarchies": ["root"],
+                "siteRootDir": "docs",
+                "usePrettyRefs": true,
+                "title": "Gustavo's Wiki",
+                "description": "Personal knowledge space",
+                "duplicateNoteBehavior": {
+                  "action": "useVault",
+                  "payload": [
+                    "vault",
+                    "programming",
+                    "dev-ops",
+                    "operating-systems",
+                    "personal-growth",
+                    "databases",
+                    "networking",
+                    "computer-science",
+                    "books",
+                    "infrastructure",
+                    "health",
+                    "architecture"
+                  ]
+                },
+                "siteUrl": "https://wiki.gustavozavaleta.com",
+                "siteLastModified": true,
+                "gh_edit_branch": "main",
+                "usePrettyLinks": true,
+                "siteNotesDir": "notes",
+                "siteFaviconPath": "favicon.ico",
+                "gh_edit_link": true,
+                "gh_edit_link_text": "Edit this page on GitHub",
+                "gh_root": "docs/",
+                "gh_edit_view_mode": "edit",
+                "writeStubs": true,
+                "siteIndex": "root"
+              },
+              "dev": { "previewV2Enabled": false, "enablePreviewV2": true },
+              "commands": {
+                "lookup": {
+                  "note": {
+                    "selectionMode": "extract",
+                    "confirmVaultOnCreate": false,
+                    "leaveTrace": false,
+                    "bubbleUpCreateNew": true,
+                    "fuzzThreshold": 0.2
+                  }
+                },
+                "insertNote": { "initialValue": "templates" },
+                "insertNoteLink": {
+                  "aliasMode": "none",
+                  "enableMultiSelect": false
+                },
+                "insertNoteIndex": { "enableMarker": false },
+                "randomNote": {}
+              },
+              "workspace": {
+                "dendronVersion": "0.72.0",
+                "vaults": [
+                  { "fsPath": "architecture", "name": "architecture" },
+                  { "fsPath": "health", "name": "health" },
+                  { "fsPath": "infrastructure", "name": "infrastructure" },
+                  { "fsPath": "books", "name": "books" },
+                  { "fsPath": "computer-science", "name": "computer-science" },
+                  { "fsPath": "networking", "name": "networking" },
+                  { "fsPath": "databases", "name": "databases" },
+                  { "fsPath": "personal-growth", "name": "personal-growth" },
+                  {
+                    "fsPath": "operating-systems",
+                    "name": "operating-systems"
+                  },
+                  { "fsPath": "dev-ops", "name": "dev-ops" },
+                  { "fsPath": "programming", "name": "programming" },
+                  { "fsPath": "vault", "name": "vault" }
+                ],
+                "journal": {
+                  "dailyDomain": "daily",
+                  "name": "journal",
+                  "dateFormat": "y.MM.dd",
+                  "addBehavior": "childOfDomain"
+                },
+                "scratch": {
+                  "name": "scratch",
+                  "dateFormat": "y.MM.dd.HHmmss",
+                  "addBehavior": "asOwnDomain"
+                },
+                "graph": { "zoomSpeed": 1 },
+                "enableAutoCreateOnDefinition": false,
+                "enableXVaultWikiLink": false,
+                "enableRemoteVaultInit": true,
+                "workspaceVaultSyncMode": "noCommit",
+                "enableAutoFoldFrontmatter": false,
+                "maxPreviewsCached": 10,
+                "maxNoteLength": 204800,
+                "task": {
+                  "name": "",
+                  "dateFormat": "",
+                  "addBehavior": "childOfCurrent",
+                  "statusSymbols": {
+                    "": " ",
+                    "wip": "w",
+                    "done": "x",
+                    "assigned": "a",
+                    "moved": "m",
+                    "blocked": "b",
+                    "delegated": "l",
+                    "dropped": "d",
+                    "pending": "y"
+                  },
+                  "prioritySymbols": { "H": "high", "M": "medium", "L": "low" },
+                  "todoIntegration": false,
+                  "createTaskSelectionType": "selection2link"
+                },
+                "enableUserTags": true,
+                "enableHashTags": true,
+                "enableEditorDecorations": true
+              },
+              "preview": {
+                "enableFMTitle": true,
+                "enableNoteTitleForLink": true,
+                "enableMermaid": true,
+                "enablePrettyRefs": true,
+                "enableKatex": true
+              },
+              "mermaid": true,
+              "useKatex": true
+            }
+          },
+          "__N_SSG": true
+        },
+        "page": "/notes/[id]",
+        "query": { "id": "3e389eed-da91-4a54-bd83-2645161e58e0" },
+        "buildId": "L9maZkX7GA1Lh6KYhgL2P",
+        "isFallback": false,
+        "gsp": true,
+        "scriptLoader": []
+      }
+    </script>
+  </body>
+</html>
