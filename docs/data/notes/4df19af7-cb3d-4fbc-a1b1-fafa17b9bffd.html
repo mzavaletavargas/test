@@ -1,0 +1,16 @@
+<h1 id="express"><a aria-hidden="true" class="anchor-heading" href="#express"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Express</h1>
+<h2 id="create-a-static-server"><a aria-hidden="true" class="anchor-heading" href="#create-a-static-server"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Create a static server</h2>
+<pre class="language-javascript"><code class="language-javascript">express<span class="token punctuation">.</span><span class="token method function property-access">static</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class="language-javascript"><code class="language-javascript">app<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token method function property-access">static</span><span class="token punctuation">(</span><span class="token string">"public"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class="language-javascript"><code class="language-javascript">router<span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token method function property-access">sendFile</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token method function property-access">join</span><span class="token punctuation">(</span>__dirname <span class="token operator">+</span> <span class="token string">"/index.html"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//__dirname : It will resolve to your project folder.</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="aditional-information"><a aria-hidden="true" class="anchor-heading" href="#aditional-information"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Aditional Information</h2>
+<ul>
+<li><a href="https://expressjs.com/en/starter/static-files.html">https://expressjs.com/en/starter/static-files.html</a></li>
+<li><a href="https://codeforgeek.com/2019/03/render-html-file-expressjs/">https://codeforgeek.com/2019/03/render-html-file-expressjs/</a></li>
+</ul>

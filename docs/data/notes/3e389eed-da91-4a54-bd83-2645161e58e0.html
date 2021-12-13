@@ -1,0 +1,139 @@
+<h1 id="dynamodb"><a aria-hidden="true" class="anchor-heading" href="#dynamodb"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Dynamodb</h1>
+<h2 id="general-overview"><a aria-hidden="true" class="anchor-heading" href="#general-overview"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>General Overview</h2>
+<ul>
+<li><a href="https://www.datadoghq.com/blog/top-dynamodb-performance-metrics/">performance-metrics</a></li>
+<li><a href="https://blog.yugabyte.com/11-things-you-wish-you-knew-before-starting-with-dynamodb/">11-things-before-start</a></li>
+<li><a href="https://read.acloud.guru/why-amazon-dynamodb-isnt-for-everyone-and-how-to-decide-when-it-s-for-you-aefc52ea9476?gi=d300d4ccd949">dynamo-is-not-for-everybody</a></li>
+<li><a href="https://blog.codebarrel.io/why-we-switched-from-dynamodb-back-to-rds-before-we-even-released-3c2ee092120c?gi=b30f9bb06d99">back-to-rds</a></li>
+<li><a href="https://theburningmonk.com/2019/03/understanding-the-scaling-behaviour-of-dynamodb-ondemand-tables/">understanding-scaling-behaviour</a></li>
+</ul>
+<h2 id="basics"><a aria-hidden="true" class="anchor-heading" href="#basics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Basics</h2>
+<p><img src="/assets/images/image-20191124220520552.png" alt="image-20191124220520552"></p>
+<p><img src="/assets/images/image-20191124222012419.png" alt="image-20191124222012419">
+<img src="/assets/images/2021-07-09-23-25-02.png"></p>
+<h2 id="tables"><a aria-hidden="true" class="anchor-heading" href="#tables"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Tables</h2>
+<ul>
+<li>name.other or name_other name convention</li>
+<li>no foreign keys on different tables</li>
+<li>tables are independents</li>
+<li>Strict ACID</li>
+</ul>
+<h2 id="data-types"><a aria-hidden="true" class="anchor-heading" href="#data-types"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Data Types</h2>
+<ul>
+<li>Scalar Types
+<ul>
+<li>String</li>
+<li>Number</li>
+<li>Boolean</li>
+<li>Binary</li>
+<li>Null</li>
+</ul>
+</li>
+<li>Document Types
+<ul>
+<li>Lists []</li>
+<li>Maps: key-values map automatically to dynamo DB JSON</li>
+</ul>
+</li>
+</ul>
+<h2 id="consistency-model"><a aria-hidden="true" class="anchor-heading" href="#consistency-model"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Consistency Model</h2>
+<p><img src="/assets/images/image-20191124223816308.png" alt="image-20191124223816308"></p>
+<p>Dynamo read consistency can be</p>
+<ul>
+<li>
+<p>Strong: most up-to-date</p>
+</li>
+<li>
+<p>Eventual: first, 50% cheaper (default)</p>
+</li>
+</ul>
+<h2 id="capacity-units"><a aria-hidden="true" class="anchor-heading" href="#capacity-units"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Capacity Units</h2>
+<p>RCUs WCUs</p>
+<p>1 partition can handle 1000 WCUs or 3000 RCUs</p>
+<h2 id="partitions"><a aria-hidden="true" class="anchor-heading" href="#partitions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Partitions</h2>
+<ul>
+<li>
+<p>up to 10 GB</p>
+</li>
+<li>
+<p>depends on provisioned capacity</p>
+</li>
+<li>
+<p><img src="/assets/images/image-20191124225317460.png" alt="image-20191124225317460"></p>
+</li>
+<li>
+<p>Not be deleted if is modified</p>
+</li>
+</ul>
+<h2 id="indexes"><a aria-hidden="true" class="anchor-heading" href="#indexes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Indexes</h2>
+<p>Hashing algorithm</p>
+<h3 id="secondary-indexes"><a aria-hidden="true" class="anchor-heading" href="#secondary-indexes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Secondary Indexes</h3>
+<ul>
+<li>
+<p>Local secondary Index</p>
+</li>
+<li>
+<p>Global secondary Index</p>
+</li>
+</ul>
+<h2 id="should-you-use-dynamodb"><a aria-hidden="true" class="anchor-heading" href="#should-you-use-dynamodb"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Should you use DynamoDB</h2>
+<p><img src="/assets/images/decision-tree.png" alt="deicision Tree"></p>
+<h2 id="best-practices"><a aria-hidden="true" class="anchor-heading" href="#best-practices"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Best Practices</h2>
+<ul>
+<li>Consistent Hashing ?</li>
+</ul>
+<h3 id="partition-cases"><a aria-hidden="true" class="anchor-heading" href="#partition-cases"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Partition cases</h3>
+<p><img src="/assets/images/image-20191126143924334.png" alt="image-20191126143924334"></p>
+<p>More database size will need to modify the provision capacity.</p>
+<p>Is recommended to move data base on frecuency, so we can have tables that store data wi less R/W capacity yhan others. This can be a cost bases solution.</p>
+<p>Present an example of migration to have the provition capacity and then lower it down.
+When doing that since there was created many partitions during the migration process and then when lowering down, we found out that the Read and Write capacity is smaller for each partititons since the provision capacity is divided in the number of partitions.</p>
+<p>Dynamodb does not allocate everything or reduce in 1 partitions. partitions will remain. Increasing our cost 6 times</p>
+<p>The best practice will be to distribute data using ´partition key to write simultanipously on dynamodb.</p>
+<h3 id="dynamodb-keys"><a aria-hidden="true" class="anchor-heading" href="#dynamodb-keys"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DynamoDb keys</h3>
+<p>Primary keys</p>
+<p>stay away scan operations</p>
+<p>filters are made after the data was getted</p>
+<p>max local secondary indexes: 5</p>
+<p>global seco</p>
+<p><img src="/assets/images/image-20191126153939760.png" alt="image-20191126153939760"></p>
+<h3 id="hot-keys-or-partitions"><a aria-hidden="true" class="anchor-heading" href="#hot-keys-or-partitions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Hot keys or Partitions</h3>
+<p>Hot keys: when certain keys has information that is going to use data from 1 partition often thatn others for example when we get recent data.</p>
+<p>We can move recent data to other table.</p>
+<p>or use DAX as cache</p>
+<h3 id="design-patterns"><a aria-hidden="true" class="anchor-heading" href="#design-patterns"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Design patterns</h3>
+<p><img src="/assets/images/image-20191126171249941.png" alt="image-20191126171249941"></p>
+<h2 id="summary"><a aria-hidden="true" class="anchor-heading" href="#summary"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Summary</h2>
+<p>DynamoDB offers a bunch of features that you can use to start an application with minimal set up. Worry less about scaling, sharding, and put your application running in short time. Also you are in AWS Ecosystem that can bring many benefits. For large-scale applications, there is some things to take into consideration.</p>
+<ul>
+<li>An really good estimation of R/W operatations for our database. In other words be able to predict concurrency and storage which impacts in the <strong>provision capacity</strong> that we need to set up at the beginning, we can modify it later but we can get into unexpected incresing in costs and slowing down every partition created since the <strong>provision capacity</strong> will be divided on each one.</li>
+<li>Be able to predict how to deal with <strong>hot keys and partitions</strong>, In case we have keys refering data that will be used often than others will end up on using a single partition instead of all tje partitions available. Increasing cost, and delay. As a solution you can "archived" some data and move it to other table, in that way you will only worry for the latest data. This startegy needs planning and play with a lot of variables.</li>
+<li>There is an alternative that Amazon provides adding a layer Using DAX, with it you can redirect incomming request in a way that can lower down the consuption of a single partition and distribute incomming R/W operations over all partitions. This alternative will increase the cost for being an aditional service.</li>
+<li>queries stron cosnistency and eventually reads</li>
+<li>index</li>
+<li>tenancy</li>
+<li>chech wiki adsk</li>
+</ul>
+<h2 id="usefull-links"><a aria-hidden="true" class="anchor-heading" href="#usefull-links"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Usefull Links</h2>
+<ul>
+<li>
+<p><a href="https://www.datadoghq.com/blog/top-dynamodb-performance-metrics/">performance-metrics</a></p>
+</li>
+<li>
+<p><a href="https://blog.yugabyte.com/11-things-you-wish-you-knew-before-starting-with-dynamodb/">11-things-before-start</a></p>
+</li>
+<li>
+<p><a href="https://read.acloud.guru/why-amazon-dynamodb-isnt-for-everyone-and-how-to-decide-when-it-s-for-you-aefc52ea9476?gi=d300d4ccd949">dynamo-is-not-for-everybody</a></p>
+</li>
+<li>
+<p><a href="https://blog.codebarrel.io/why-we-switched-from-dynamodb-back-to-rds-before-we-even-released-3c2ee092120c?gi=b30f9bb06d99">back-to-rds</a></p>
+</li>
+<li>
+<p><a href="https://theburningmonk.com/2019/03/understanding-the-scaling-behaviour-of-dynamodb-ondemand-tables/">understanding-scaling-behaviour</a></p>
+</li>
+<li>
+<p>Youtube: <a href="https://www.youtube.com/watch?v=HaEPXoXVf2k">AWS re:Invent 2018: Amazon DynamoDB Deep Dive: Advanced Design Patterns for DynamoDB (DAT401)
+</a></p>
+</li>
+</ul>
+<p>let's say that you are forced to increase the PC to handle more R/W operations during black friday and return to the previous value after that event, as a result you will end up with more partitions which is fine when the value was higher but the we can</p>

@@ -1,0 +1,42 @@
+<h1 id="worker-threads"><a aria-hidden="true" class="anchor-heading" href="#worker-threads"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Worker Threads</h1>
+<h2 id="why"><a aria-hidden="true" class="anchor-heading" href="#why"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Why?</h2>
+<p>Intesive cpu work, like compression.</p>
+<h2 id="what-should-i-use-child_process-worker-threads"><a aria-hidden="true" class="anchor-heading" href="#what-should-i-use-child_process-worker-threads"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>What should I use: Child_process, worker Threads</h2>
+<p>Explained : <a href="https://blog.logrocket.com/node-js-multithreading-what-are-worker-threads-and-why-do-they-matter-48ab102f8b10">https://blog.logrocket.com/node-js-multithreading-what-are-worker-threads-and-why-do-they-matter-48ab102f8b10</a></p>
+<p>Worker threads: <a href="https://nodejs.org/api/worker_threads.html">https://nodejs.org/api/worker_threads.html</a>
+Child Process: <a href="https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options">https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options</a></p>
+<h2 id="code"><a aria-hidden="true" class="anchor-heading" href="#code"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Code</h2>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span>
+  <span class="token maybe-class-name">Worker</span><span class="token punctuation">,</span>
+  isMainThread<span class="token punctuation">,</span>
+  parentPort<span class="token punctuation">,</span>
+  workerData<span class="token punctuation">,</span>
+<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"worker_threads"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> w <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Worker</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token punctuation">{</span> workerData<span class="token operator">:</span> <span class="token keyword null nil">null</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+w<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">"message"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+w<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">"error"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+w<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">"exit"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Child on <code>path</code></p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span> parentPort <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"worker_threads"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// do something</span>
+
+parentPort<span class="token punctuation">.</span><span class="token method function property-access">postMessage</span><span class="token punctuation">(</span><span class="token string">"notify parent"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="thread-pool"><a aria-hidden="true" class="anchor-heading" href="#thread-pool"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Thread pool</h2>
+<p>Is nice to have a thread poll, this library manage it for you
+<a href="https://github.com/watson/worker-threads-pool">https://github.com/watson/worker-threads-pool</a></p>
+<p>General
+<a href="https://gobyexample.com/worker-pools">https://gobyexample.com/worker-pools</a></p>
+<h2 id="concurrent-work"><a aria-hidden="true" class="anchor-heading" href="#concurrent-work"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Concurrent work</h2>
+<p><a href="https://medium.com/@piotrkarpaa/async-await-and-parallel-code-in-node-js-6de6501eea48%5C">https://medium.com/@piotrkarpaa/async-await-and-parallel-code-in-node-js-6de6501eea48\</a>
+<a href="https://medium.com/platformer-blog/node-js-concurrency-with-async-await-and-promises-b4c4ae8f4510">https://medium.com/platformer-blog/node-js-concurrency-with-async-await-and-promises-b4c4ae8f4510</a></p>
+<h2 id="child-process"><a aria-hidden="true" class="anchor-heading" href="#child-process"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>child Process</h2>
+<p><a href="https://medium.com/the-guild/getting-to-know-nodes-child-process-module-8ed63038f3fa">https://medium.com/the-guild/getting-to-know-nodes-child-process-module-8ed63038f3fa</a></p>
+<p><a href="https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a">https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a</a></p>
+<h2 id="aditional-information"><a aria-hidden="true" class="anchor-heading" href="#aditional-information"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Aditional Information</h2>
+<p><a href="https://medium.com/dailyjs/threads-in-node-10-5-0-a-practical-intro-3b85a0a3c953">https://medium.com/dailyjs/threads-in-node-10-5-0-a-practical-intro-3b85a0a3c953</a>
+<a href="https://medium.com/lazy-engineering/node-worker-threads-b57a32d84845">https://medium.com/lazy-engineering/node-worker-threads-b57a32d84845</a>
+<a href="https://nodejs.org/en/docs/guides/dont-block-the-event-loop/">https://nodejs.org/en/docs/guides/dont-block-the-event-loop/</a></p>

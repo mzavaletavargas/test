@@ -1,0 +1,5 @@
+<h1 id="kill-current-process"><a aria-hidden="true" class="anchor-heading" href="#kill-current-process"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Kill Current Process</h1>
+<h2 id="kill-current-process-1"><a aria-hidden="true" class="anchor-heading" href="#kill-current-process-1"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Kill current process</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">netstat</span> -ano <span class="token operator">|</span> findstr :pidHere 
+taskkill /PID pidHere /F
+</code></pre>

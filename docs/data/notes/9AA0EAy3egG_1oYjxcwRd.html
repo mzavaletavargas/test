@@ -1,0 +1,15 @@
+<h1 id="codebuild"><a aria-hidden="true" class="anchor-heading" href="#codebuild"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Codebuild</h1>
+<h1 id="aws-codebuild"><a aria-hidden="true" class="anchor-heading" href="#aws-codebuild"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AWS Codebuild</h1>
+<p>Getting version number from file:</p>
+<pre class="language-bash"><code class="language-bash"> - <span class="token assign-left variable">NPM_VERSION</span><span class="token operator">=</span>v-<span class="token variable"><span class="token variable">$(</span><span class="token function">cat</span> package.json <span class="token operator">|</span> <span class="token function">grep</span> version <span class="token operator">|</span> <span class="token function">head</span> -1 <span class="token operator">|</span> <span class="token function">awk</span> -F<span class="token string">":"</span> <span class="token string">'{print $2}'</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/[\ ",]//g'</span><span class="token variable">)</span></span>
+</code></pre>
+<h2 id="related"><a aria-hidden="true" class="anchor-heading" href="#related"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Related</h2>
+<p><img src="/assets/images/2021-07-09-21-05-11.png" alt="Node Pipeline Architecture"></p>
+<p><a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html">Build specification reference for CodeBuild - AWS CodeBuild</a>
+<a href="https://docs.aws.amazon.com/codebuild/latest/userguide/available-runtimes.html">Available runtimes - AWS CodeBuild</a></p>
+<h2 id="terraform"><a aria-hidden="true" class="anchor-heading" href="#terraform"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Terraform</h2>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/codedeploy_app">https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/codedeploy_app</a></p>
+<h2 id="github-webhooks"><a aria-hidden="true" class="anchor-heading" href="#github-webhooks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Github webhooks</h2>
+<p><a href="https://docs.aws.amazon.com/codebuild/latest/userguide/github-webhook.html">https://docs.aws.amazon.com/codebuild/latest/userguide/github-webhook.html</a></p>
+<h2 id="docs"><a aria-hidden="true" class="anchor-heading" href="#docs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>docs</h2>
+<p><a href="https://docs.aws.amazon.com/codebuild/latest/userguide/codebuild-user.pdf">https://docs.aws.amazon.com/codebuild/latest/userguide/codebuild-user.pdf</a></p>

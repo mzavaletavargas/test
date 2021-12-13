@@ -1,0 +1,3686 @@
+{
+  "notes": {
+    "403": {
+      "id": "403",
+      "title": "This page has not yet sprouted",
+      "vault": {
+        "fsPath": "architecture",
+        "name": "architecture"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "403",
+      "updated": 1639372068031,
+      "created": 1639372068031,
+      "parent": null,
+      "children": [],
+      "data": {}
+    },
+    "23f9dc67-8303-4034-90d3-7371e6cc8996": {
+      "id": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+      "title": "Welcome",
+      "vault": {
+        "fsPath": "vault",
+        "name": "vault"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [
+        {
+          "type": "ref",
+          "from": {
+            "fname": "root",
+            "id": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+            "vaultName": "vault"
+          },
+          "value": "architecture.microservices",
+          "position": {
+            "start": {
+              "line": 14,
+              "column": 1,
+              "offset": 460
+            },
+            "end": {
+              "line": 14,
+              "column": 55,
+              "offset": 514
+            },
+            "indent": []
+          },
+          "xvault": true,
+          "to": {
+            "fname": "architecture.microservices",
+            "vaultName": "architecture"
+          }
+        }
+      ],
+      "anchors": {
+        "personal-wiki": {
+          "type": "header",
+          "text": "Personal wiki",
+          "value": "personal-wiki",
+          "line": 8,
+          "column": 0
+        },
+        "content-example": {
+          "type": "header",
+          "text": "Content Example",
+          "value": "content-example",
+          "line": 18,
+          "column": 0
+        }
+      },
+      "fname": "root",
+      "updated": 1626063584796,
+      "created": 1621701645107,
+      "parent": null,
+      "children": [
+        "QYW64J8o1q-RZUAWNuBVz",
+        "yWa7opDl6kwVzYa8jBw6Y",
+        "9bb7282d-4ab7-4792-b0c5-43f293c296e1",
+        "47e06771-c344-4012-8428-07fea574a55e",
+        "dc9ce0b8-8551-4aaf-bcc8-309ad1c58b36",
+        "4ad54c56-c118-4c77-b7a7-704b6e57579c",
+        "8a285efb-1044-43b2-b86f-904ad3bf48fc",
+        "3e958243-cf77-44a4-8a90-fef2ec98ad43",
+        "28e19609-7af9-4cfe-8ea3-a7341e6709e8",
+        "d824c890-9817-49b3-ba11-36bc6c166015",
+        "9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8"
+      ],
+      "data": {},
+      "contentHash": "e01bd36ad387507acb1823b37e43ca12",
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      }
+    },
+    "9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8": {
+      "id": "9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8",
+      "title": "Programming",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "programming",
+      "updated": 1621747084621,
+      "created": 1621701712670,
+      "parent": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+      "children": [
+        "605e397f-ef56-4e95-b71a-b2c9a73bece0",
+        "b9f47610-404c-4b38-9f3b-6b4b83f53e7a",
+        "ce6e9d6f-33bc-4eb6-aa8d-773740ff1a16",
+        "bwExY6uB9XB2qOHI",
+        "5de474bb-6a15-4814-99e6-4fb44e2361e5"
+      ],
+      "data": {},
+      "contentHash": "1a35432af160a4aa7c22d48d4f90db1b",
+      "custom": {}
+    },
+    "5de474bb-6a15-4814-99e6-4fb44e2361e5": {
+      "id": "5de474bb-6a15-4814-99e6-4fb44e2361e5",
+      "title": "Testing",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "programming.testing",
+      "updated": 1622002745475,
+      "created": 1622002745475,
+      "parent": "9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8",
+      "children": [
+        "99faaac5-b413-4189-9568-56500c54793a"
+      ],
+      "data": {},
+      "contentHash": "345f4d329e0fd83b3562298aab7000f6",
+      "custom": {}
+    },
+    "99faaac5-b413-4189-9568-56500c54793a": {
+      "id": "99faaac5-b413-4189-9568-56500c54793a",
+      "title": "Canary",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "references": {
+          "type": "header",
+          "text": "References",
+          "value": "references",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "programming.testing.canary",
+      "updated": 1622002783854,
+      "created": 1622002754225,
+      "parent": "5de474bb-6a15-4814-99e6-4fb44e2361e5",
+      "children": [],
+      "data": {},
+      "contentHash": "50348c17f0177391d8cc085a5392e080",
+      "custom": {}
+    },
+    "bwExY6uB9XB2qOHI": {
+      "id": "bwExY6uB9XB2qOHI",
+      "title": "Ruby",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "stuff-learned-coding-on-ruby": {
+          "type": "header",
+          "text": "Stuff learned coding on ruby.",
+          "value": "stuff-learned-coding-on-ruby",
+          "line": 8,
+          "column": 0
+        },
+        "basics": {
+          "type": "header",
+          "text": "Basics",
+          "value": "basics",
+          "line": 10,
+          "column": 0
+        },
+        "gemfile-vs-gemspec": {
+          "type": "header",
+          "text": "Gemfile vs Gemspec",
+          "value": "gemfile-vs-gemspec",
+          "line": 18,
+          "column": 0
+        },
+        "error-handling": {
+          "type": "header",
+          "text": "Error handling",
+          "value": "error-handling",
+          "line": 22,
+          "column": 0
+        },
+        "getters-and-setters": {
+          "type": "header",
+          "text": "Getters and setters",
+          "value": "getters-and-setters",
+          "line": 53,
+          "column": 0
+        },
+        "operators": {
+          "type": "header",
+          "text": "Operators",
+          "value": "operators",
+          "line": 84,
+          "column": 0
+        },
+        "vault-sample": {
+          "type": "header",
+          "text": "Vault sample",
+          "value": "vault-sample",
+          "line": 88,
+          "column": 0
+        },
+        "depency-injection": {
+          "type": "header",
+          "text": "Depency Injection",
+          "value": "depency-injection",
+          "line": 92,
+          "column": 0
+        },
+        "unit-test": {
+          "type": "header",
+          "text": "Unit test",
+          "value": "unit-test",
+          "line": 98,
+          "column": 0
+        },
+        "linting": {
+          "type": "header",
+          "text": "Linting",
+          "value": "linting",
+          "line": 112,
+          "column": 0
+        },
+        "vs-code-extensions": {
+          "type": "header",
+          "text": "VS code extensions",
+          "value": "vs-code-extensions",
+          "line": 120,
+          "column": 0
+        },
+        "return-vs-put": {
+          "type": "header",
+          "text": "return vs put",
+          "value": "return-vs-put",
+          "line": 124,
+          "column": 0
+        },
+        "string-replacement": {
+          "type": "header",
+          "text": "String replacement",
+          "value": "string-replacement",
+          "line": 145,
+          "column": 0
+        },
+        "publish-gems": {
+          "type": "header",
+          "text": "Publish gems",
+          "value": "publish-gems",
+          "line": 149,
+          "column": 0
+        },
+        "usefull-resources": {
+          "type": "header",
+          "text": "Usefull resources",
+          "value": "usefull-resources",
+          "line": 155,
+          "column": 0
+        }
+      },
+      "fname": "programming.ruby",
+      "updated": 1628090541547,
+      "created": 1626189055674,
+      "parent": "9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8",
+      "children": [
+        "RrrexBaG2ydBnKa9"
+      ],
+      "data": {},
+      "contentHash": "392600c2ad5eda173384286fce36f3ff",
+      "custom": {}
+    },
+    "RrrexBaG2ydBnKa9": {
+      "id": "RrrexBaG2ydBnKa9",
+      "title": "Lambda",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "deploy-ruby-aws-lambda": {
+          "type": "header",
+          "text": "Deploy ruby AWS Lambda",
+          "value": "deploy-ruby-aws-lambda",
+          "line": 8,
+          "column": 0
+        },
+        "steps": {
+          "type": "header",
+          "text": "Steps",
+          "value": "steps",
+          "line": 10,
+          "column": 0
+        },
+        "aws-sdk-to-connect-to-vault-using-iam-role": {
+          "type": "header",
+          "text": "AWS SDK to connect to vault using IAM role",
+          "value": "aws-sdk-to-connect-to-vault-using-iam-role",
+          "line": 52,
+          "column": 0
+        }
+      },
+      "fname": "programming.ruby.lambda",
+      "updated": 1628091510972,
+      "created": 1627923171051,
+      "parent": "bwExY6uB9XB2qOHI",
+      "children": [],
+      "data": {},
+      "contentHash": "b852c2af3159ab94dc39f687c3e46d5c",
+      "custom": {}
+    },
+    "ce6e9d6f-33bc-4eb6-aa8d-773740ff1a16": {
+      "id": "ce6e9d6f-33bc-4eb6-aa8d-773740ff1a16",
+      "title": "JavaScript",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "programming.javascript",
+      "updated": 1621818037005,
+      "created": 1621818037005,
+      "parent": "9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8",
+      "children": [
+        "s3JfSxaehW1ogwof2n8MC",
+        "231a4ba4-a7bf-45b6-9092-b5ba810d4039",
+        "MIzoslKKMEY2b67C_r0vE",
+        "73d28d3f-0f79-4683-95d1-7173f1c4bea2",
+        "dec2b4d3-ff94-4735-8797-0a65986de197"
+      ],
+      "data": {},
+      "contentHash": "3d1e911525a159a2860ab300db85a53a",
+      "stub": false,
+      "custom": {
+        "stub": true
+      }
+    },
+    "dec2b4d3-ff94-4735-8797-0a65986de197": {
+      "id": "dec2b4d3-ff94-4735-8797-0a65986de197",
+      "title": "Node.js",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "programming.javascript.node-js",
+      "updated": 1621707310514,
+      "created": 1621707310514,
+      "parent": "ce6e9d6f-33bc-4eb6-aa8d-773740ff1a16",
+      "children": [
+        "d69aee32-573c-4b59-abcd-d6cfe3ded443",
+        "d43e7547-5709-4155-b0b4-89a37b586844",
+        "8240e3b4-8760-43bf-8de3-f3c28c8a4af3",
+        "4df19af7-cb3d-4fbc-a1b1-fafa17b9bffd",
+        "55c570f1-f3bd-41dd-9279-34f8d623c0df",
+        "1847ce5f-bb55-468c-b97d-dd888e1c1231",
+        "394eb99d-c9b7-41db-ad62-e4c3c8509407",
+        "257957a2-5699-47d2-b6d5-96d468443db7",
+        "c796d05d-8deb-489d-bb95-495b5376558a",
+        "78e1ced2-067d-4250-baba-4c35e5ae0d50"
+      ],
+      "data": {},
+      "contentHash": "a2226f7ed1a2f2360eec05f499ea9fe8",
+      "custom": {}
+    },
+    "78e1ced2-067d-4250-baba-4c35e5ae0d50": {
+      "id": "78e1ced2-067d-4250-baba-4c35e5ae0d50",
+      "title": "Worker Threads",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "why": {
+          "type": "header",
+          "text": "Why?",
+          "value": "why",
+          "line": 8,
+          "column": 0
+        },
+        "what-should-i-use-child_process-worker-threads": {
+          "type": "header",
+          "text": "What should I use: Child_process, worker Threads",
+          "value": "what-should-i-use-child_process-worker-threads",
+          "line": 12,
+          "column": 0
+        },
+        "code": {
+          "type": "header",
+          "text": "Code",
+          "value": "code",
+          "line": 19,
+          "column": 0
+        },
+        "thread-pool": {
+          "type": "header",
+          "text": "Thread pool",
+          "value": "thread-pool",
+          "line": 45,
+          "column": 0
+        },
+        "concurrent-work": {
+          "type": "header",
+          "text": "Concurrent work",
+          "value": "concurrent-work",
+          "line": 53,
+          "column": 0
+        },
+        "child-process": {
+          "type": "header",
+          "text": "child Process",
+          "value": "child-process",
+          "line": 58,
+          "column": 0
+        },
+        "aditional-information": {
+          "type": "header",
+          "text": "Aditional Information",
+          "value": "aditional-information",
+          "line": 64,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.node-js.worker-threads",
+      "updated": 1621708807912,
+      "created": 1621708792442,
+      "parent": "dec2b4d3-ff94-4735-8797-0a65986de197",
+      "children": [],
+      "data": {},
+      "contentHash": "86e203417be8d4cd9a88812d41d256df",
+      "custom": {}
+    },
+    "c796d05d-8deb-489d-bb95-495b5376558a": {
+      "id": "c796d05d-8deb-489d-bb95-495b5376558a",
+      "title": "Security",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [
+        {
+          "type": "ref",
+          "from": {
+            "fname": "programming.javascript.node-js.security",
+            "id": "c796d05d-8deb-489d-bb95-495b5376558a",
+            "vaultName": "programming"
+          },
+          "value": "networking.nginx",
+          "position": {
+            "start": {
+              "line": 19,
+              "column": 1,
+              "offset": 374
+            },
+            "end": {
+              "line": 19,
+              "column": 54,
+              "offset": 427
+            },
+            "indent": []
+          },
+          "xvault": true,
+          "to": {
+            "fname": "networking.nginx",
+            "anchorHeader": "conclusion",
+            "vaultName": "networking"
+          }
+        }
+      ],
+      "anchors": {
+        "avoid-80-port": {
+          "type": "header",
+          "text": "Avoid 80 port",
+          "value": "avoid-80-port",
+          "line": 8,
+          "column": 0
+        },
+        "why": {
+          "type": "header",
+          "text": "Why?",
+          "value": "why",
+          "line": 13,
+          "column": 0
+        },
+        "what-is-the-main-problem": {
+          "type": "header",
+          "text": "What is the main problem?",
+          "value": "what-is-the-main-problem",
+          "line": 17,
+          "column": 0
+        },
+        "aditional-information": {
+          "type": "header",
+          "text": "Aditional information",
+          "value": "aditional-information",
+          "line": 27,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.node-js.security",
+      "updated": 1621708730548,
+      "created": 1621708493720,
+      "parent": "dec2b4d3-ff94-4735-8797-0a65986de197",
+      "children": [],
+      "data": {},
+      "contentHash": "bfa80d671798e325abe9e612ae7f6b65",
+      "custom": {}
+    },
+    "257957a2-5699-47d2-b6d5-96d468443db7": {
+      "id": "257957a2-5699-47d2-b6d5-96d468443db7",
+      "title": "Profiling",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "motivation": {
+          "type": "header",
+          "text": "Motivation",
+          "value": "motivation",
+          "line": 8,
+          "column": 0
+        },
+        "some-apms-application-performance-management": {
+          "type": "header",
+          "text": "Some APM's (Application Performance Management)",
+          "value": "some-apms-application-performance-management",
+          "line": 12,
+          "column": 0
+        },
+        "some-standard-profilers": {
+          "type": "header",
+          "text": "Some Standard Profilers",
+          "value": "some-standard-profilers",
+          "line": 21,
+          "column": 0
+        },
+        "other-visualization-profiling-tools": {
+          "type": "header",
+          "text": "Other visualization profiling tools",
+          "value": "other-visualization-profiling-tools",
+          "line": 25,
+          "column": 0
+        },
+        "new-relic": {
+          "type": "header",
+          "text": "New Relic",
+          "value": "new-relic",
+          "line": 33,
+          "column": 0
+        },
+        "considerations": {
+          "type": "header",
+          "text": "Considerations",
+          "value": "considerations",
+          "line": 35,
+          "column": 0
+        },
+        "installation": {
+          "type": "header",
+          "text": "Installation",
+          "value": "installation",
+          "line": 48,
+          "column": 0
+        },
+        "using-autocannon": {
+          "type": "header",
+          "text": "Using Autocannon",
+          "value": "using-autocannon",
+          "line": 53,
+          "column": 0
+        },
+        "test-1": {
+          "type": "header",
+          "text": "Test 1",
+          "value": "test-1",
+          "line": 63,
+          "column": 0
+        },
+        "conclusions": {
+          "type": "header",
+          "text": "Conclusions",
+          "value": "conclusions",
+          "line": 101,
+          "column": 0
+        },
+        "profiling-with-clinicjs": {
+          "type": "header",
+          "text": "Profiling with ClinicJS",
+          "value": "profiling-with-clinicjs",
+          "line": 105,
+          "column": 0
+        },
+        "flame": {
+          "type": "header",
+          "text": "Flame",
+          "value": "flame",
+          "line": 107,
+          "column": 0
+        },
+        "conclusion": {
+          "type": "header",
+          "text": "Conclusion",
+          "value": "conclusion",
+          "line": 127,
+          "column": 0
+        },
+        "doctor": {
+          "type": "header",
+          "text": "Doctor",
+          "value": "doctor",
+          "line": 131,
+          "column": 0
+        },
+        "bubbleproof": {
+          "type": "header",
+          "text": "bubbleproof",
+          "value": "bubbleproof",
+          "line": 148,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.node-js.profiling",
+      "updated": 1621708474804,
+      "created": 1621708234673,
+      "parent": "dec2b4d3-ff94-4735-8797-0a65986de197",
+      "children": [],
+      "data": {},
+      "contentHash": "c56cfa928e68418a11e1e6db42a40a25",
+      "custom": {}
+    },
+    "394eb99d-c9b7-41db-ad62-e4c3c8509407": {
+      "id": "394eb99d-c9b7-41db-ad62-e4c3c8509407",
+      "title": "Process",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "how-to-use-it": {
+          "type": "header",
+          "text": "How to use it",
+          "value": "how-to-use-it",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.node-js.process",
+      "updated": 1621708209994,
+      "created": 1621708196212,
+      "parent": "dec2b4d3-ff94-4735-8797-0a65986de197",
+      "children": [],
+      "data": {},
+      "contentHash": "a4761fcf97ffec4e61971b45cbe541fd",
+      "custom": {}
+    },
+    "1847ce5f-bb55-468c-b97d-dd888e1c1231": {
+      "id": "1847ce5f-bb55-468c-b97d-dd888e1c1231",
+      "title": "Node 14",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "why-should-i-use-it": {
+          "type": "header",
+          "text": "Why should I use it?",
+          "value": "why-should-i-use-it",
+          "line": 8,
+          "column": 0
+        },
+        "references": {
+          "type": "header",
+          "text": "References",
+          "value": "references",
+          "line": 12,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.node-js.node-14",
+      "updated": 1621893157254,
+      "created": 1621820040693,
+      "parent": "dec2b4d3-ff94-4735-8797-0a65986de197",
+      "children": [],
+      "data": {},
+      "contentHash": "28b6362d72d91c398724497e2315a450",
+      "custom": {}
+    },
+    "55c570f1-f3bd-41dd-9279-34f8d623c0df": {
+      "id": "55c570f1-f3bd-41dd-9279-34f8d623c0df",
+      "title": "Nginx Example",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "programming.javascript.node-js.nginx-example",
+            "id": "55c570f1-f3bd-41dd-9279-34f8d623c0df",
+            "vaultName": "programming"
+          },
+          "value": "networking.nginx",
+          "alias": "networking.nginx",
+          "position": {
+            "start": {
+              "line": 4,
+              "column": 1,
+              "offset": 19
+            },
+            "end": {
+              "line": 4,
+              "column": 21,
+              "offset": 39
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "networking.nginx"
+          }
+        },
+        {
+          "type": "ref",
+          "from": {
+            "fname": "programming.javascript.node-js.nginx-example",
+            "id": "55c570f1-f3bd-41dd-9279-34f8d623c0df",
+            "vaultName": "programming"
+          },
+          "value": "networking.nginx",
+          "position": {
+            "start": {
+              "line": 8,
+              "column": 1,
+              "offset": 53
+            },
+            "end": {
+              "line": 8,
+              "column": 61,
+              "offset": 113
+            },
+            "indent": []
+          },
+          "xvault": true,
+          "to": {
+            "fname": "networking.nginx",
+            "anchorHeader": "example-with-node",
+            "vaultName": "networking"
+          }
+        }
+      ],
+      "anchors": {
+        "what-is-nginx": {
+          "type": "header",
+          "text": "What is NGINX",
+          "value": "what-is-nginx",
+          "line": 8,
+          "column": 0
+        },
+        "example": {
+          "type": "header",
+          "text": "Example",
+          "value": "example",
+          "line": 12,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.node-js.nginx-example",
+      "updated": 1621708136742,
+      "created": 1621707816331,
+      "parent": "dec2b4d3-ff94-4735-8797-0a65986de197",
+      "children": [],
+      "data": {},
+      "contentHash": "3f45d8354496a19bc9b1ad85ee1d6ed0",
+      "custom": {}
+    },
+    "4df19af7-cb3d-4fbc-a1b1-fafa17b9bffd": {
+      "id": "4df19af7-cb3d-4fbc-a1b1-fafa17b9bffd",
+      "title": "Express",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "create-a-static-server": {
+          "type": "header",
+          "text": "Create a static server",
+          "value": "create-a-static-server",
+          "line": 8,
+          "column": 0
+        },
+        "aditional-information": {
+          "type": "header",
+          "text": "Aditional Information",
+          "value": "aditional-information",
+          "line": 25,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.node-js.express",
+      "updated": 1621707441948,
+      "created": 1621707420735,
+      "parent": "dec2b4d3-ff94-4735-8797-0a65986de197",
+      "children": [],
+      "data": {},
+      "contentHash": "9815b8445f1c118cdc15ad66bef45171",
+      "custom": {}
+    },
+    "8240e3b4-8760-43bf-8de3-f3c28c8a4af3": {
+      "id": "8240e3b4-8760-43bf-8de3-f3c28c8a4af3",
+      "title": "Examples",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "programming.javascript.node-js.examples",
+      "updated": 1621818037015,
+      "created": 1621818037015,
+      "parent": "dec2b4d3-ff94-4735-8797-0a65986de197",
+      "children": [
+        "eab807bc-1675-468a-b37e-5acc15d35ff0"
+      ],
+      "data": {},
+      "contentHash": "883738ed04314f622e88e724b4e49b09",
+      "stub": false,
+      "custom": {
+        "stub": true
+      }
+    },
+    "eab807bc-1675-468a-b37e-5acc15d35ff0": {
+      "id": "eab807bc-1675-468a-b37e-5acc15d35ff0",
+      "title": "Server without Frameworks",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "example": {
+          "type": "header",
+          "text": "Example",
+          "value": "example",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.node-js.examples.server-without-frameworks",
+      "updated": 1621708780421,
+      "created": 1621708775808,
+      "parent": "8240e3b4-8760-43bf-8de3-f3c28c8a4af3",
+      "children": [],
+      "data": {},
+      "contentHash": "c4fc8f166b26efaa13bcc6902238966d",
+      "custom": {}
+    },
+    "d43e7547-5709-4155-b0b4-89a37b586844": {
+      "id": "d43e7547-5709-4155-b0b4-89a37b586844",
+      "title": "Error Handling",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "custom-errors": {
+          "type": "header",
+          "text": "Custom Errors",
+          "value": "custom-errors",
+          "line": 8,
+          "column": 0
+        },
+        "aditional-information": {
+          "type": "header",
+          "text": "Aditional Information",
+          "value": "aditional-information",
+          "line": 12,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.node-js.error-handling",
+      "updated": 1621707479054,
+      "created": 1621707473881,
+      "parent": "dec2b4d3-ff94-4735-8797-0a65986de197",
+      "children": [],
+      "data": {},
+      "contentHash": "f5ca17ef0cb3612a14a4baa11cf377b2",
+      "custom": {}
+    },
+    "d69aee32-573c-4b59-abcd-d6cfe3ded443": {
+      "id": "d69aee32-573c-4b59-abcd-d6cfe3ded443",
+      "title": "Clusters",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "pm2": {
+          "type": "header",
+          "text": "PM2",
+          "value": "pm2",
+          "line": 8,
+          "column": 0
+        },
+        "installation": {
+          "type": "header",
+          "text": "Installation",
+          "value": "installation",
+          "line": 17,
+          "column": 0
+        },
+        "usefull-comands": {
+          "type": "header",
+          "text": "Usefull Comands",
+          "value": "usefull-comands",
+          "line": 24,
+          "column": 0
+        },
+        "cluster-module": {
+          "type": "header",
+          "text": "Cluster Module",
+          "value": "cluster-module",
+          "line": 41,
+          "column": 0
+        },
+        "aditional-information": {
+          "type": "header",
+          "text": "Aditional Information",
+          "value": "aditional-information",
+          "line": 100,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.node-js.clusters",
+      "updated": 1621707401948,
+      "created": 1621707325747,
+      "parent": "dec2b4d3-ff94-4735-8797-0a65986de197",
+      "children": [],
+      "data": {},
+      "contentHash": "479c6863e2c7bd5bbc190b93e42492e1",
+      "custom": {}
+    },
+    "73d28d3f-0f79-4683-95d1-7173f1c4bea2": {
+      "id": "73d28d3f-0f79-4683-95d1-7173f1c4bea2",
+      "title": "Jam Stack",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "gatsby": {
+          "type": "header",
+          "text": "Gatsby",
+          "value": "gatsby",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.jam-stack",
+      "updated": 1621708926165,
+      "created": 1621708880619,
+      "parent": "ce6e9d6f-33bc-4eb6-aa8d-773740ff1a16",
+      "children": [],
+      "data": {},
+      "contentHash": "1ae608abb87476cb162136d557f92a34",
+      "custom": {}
+    },
+    "MIzoslKKMEY2b67C_r0vE": {
+      "id": "MIzoslKKMEY2b67C_r0vE",
+      "title": "Functions",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "programming.javascript.functions",
+      "updated": 1626059933551,
+      "created": 1626059933551,
+      "parent": "ce6e9d6f-33bc-4eb6-aa8d-773740ff1a16",
+      "children": [
+        "p1WUeVyju973efqy",
+        "MDoQi_1oH6-j6e1jWYV6x",
+        "d4cb4ba7-5cf8-4e05-96ae-e0e238da53e7"
+      ],
+      "data": {},
+      "contentHash": "e5056d55f397a88018b67d46326cfecf",
+      "stub": false,
+      "custom": {
+        "stub": true
+      }
+    },
+    "d4cb4ba7-5cf8-4e05-96ae-e0e238da53e7": {
+      "id": "d4cb4ba7-5cf8-4e05-96ae-e0e238da53e7",
+      "title": "Scope",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "global-scope": {
+          "type": "header",
+          "text": "Global Scope",
+          "value": "global-scope",
+          "line": 8,
+          "column": 0
+        },
+        "execution-context": {
+          "type": "header",
+          "text": "Execution context",
+          "value": "execution-context",
+          "line": 12,
+          "column": 0
+        },
+        "lexical-scope": {
+          "type": "header",
+          "text": "Lexical Scope",
+          "value": "lexical-scope",
+          "line": 16,
+          "column": 0
+        },
+        "clousure": {
+          "type": "header",
+          "text": "Clousure",
+          "value": "clousure",
+          "line": 20,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.functions.scope",
+      "updated": 1621708978574,
+      "created": 1621708963632,
+      "parent": "MIzoslKKMEY2b67C_r0vE",
+      "children": [],
+      "data": {},
+      "contentHash": "830ff6c2a86cbac509c7f00bef482e1d",
+      "custom": {}
+    },
+    "MDoQi_1oH6-j6e1jWYV6x": {
+      "id": "MDoQi_1oH6-j6e1jWYV6x",
+      "title": "Call, apply and bind",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "call-apply-and-bind": {
+          "type": "header",
+          "text": "Call, apply and bind",
+          "value": "call-apply-and-bind",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.functions.bind-call-apply",
+      "updated": 1625951722646,
+      "created": 1625951722646,
+      "parent": "MIzoslKKMEY2b67C_r0vE",
+      "children": [],
+      "data": {},
+      "contentHash": "39a37840eb7a95911482c69d006e557f",
+      "custom": {}
+    },
+    "p1WUeVyju973efqy": {
+      "id": "p1WUeVyju973efqy",
+      "title": "Arrow",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "programming.javascript.functions.arrow",
+      "updated": 1626327236193,
+      "created": 1626327236193,
+      "parent": "MIzoslKKMEY2b67C_r0vE",
+      "children": [],
+      "data": {},
+      "contentHash": "cda0002386cb9aeff330d882a365ef14",
+      "custom": {}
+    },
+    "231a4ba4-a7bf-45b6-9092-b5ba810d4039": {
+      "id": "231a4ba4-a7bf-45b6-9092-b5ba810d4039",
+      "title": "Examples",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "programming.javascript.examples",
+      "updated": 1621709007553,
+      "created": 1621709007553,
+      "parent": "ce6e9d6f-33bc-4eb6-aa8d-773740ff1a16",
+      "children": [
+        "5bd6923f-18c2-481c-ac65-68e619c9cf34",
+        "f1937430-5723-4027-ad2d-b41b64443950"
+      ],
+      "data": {},
+      "contentHash": "fa6e228b940df2e063087d99bea9d9c5",
+      "custom": {}
+    },
+    "f1937430-5723-4027-ad2d-b41b64443950": {
+      "id": "f1937430-5723-4027-ad2d-b41b64443950",
+      "title": "Search Engine",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "usefull-links": {
+          "type": "header",
+          "text": "Usefull links",
+          "value": "usefull-links",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.examples.search-engine",
+      "updated": 1621709047915,
+      "created": 1621709014303,
+      "parent": "231a4ba4-a7bf-45b6-9092-b5ba810d4039",
+      "children": [],
+      "data": {},
+      "contentHash": "6874c543174cb9f9de22c38cff26b573",
+      "custom": {}
+    },
+    "5bd6923f-18c2-481c-ac65-68e619c9cf34": {
+      "id": "5bd6923f-18c2-481c-ac65-68e619c9cf34",
+      "title": "Create Geometrix Figures",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "usefull-links": {
+          "type": "header",
+          "text": "Usefull Links",
+          "value": "usefull-links",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.examples.create-geometrix-figures",
+      "updated": 1621709124997,
+      "created": 1621709113620,
+      "parent": "231a4ba4-a7bf-45b6-9092-b5ba810d4039",
+      "children": [],
+      "data": {},
+      "contentHash": "1f5d9e546a0f1fe485f632c19571ac9c",
+      "custom": {}
+    },
+    "s3JfSxaehW1ogwof2n8MC": {
+      "id": "s3JfSxaehW1ogwof2n8MC",
+      "title": "Arrays",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "arrays": {
+          "type": "header",
+          "text": "Arrays",
+          "value": "arrays",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "programming.javascript.arrays",
+      "updated": 1625952093353,
+      "created": 1625952007547,
+      "parent": "ce6e9d6f-33bc-4eb6-aa8d-773740ff1a16",
+      "children": [],
+      "data": {},
+      "contentHash": "ee862b2c85bf378c559d23a49447fc74",
+      "custom": {}
+    },
+    "b9f47610-404c-4b38-9f3b-6b4b83f53e7a": {
+      "id": "b9f47610-404c-4b38-9f3b-6b4b83f53e7a",
+      "title": "Collaborative",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "programming.collaborative",
+      "updated": 1625874001261,
+      "created": 1621818037004,
+      "parent": "9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8",
+      "children": [
+        "d5277a54-dcf8-40a1-9c67-a58d3ab9794c"
+      ],
+      "data": {},
+      "contentHash": "f80c7d6939cd736c6c64439986fe740d",
+      "stub": false,
+      "custom": {
+        "stub": true
+      }
+    },
+    "d5277a54-dcf8-40a1-9c67-a58d3ab9794c": {
+      "id": "d5277a54-dcf8-40a1-9c67-a58d3ab9794c",
+      "title": "Git",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "programming.collaborative.git",
+      "updated": 1621709259943,
+      "created": 1621709178396,
+      "parent": "b9f47610-404c-4b38-9f3b-6b4b83f53e7a",
+      "children": [
+        "RQG3FjKttG4YVbGmhnwO9",
+        "533f3444-2b18-41f0-9284-c31d87eedd08",
+        "5ffa1381-0b01-4656-8ad8-1a226133dec7"
+      ],
+      "data": {},
+      "contentHash": "19930eb6afe809ac77f96f6e6521a19d",
+      "custom": {}
+    },
+    "5ffa1381-0b01-4656-8ad8-1a226133dec7": {
+      "id": "5ffa1381-0b01-4656-8ad8-1a226133dec7",
+      "title": "Squash",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "programming.collaborative.git.squash",
+      "updated": 1625873874346,
+      "created": 1621709278345,
+      "parent": "d5277a54-dcf8-40a1-9c67-a58d3ab9794c",
+      "children": [],
+      "data": {},
+      "contentHash": "19a2ead1f3fc183ac5ea91302b4ace01",
+      "custom": {}
+    },
+    "533f3444-2b18-41f0-9284-c31d87eedd08": {
+      "id": "533f3444-2b18-41f0-9284-c31d87eedd08",
+      "title": "Multiple Accounts",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "reference": {
+          "type": "header",
+          "text": "Reference",
+          "value": "reference",
+          "line": 22,
+          "column": 0
+        }
+      },
+      "fname": "programming.collaborative.git.multiple-accounts",
+      "updated": 1621709268301,
+      "created": 1621709263959,
+      "parent": "d5277a54-dcf8-40a1-9c67-a58d3ab9794c",
+      "children": [],
+      "data": {},
+      "contentHash": "00e13a407149a7464726ffd8d6836e8d",
+      "custom": {}
+    },
+    "RQG3FjKttG4YVbGmhnwO9": {
+      "id": "RQG3FjKttG4YVbGmhnwO9",
+      "title": "Gitflow",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "gitflow": {
+          "type": "header",
+          "text": "Gitflow",
+          "value": "gitflow",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "programming.collaborative.git.gitflow",
+      "updated": 1625874147018,
+      "created": 1625874023547,
+      "parent": "d5277a54-dcf8-40a1-9c67-a58d3ab9794c",
+      "children": [],
+      "data": {},
+      "contentHash": "9cb0f5edddaec7a17e5e3f82751a3622",
+      "custom": {}
+    },
+    "605e397f-ef56-4e95-b71a-b2c9a73bece0": {
+      "id": "605e397f-ef56-4e95-b71a-b2c9a73bece0",
+      "title": "Android",
+      "vault": {
+        "fsPath": "programming",
+        "name": "programming"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "getting-started": {
+          "type": "header",
+          "text": "Getting started",
+          "value": "getting-started",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "programming.android",
+      "updated": 1622780446761,
+      "created": 1622780397622,
+      "parent": "9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8",
+      "children": [],
+      "data": {},
+      "contentHash": "4c6e390c0660de44faa266b51591cff6",
+      "custom": {}
+    },
+    "d824c890-9817-49b3-ba11-36bc6c166015": {
+      "id": "d824c890-9817-49b3-ba11-36bc6c166015",
+      "title": "Dev Ops",
+      "vault": {
+        "fsPath": "dev-ops",
+        "name": "dev-ops"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "dev-ops",
+      "updated": 1621703001524,
+      "created": 1621703001525,
+      "parent": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+      "children": [
+        "a59959ae-60b2-449b-baec-96ccb7a1b515"
+      ],
+      "data": {},
+      "contentHash": "04fd4d12e44d0dda2157300c779a5225",
+      "custom": {
+        "stub": false
+      }
+    },
+    "a59959ae-60b2-449b-baec-96ccb7a1b515": {
+      "id": "a59959ae-60b2-449b-baec-96ccb7a1b515",
+      "title": "Terraform",
+      "vault": {
+        "fsPath": "dev-ops",
+        "name": "dev-ops"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "dev-ops.terraform",
+      "updated": 1621702887821,
+      "created": 1621702753995,
+      "parent": "d824c890-9817-49b3-ba11-36bc6c166015",
+      "children": [],
+      "data": {},
+      "contentHash": "4074d3de3aeaf80aede03fda62c26b7c",
+      "custom": {}
+    },
+    "28e19609-7af9-4cfe-8ea3-a7341e6709e8": {
+      "id": "28e19609-7af9-4cfe-8ea3-a7341e6709e8",
+      "title": "Operating Systems",
+      "vault": {
+        "fsPath": "operating-systems",
+        "name": "operating-systems"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "operating-systems",
+      "updated": 1621703168785,
+      "created": 1621703001518,
+      "parent": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+      "children": [
+        "2TutlFbCUJW5WSfB2CbCA",
+        "a104c545-bf72-4e5e-a3b1-ec7db40358bf",
+        "4eb5b7e5-c4d0-4fca-9675-a64459191509",
+        "030640f0-7df3-4bf1-b8b1-137d6c5a0bd3",
+        "74e7c8bb-61f0-48bd-9b62-e0ce971f98db"
+      ],
+      "data": {},
+      "contentHash": "192a6678888f6c709643bd4a1195d76a",
+      "custom": {
+        "stub": false
+      }
+    },
+    "74e7c8bb-61f0-48bd-9b62-e0ce971f98db": {
+      "id": "74e7c8bb-61f0-48bd-9b62-e0ce971f98db",
+      "title": "Windows",
+      "vault": {
+        "fsPath": "operating-systems",
+        "name": "operating-systems"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "operating-systems.windows",
+      "updated": 1621706644588,
+      "created": 1621706644588,
+      "parent": "28e19609-7af9-4cfe-8ea3-a7341e6709e8",
+      "children": [
+        "b4f4e9e4-501a-4fc8-bebf-ea289a66f3a6",
+        "e60b3995-d638-4190-a43f-05bc77c93e13"
+      ],
+      "data": {},
+      "contentHash": "58c4315c0b97445f89fd69938161b6c5",
+      "custom": {}
+    },
+    "e60b3995-d638-4190-a43f-05bc77c93e13": {
+      "id": "e60b3995-d638-4190-a43f-05bc77c93e13",
+      "title": "Kill Current Process",
+      "vault": {
+        "fsPath": "operating-systems",
+        "name": "operating-systems"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "kill-current-process": {
+          "type": "header",
+          "text": "Kill current process",
+          "value": "kill-current-process",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "operating-systems.windows.kill-current-process",
+      "updated": 1621706701773,
+      "created": 1621706682508,
+      "parent": "74e7c8bb-61f0-48bd-9b62-e0ce971f98db",
+      "children": [],
+      "data": {},
+      "contentHash": "b2f99b258aff64b1630de81da2a28013",
+      "custom": {}
+    },
+    "b4f4e9e4-501a-4fc8-bebf-ea289a66f3a6": {
+      "id": "b4f4e9e4-501a-4fc8-bebf-ea289a66f3a6",
+      "title": "Bulk Delete",
+      "vault": {
+        "fsPath": "operating-systems",
+        "name": "operating-systems"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "operating-systems.windows.bulk-delete",
+      "updated": 1621706656393,
+      "created": 1621706656393,
+      "parent": "74e7c8bb-61f0-48bd-9b62-e0ce971f98db",
+      "children": [],
+      "data": {},
+      "contentHash": "5508d2e3ff525956cf8d7456b0e066cb",
+      "custom": {}
+    },
+    "030640f0-7df3-4bf1-b8b1-137d6c5a0bd3": {
+      "id": "030640f0-7df3-4bf1-b8b1-137d6c5a0bd3",
+      "title": "Monitoring",
+      "vault": {
+        "fsPath": "operating-systems",
+        "name": "operating-systems"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "operating-systems.monitoring",
+      "updated": 1621894148293,
+      "created": 1621894148293,
+      "parent": "28e19609-7af9-4cfe-8ea3-a7341e6709e8",
+      "children": [
+        "3c4e65d2-d0ca-4450-8073-dc1a39bddc29"
+      ],
+      "data": {},
+      "contentHash": "9bd2a5db29e06fa8d44105bc52f21c3a",
+      "custom": {}
+    },
+    "3c4e65d2-d0ca-4450-8073-dc1a39bddc29": {
+      "id": "3c4e65d2-d0ca-4450-8073-dc1a39bddc29",
+      "title": "Datadog",
+      "vault": {
+        "fsPath": "operating-systems",
+        "name": "operating-systems"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "operating-systems.monitoring.datadog",
+            "id": "3c4e65d2-d0ca-4450-8073-dc1a39bddc29",
+            "vaultName": "operating-systems"
+          },
+          "value": "operating-systems.kubernetes.logging",
+          "alias": "FluentBit",
+          "position": {
+            "start": {
+              "line": 2,
+              "column": 240,
+              "offset": 240
+            },
+            "end": {
+              "line": 2,
+              "column": 304,
+              "offset": 304
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "operating-systems.kubernetes.logging",
+            "anchorHeader": "fluent-bit"
+          }
+        }
+      ],
+      "anchors": {
+        "references": {
+          "type": "header",
+          "text": "References",
+          "value": "references",
+          "line": 10,
+          "column": 0
+        }
+      },
+      "fname": "operating-systems.monitoring.datadog",
+      "updated": 1621894629412,
+      "created": 1621894154053,
+      "parent": "030640f0-7df3-4bf1-b8b1-137d6c5a0bd3",
+      "children": [],
+      "data": {},
+      "contentHash": "8772015c2c50375ac15ef17b8dfbec8c",
+      "custom": {}
+    },
+    "4eb5b7e5-c4d0-4fca-9675-a64459191509": {
+      "id": "4eb5b7e5-c4d0-4fca-9675-a64459191509",
+      "title": "Linux",
+      "vault": {
+        "fsPath": "operating-systems",
+        "name": "operating-systems"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "operating-systems.linux",
+      "updated": 1621708830558,
+      "created": 1621708830558,
+      "parent": "28e19609-7af9-4cfe-8ea3-a7341e6709e8",
+      "children": [
+        "6b4343d6-feba-4187-b61a-92ebb87c156e"
+      ],
+      "data": {},
+      "contentHash": "f08576581359923c7de4f67213bca92b",
+      "custom": {}
+    },
+    "6b4343d6-feba-4187-b61a-92ebb87c156e": {
+      "id": "6b4343d6-feba-4187-b61a-92ebb87c156e",
+      "title": "Compress Uncompress",
+      "vault": {
+        "fsPath": "operating-systems",
+        "name": "operating-systems"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "links": {
+          "type": "header",
+          "text": "Links",
+          "value": "links",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "operating-systems.linux.compress-uncompress",
+      "updated": 1621708852895,
+      "created": 1621708845244,
+      "parent": "4eb5b7e5-c4d0-4fca-9675-a64459191509",
+      "children": [],
+      "data": {},
+      "contentHash": "bd1013f6ee351739673cf829809e0b0b",
+      "custom": {}
+    },
+    "a104c545-bf72-4e5e-a3b1-ec7db40358bf": {
+      "id": "a104c545-bf72-4e5e-a3b1-ec7db40358bf",
+      "title": "Kubernetes",
+      "vault": {
+        "fsPath": "operating-systems",
+        "name": "operating-systems"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "kubernetes": {
+          "type": "header",
+          "text": "Kubernetes",
+          "value": "kubernetes",
+          "line": 9,
+          "column": 0
+        },
+        "working-dev-environments": {
+          "type": "header",
+          "text": "Working dev environments",
+          "value": "working-dev-environments",
+          "line": 11,
+          "column": 0
+        },
+        "gotchas": {
+          "type": "header",
+          "text": "Gotchas",
+          "value": "gotchas",
+          "line": 15,
+          "column": 0
+        }
+      },
+      "fname": "operating-systems.kubernetes",
+      "updated": 1622002408193,
+      "created": 1621703001520,
+      "parent": "28e19609-7af9-4cfe-8ea3-a7341e6709e8",
+      "children": [
+        "bb0aabc9-d22e-4f1d-905d-96853fd3f8f7",
+        "c747004d-6ec4-4475-a696-fac341c1a707"
+      ],
+      "data": {},
+      "contentHash": "040a7187fabed6b1c33a54d55dabe7e6",
+      "custom": {
+        "stub": false
+      }
+    },
+    "c747004d-6ec4-4475-a696-fac341c1a707": {
+      "id": "c747004d-6ec4-4475-a696-fac341c1a707",
+      "title": "Team Collaboration",
+      "vault": {
+        "fsPath": "operating-systems",
+        "name": "operating-systems"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "planning": {
+          "type": "header",
+          "text": "Planning",
+          "value": "planning",
+          "line": 8,
+          "column": 0
+        },
+        "kubernetes-development-tools": {
+          "type": "header",
+          "text": "Kubernetes development tools",
+          "value": "kubernetes-development-tools",
+          "line": 12,
+          "column": 0
+        },
+        "ideas": {
+          "type": "header",
+          "text": "Ideas",
+          "value": "ideas",
+          "line": 21,
+          "column": 0
+        },
+        "podcast": {
+          "type": "header",
+          "text": "Podcast",
+          "value": "podcast",
+          "line": 28,
+          "column": 0
+        },
+        "charts": {
+          "type": "header",
+          "text": "Charts",
+          "value": "charts",
+          "line": 61,
+          "column": 0
+        },
+        "options": {
+          "type": "header",
+          "text": "Options",
+          "value": "options",
+          "line": 66,
+          "column": 0
+        },
+        "questions": {
+          "type": "header",
+          "text": "Questions",
+          "value": "questions",
+          "line": 70,
+          "column": 0
+        },
+        "references": {
+          "type": "header",
+          "text": "References",
+          "value": "references",
+          "line": 74,
+          "column": 0
+        }
+      },
+      "fname": "operating-systems.kubernetes.team-collaboration",
+      "updated": 1622002923195,
+      "created": 1621908525881,
+      "parent": "a104c545-bf72-4e5e-a3b1-ec7db40358bf",
+      "children": [
+        "1769ba5b-d9f2-4564-8a8e-a4c4f32169c7",
+        "f0b0b3e1-1a9f-4fc3-811c-5d96f3aba983"
+      ],
+      "data": {},
+      "contentHash": "b351443807a366591de70dc6aeb93c0a",
+      "custom": {}
+    },
+    "f0b0b3e1-1a9f-4fc3-811c-5d96f3aba983": {
+      "id": "f0b0b3e1-1a9f-4fc3-811c-5d96f3aba983",
+      "title": "Telepresence 1",
+      "vault": {
+        "fsPath": "operating-systems",
+        "name": "operating-systems"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "spike-telepresence-v1": {
+          "type": "header",
+          "text": "SPIKE Telepresence V1",
+          "value": "spike-telepresence-v1",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "operating-systems.kubernetes.team-collaboration.telepresence-1",
+      "updated": 1622083033990,
+      "created": 1622002563663,
+      "parent": "c747004d-6ec4-4475-a696-fac341c1a707",
+      "children": [],
+      "data": {},
+      "contentHash": "458c0ab5d4bce41a60dd02b978f1233e",
+      "custom": {}
+    },
+    "1769ba5b-d9f2-4564-8a8e-a4c4f32169c7": {
+      "id": "1769ba5b-d9f2-4564-8a8e-a4c4f32169c7",
+      "title": "Devspace",
+      "vault": {
+        "fsPath": "operating-systems",
+        "name": "operating-systems"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "development": {
+          "type": "header",
+          "text": "Development",
+          "value": "development",
+          "line": 14,
+          "column": 0
+        },
+        "1-time-steps": {
+          "type": "header",
+          "text": "1-Time steps",
+          "value": "1-time-steps",
+          "line": 33,
+          "column": 0
+        },
+        "database": {
+          "type": "header",
+          "text": "Database",
+          "value": "database",
+          "line": 69,
+          "column": 0
+        },
+        "logging": {
+          "type": "header",
+          "text": "Logging",
+          "value": "logging",
+          "line": 75,
+          "column": 0
+        },
+        "environment-variables": {
+          "type": "header",
+          "text": "Environment variables",
+          "value": "environment-variables",
+          "line": 81,
+          "column": 0
+        },
+        "debugging-with-vs-code": {
+          "type": "header",
+          "text": "Debugging with VS Code",
+          "value": "debugging-with-vs-code",
+          "line": 85,
+          "column": 0
+        },
+        "config-file-sample": {
+          "type": "header",
+          "text": "Config file sample",
+          "value": "config-file-sample",
+          "line": 112,
+          "column": 0
+        },
+        "faqs": {
+          "type": "header",
+          "text": "FAQs",
+          "value": "faqs",
+          "line": 173,
+          "column": 0
+        }
+      },
+      "fname": "operating-systems.kubernetes.team-collaboration.devspace",
+      "updated": 1625873307295,
+      "created": 1622780489289,
+      "parent": "c747004d-6ec4-4475-a696-fac341c1a707",
+      "children": [],
+      "data": {},
+      "contentHash": "a4da1f0834c2a38d412fb12b54da2f84",
+      "custom": {}
+    },
+    "bb0aabc9-d22e-4f1d-905d-96853fd3f8f7": {
+      "id": "bb0aabc9-d22e-4f1d-905d-96853fd3f8f7",
+      "title": "Kubernetes Logging",
+      "vault": {
+        "fsPath": "operating-systems",
+        "name": "operating-systems"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [
+        {
+          "from": {
+            "fname": "operating-systems.monitoring.datadog",
+            "vaultName": "operating-systems"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 2,
+              "column": 240,
+              "offset": 240
+            },
+            "end": {
+              "line": 2,
+              "column": 304,
+              "offset": 304
+            },
+            "indent": []
+          },
+          "value": "operating-systems.kubernetes.logging"
+        }
+      ],
+      "anchors": {
+        "spike-kubernetes-logging": {
+          "type": "header",
+          "text": "SPIKE Kubernetes Logging",
+          "value": "spike-kubernetes-logging",
+          "line": 8,
+          "column": 0
+        },
+        "podcast": {
+          "type": "header",
+          "text": "Podcast",
+          "value": "podcast",
+          "line": 12,
+          "column": 0
+        },
+        "blogs": {
+          "type": "header",
+          "text": "Blogs",
+          "value": "blogs",
+          "line": 24,
+          "column": 0
+        },
+        "data-collector": {
+          "type": "header",
+          "text": "Data Collector",
+          "value": "data-collector",
+          "line": 32,
+          "column": 0
+        },
+        "fluent-bit": {
+          "type": "header",
+          "text": "Fluent Bit",
+          "value": "fluent-bit",
+          "line": 44,
+          "column": 0
+        },
+        "logging": {
+          "type": "header",
+          "text": "Logging",
+          "value": "logging",
+          "line": 79,
+          "column": 0
+        },
+        "roadblocks": {
+          "type": "header",
+          "text": "Roadblocks",
+          "value": "roadblocks",
+          "line": 85,
+          "column": 0
+        },
+        "ideas": {
+          "type": "header",
+          "text": "Ideas",
+          "value": "ideas",
+          "line": 89,
+          "column": 0
+        },
+        "references": {
+          "type": "header",
+          "text": "References",
+          "value": "references",
+          "line": 97,
+          "column": 0
+        }
+      },
+      "fname": "operating-systems.kubernetes.logging",
+      "updated": 1621702961234,
+      "created": 1621702944254,
+      "parent": "a104c545-bf72-4e5e-a3b1-ec7db40358bf",
+      "children": [],
+      "data": {},
+      "contentHash": "1be70c3cef1c391fa657cdcb66a0041e",
+      "custom": {}
+    },
+    "2TutlFbCUJW5WSfB2CbCA": {
+      "id": "2TutlFbCUJW5WSfB2CbCA",
+      "title": "Docker",
+      "vault": {
+        "fsPath": "operating-systems",
+        "name": "operating-systems"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "docker": {
+          "type": "header",
+          "text": "Docker",
+          "value": "docker",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "operating-systems.docker",
+      "updated": 1625873712835,
+      "created": 1625873357522,
+      "parent": "28e19609-7af9-4cfe-8ea3-a7341e6709e8",
+      "children": [],
+      "data": {},
+      "contentHash": "45bef4dae209d9eaef2e24a7cd1ea8de",
+      "custom": {}
+    },
+    "3e958243-cf77-44a4-8a90-fef2ec98ad43": {
+      "id": "3e958243-cf77-44a4-8a90-fef2ec98ad43",
+      "title": "Personal Growth",
+      "vault": {
+        "fsPath": "personal-growth",
+        "name": "personal-growth"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "personal-growth",
+      "updated": 1625894883086,
+      "created": 1621818036987,
+      "parent": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+      "children": [
+        "452aec26-69a5-453f-98fc-a345f0aa2237",
+        "cz7_eAnC3jsWQ-7iTph9E",
+        "e3983131-31fd-461a-bb13-0f6e215364ca"
+      ],
+      "data": {},
+      "contentHash": "0b3ef51781a2255fa5d1370d8b4f9693",
+      "stub": false,
+      "custom": {
+        "stub": true
+      }
+    },
+    "e3983131-31fd-461a-bb13-0f6e215364ca": {
+      "id": "e3983131-31fd-461a-bb13-0f6e215364ca",
+      "title": "Task Management",
+      "vault": {
+        "fsPath": "personal-growth",
+        "name": "personal-growth"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "use-full-links": {
+          "type": "header",
+          "text": "Use full Links",
+          "value": "use-full-links",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "personal-growth.task-management",
+      "updated": 1621706815177,
+      "created": 1621706777776,
+      "parent": "3e958243-cf77-44a4-8a90-fef2ec98ad43",
+      "children": [],
+      "data": {},
+      "contentHash": "b08c0bc4d4b9e9bd481711cc98892216",
+      "custom": {}
+    },
+    "cz7_eAnC3jsWQ-7iTph9E": {
+      "id": "cz7_eAnC3jsWQ-7iTph9E",
+      "title": "Personal Webpage",
+      "vault": {
+        "fsPath": "personal-growth",
+        "name": "personal-growth"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "inspiration": {
+          "type": "header",
+          "text": "Inspiration",
+          "value": "inspiration",
+          "line": 8,
+          "column": 0
+        },
+        "dev": {
+          "type": "header",
+          "text": "dev",
+          "value": "dev",
+          "line": 12,
+          "column": 0
+        },
+        "hosting": {
+          "type": "header",
+          "text": "Hosting",
+          "value": "hosting",
+          "line": 18,
+          "column": 0
+        },
+        "upload": {
+          "type": "header",
+          "text": "upload",
+          "value": "upload",
+          "line": 25,
+          "column": 0
+        },
+        "interesting": {
+          "type": "header",
+          "text": "Interesting",
+          "value": "interesting",
+          "line": 34,
+          "column": 0
+        }
+      },
+      "fname": "personal-growth.personal-webpage",
+      "updated": 1626045349074,
+      "created": 1626034617083,
+      "parent": "3e958243-cf77-44a4-8a90-fef2ec98ad43",
+      "children": [],
+      "data": {},
+      "contentHash": "8b8cdaceaa3eda5f717497cf308e8072",
+      "custom": {}
+    },
+    "452aec26-69a5-453f-98fc-a345f0aa2237": {
+      "id": "452aec26-69a5-453f-98fc-a345f0aa2237",
+      "title": "Digital Gardening",
+      "vault": {
+        "fsPath": "personal-growth",
+        "name": "personal-growth"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "inspiration": {
+          "type": "header",
+          "text": "Inspiration",
+          "value": "inspiration",
+          "line": 8,
+          "column": 0
+        },
+        "references": {
+          "type": "header",
+          "text": "References",
+          "value": "references",
+          "line": 14,
+          "column": 0
+        }
+      },
+      "fname": "personal-growth.digital-gardening",
+      "updated": 1621894038000,
+      "created": 1621893877114,
+      "parent": "3e958243-cf77-44a4-8a90-fef2ec98ad43",
+      "children": [],
+      "data": {},
+      "contentHash": "c925aa0fb3423a5230e92e85d62da35f",
+      "custom": {}
+    },
+    "8a285efb-1044-43b2-b86f-904ad3bf48fc": {
+      "id": "8a285efb-1044-43b2-b86f-904ad3bf48fc",
+      "title": "Databases",
+      "vault": {
+        "fsPath": "databases",
+        "name": "databases"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "introduction": {
+          "type": "header",
+          "text": "Introduction",
+          "value": "introduction",
+          "line": 9,
+          "column": 0
+        },
+        "basic-relational-concepts": {
+          "type": "header",
+          "text": "Basic relational concepts",
+          "value": "basic-relational-concepts",
+          "line": 15,
+          "column": 0
+        },
+        "normalization": {
+          "type": "header",
+          "text": "Normalization",
+          "value": "normalization",
+          "line": 24,
+          "column": 0
+        },
+        "nosql-basic-concepts": {
+          "type": "header",
+          "text": "NoSQL Basic Concepts",
+          "value": "nosql-basic-concepts",
+          "line": 79,
+          "column": 0
+        },
+        "types-of-nosql": {
+          "type": "header",
+          "text": "Types of NoSQL",
+          "value": "types-of-nosql",
+          "line": 86,
+          "column": 0
+        },
+        "acid": {
+          "type": "header",
+          "text": "ACID",
+          "value": "acid",
+          "line": 106,
+          "column": 0
+        }
+      },
+      "fname": "databases",
+      "updated": 1621709646409,
+      "created": 1621707701484,
+      "parent": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+      "children": [
+        "3e389eed-da91-4a54-bd83-2645161e58e0",
+        "83ea6a26-e3cd-4214-b35d-26c04710621e"
+      ],
+      "data": {},
+      "contentHash": "fde28129eb648cadfaebfe9b0037c509",
+      "custom": {
+        "stub": false
+      }
+    },
+    "83ea6a26-e3cd-4214-b35d-26c04710621e": {
+      "id": "83ea6a26-e3cd-4214-b35d-26c04710621e",
+      "title": "Postgres",
+      "vault": {
+        "fsPath": "databases",
+        "name": "databases"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "general-overview": {
+          "type": "header",
+          "text": "General Overview",
+          "value": "general-overview",
+          "line": 8,
+          "column": 0
+        },
+        "performance": {
+          "type": "header",
+          "text": "Performance",
+          "value": "performance",
+          "line": 26,
+          "column": 0
+        }
+      },
+      "fname": "databases.postgres",
+      "updated": 1621707184618,
+      "created": 1621706876486,
+      "parent": "8a285efb-1044-43b2-b86f-904ad3bf48fc",
+      "children": [],
+      "data": {},
+      "contentHash": "a016e4d4693bcc680da09e5335307bb7",
+      "custom": {}
+    },
+    "3e389eed-da91-4a54-bd83-2645161e58e0": {
+      "id": "3e389eed-da91-4a54-bd83-2645161e58e0",
+      "title": "Dynamodb",
+      "vault": {
+        "fsPath": "databases",
+        "name": "databases"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "general-overview": {
+          "type": "header",
+          "text": "General Overview",
+          "value": "general-overview",
+          "line": 8,
+          "column": 0
+        },
+        "basics": {
+          "type": "header",
+          "text": "Basics",
+          "value": "basics",
+          "line": 16,
+          "column": 0
+        },
+        "tables": {
+          "type": "header",
+          "text": "Tables",
+          "value": "tables",
+          "line": 23,
+          "column": 0
+        },
+        "data-types": {
+          "type": "header",
+          "text": "Data Types",
+          "value": "data-types",
+          "line": 30,
+          "column": 0
+        },
+        "consistency-model": {
+          "type": "header",
+          "text": "Consistency Model",
+          "value": "consistency-model",
+          "line": 42,
+          "column": 0
+        },
+        "capacity-units": {
+          "type": "header",
+          "text": "Capacity Units",
+          "value": "capacity-units",
+          "line": 52,
+          "column": 0
+        },
+        "partitions": {
+          "type": "header",
+          "text": "Partitions",
+          "value": "partitions",
+          "line": 58,
+          "column": 0
+        },
+        "indexes": {
+          "type": "header",
+          "text": "Indexes",
+          "value": "indexes",
+          "line": 68,
+          "column": 0
+        },
+        "secondary-indexes": {
+          "type": "header",
+          "text": "Secondary Indexes",
+          "value": "secondary-indexes",
+          "line": 72,
+          "column": 0
+        },
+        "should-you-use-dynamodb": {
+          "type": "header",
+          "text": "Should you use DynamoDB",
+          "value": "should-you-use-dynamodb",
+          "line": 78,
+          "column": 0
+        },
+        "best-practices": {
+          "type": "header",
+          "text": "Best Practices",
+          "value": "best-practices",
+          "line": 82,
+          "column": 0
+        },
+        "partition-cases": {
+          "type": "header",
+          "text": "Partition cases",
+          "value": "partition-cases",
+          "line": 86,
+          "column": 0
+        },
+        "dynamodb-keys": {
+          "type": "header",
+          "text": "DynamoDb keys",
+          "value": "dynamodb-keys",
+          "line": 101,
+          "column": 0
+        },
+        "hot-keys-or-partitions": {
+          "type": "header",
+          "text": "Hot keys or Partitions",
+          "value": "hot-keys-or-partitions",
+          "line": 115,
+          "column": 0
+        },
+        "design-patterns": {
+          "type": "header",
+          "text": "Design patterns",
+          "value": "design-patterns",
+          "line": 123,
+          "column": 0
+        },
+        "summary": {
+          "type": "header",
+          "text": "Summary",
+          "value": "summary",
+          "line": 127,
+          "column": 0
+        },
+        "usefull-links": {
+          "type": "header",
+          "text": "Usefull Links",
+          "value": "usefull-links",
+          "line": 139,
+          "column": 0
+        }
+      },
+      "fname": "databases.dynamodb",
+      "updated": 1626054210304,
+      "created": 1621709312456,
+      "parent": "8a285efb-1044-43b2-b86f-904ad3bf48fc",
+      "children": [],
+      "data": {},
+      "contentHash": "558b30723d8480398d22ecf9937e1db6",
+      "custom": {}
+    },
+    "4ad54c56-c118-4c77-b7a7-704b6e57579c": {
+      "id": "4ad54c56-c118-4c77-b7a7-704b6e57579c",
+      "title": "Networking",
+      "vault": {
+        "fsPath": "networking",
+        "name": "networking"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "networking",
+      "updated": 1621818036974,
+      "created": 1621818036974,
+      "parent": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+      "children": [
+        "5eb04dc2-7759-4fa7-845a-48043ffe2382"
+      ],
+      "data": {},
+      "contentHash": "8a5beef70c647d283d4ee2e9b94fbc29",
+      "stub": false,
+      "custom": {
+        "stub": true
+      }
+    },
+    "5eb04dc2-7759-4fa7-845a-48043ffe2382": {
+      "id": "5eb04dc2-7759-4fa7-845a-48043ffe2382",
+      "title": "Nginx",
+      "vault": {
+        "fsPath": "networking",
+        "name": "networking"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [
+        {
+          "from": {
+            "fname": "programming.javascript.node-js.nginx-example",
+            "vaultName": "programming"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 4,
+              "column": 1,
+              "offset": 19
+            },
+            "end": {
+              "line": 4,
+              "column": 21,
+              "offset": 39
+            },
+            "indent": []
+          },
+          "value": "networking.nginx"
+        },
+        {
+          "from": {
+            "fname": "programming.javascript.node-js.nginx-example",
+            "vaultName": "programming"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 8,
+              "column": 1,
+              "offset": 53
+            },
+            "end": {
+              "line": 8,
+              "column": 61,
+              "offset": 113
+            },
+            "indent": []
+          },
+          "value": "networking.nginx"
+        },
+        {
+          "from": {
+            "fname": "programming.javascript.node-js.security",
+            "vaultName": "programming"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 19,
+              "column": 1,
+              "offset": 374
+            },
+            "end": {
+              "line": 19,
+              "column": 54,
+              "offset": 427
+            },
+            "indent": []
+          },
+          "value": "networking.nginx"
+        }
+      ],
+      "anchors": {
+        "what-is-it": {
+          "type": "header",
+          "text": "What is it?",
+          "value": "what-is-it",
+          "line": 8,
+          "column": 0
+        },
+        "why-do-we-need-this-web-server": {
+          "type": "header",
+          "text": "Why do we need this web server?",
+          "value": "why-do-we-need-this-web-server",
+          "line": 18,
+          "column": 0
+        },
+        "avoid-running-our-nodejs-app-on-port-80": {
+          "type": "header",
+          "text": "Avoid running our Node.js app on port 80",
+          "value": "avoid-running-our-nodejs-app-on-port-80",
+          "line": 27,
+          "column": 0
+        },
+        "reverse-proxy": {
+          "type": "header",
+          "text": "Reverse proxy",
+          "value": "reverse-proxy",
+          "line": 35,
+          "column": 0
+        },
+        "load-balancer": {
+          "type": "header",
+          "text": "Load Balancer",
+          "value": "load-balancer",
+          "line": 43,
+          "column": 0
+        },
+        "differences": {
+          "type": "header",
+          "text": "Differences",
+          "value": "differences",
+          "line": 58,
+          "column": 0
+        },
+        "algorithm": {
+          "type": "header",
+          "text": "Algorithm",
+          "value": "algorithm",
+          "line": 62,
+          "column": 0
+        },
+        "example-with-node": {
+          "type": "header",
+          "text": "Example with Node",
+          "value": "example-with-node",
+          "line": 67,
+          "column": 0
+        },
+        "conclusion": {
+          "type": "header",
+          "text": "Conclusion",
+          "value": "conclusion",
+          "line": 131,
+          "column": 0
+        },
+        "aditional-information": {
+          "type": "header",
+          "text": "Aditional Information",
+          "value": "aditional-information",
+          "line": 135,
+          "column": 0
+        }
+      },
+      "fname": "networking.nginx",
+      "updated": 1621707866008,
+      "created": 1621707712304,
+      "parent": "4ad54c56-c118-4c77-b7a7-704b6e57579c",
+      "children": [],
+      "data": {},
+      "contentHash": "081e843b1b9891b56ecd1ef2cdc9da56",
+      "custom": {}
+    },
+    "dc9ce0b8-8551-4aaf-bcc8-309ad1c58b36": {
+      "id": "dc9ce0b8-8551-4aaf-bcc8-309ad1c58b36",
+      "title": "Computer Science",
+      "vault": {
+        "fsPath": "computer-science",
+        "name": "computer-science"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "computer-science",
+      "updated": 1621818199923,
+      "created": 1621818199923,
+      "parent": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+      "children": [
+        "e3ea12bb-f6e7-4506-a2ba-ac0ec0e91c54"
+      ],
+      "data": {},
+      "contentHash": "57e66ac36e8b29f07a90e3863e124872",
+      "custom": {}
+    },
+    "e3ea12bb-f6e7-4506-a2ba-ac0ec0e91c54": {
+      "id": "e3ea12bb-f6e7-4506-a2ba-ac0ec0e91c54",
+      "title": "Concepts",
+      "vault": {
+        "fsPath": "computer-science",
+        "name": "computer-science"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "computer-science.concepts",
+      "updated": 1621818216771,
+      "created": 1621818216771,
+      "parent": "dc9ce0b8-8551-4aaf-bcc8-309ad1c58b36",
+      "children": [
+        "28b61d94-259f-4e30-8285-957babc62de2",
+        "b3aa528f-cbca-4e00-ac88-6e3bd3e1c271"
+      ],
+      "data": {},
+      "contentHash": "2752e862e541b69745d38e23e914fa50",
+      "custom": {}
+    },
+    "b3aa528f-cbca-4e00-ac88-6e3bd3e1c271": {
+      "id": "b3aa528f-cbca-4e00-ac88-6e3bd3e1c271",
+      "title": "High Order Function",
+      "vault": {
+        "fsPath": "computer-science",
+        "name": "computer-science"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "what-is-it": {
+          "type": "header",
+          "text": "What is it?",
+          "value": "what-is-it",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "computer-science.concepts.high-order-function",
+      "updated": 1621818239651,
+      "created": 1621818232037,
+      "parent": "e3ea12bb-f6e7-4506-a2ba-ac0ec0e91c54",
+      "children": [],
+      "data": {},
+      "contentHash": "87781738c78b47fac7980b0524f119a1",
+      "custom": {}
+    },
+    "28b61d94-259f-4e30-8285-957babc62de2": {
+      "id": "28b61d94-259f-4e30-8285-957babc62de2",
+      "title": "First Class Function",
+      "vault": {
+        "fsPath": "computer-science",
+        "name": "computer-science"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "general-concept": {
+          "type": "header",
+          "text": "General Concept",
+          "value": "general-concept",
+          "line": 8,
+          "column": 0
+        },
+        "first-class-citizen": {
+          "type": "header",
+          "text": "First class citizen",
+          "value": "first-class-citizen",
+          "line": 17,
+          "column": 0
+        },
+        "example": {
+          "type": "header",
+          "text": "Example",
+          "value": "example",
+          "line": 21,
+          "column": 0
+        }
+      },
+      "fname": "computer-science.concepts.first-class-function",
+      "updated": 1621818272191,
+      "created": 1621818260946,
+      "parent": "e3ea12bb-f6e7-4506-a2ba-ac0ec0e91c54",
+      "children": [],
+      "data": {},
+      "contentHash": "0142df151cd7fec7104008fec85ff038",
+      "custom": {}
+    },
+    "47e06771-c344-4012-8428-07fea574a55e": {
+      "id": "47e06771-c344-4012-8428-07fea574a55e",
+      "title": "Books",
+      "vault": {
+        "fsPath": "books",
+        "name": "books"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "books",
+      "updated": 1621818329050,
+      "created": 1621818329050,
+      "parent": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+      "children": [
+        "edda0772-ac78-404b-853a-81349ec06775"
+      ],
+      "data": {},
+      "contentHash": "e39106612f43c82f3689c51de7ad210d",
+      "custom": {}
+    },
+    "edda0772-ac78-404b-853a-81349ec06775": {
+      "id": "edda0772-ac78-404b-853a-81349ec06775",
+      "title": "Clean Code",
+      "vault": {
+        "fsPath": "books",
+        "name": "books"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "meaningful-names": {
+          "type": "header",
+          "text": "Meaningful Names",
+          "value": "meaningful-names",
+          "line": 8,
+          "column": 0
+        },
+        "references": {
+          "type": "header",
+          "text": "References",
+          "value": "references",
+          "line": 28,
+          "column": 0
+        }
+      },
+      "fname": "books.clean-code",
+      "updated": 1625894879747,
+      "created": 1621818337378,
+      "parent": "47e06771-c344-4012-8428-07fea574a55e",
+      "children": [],
+      "data": {},
+      "contentHash": "17e22312b45f7d631a9ef9584c162dcd",
+      "custom": {}
+    },
+    "9bb7282d-4ab7-4792-b0c5-43f293c296e1": {
+      "id": "9bb7282d-4ab7-4792-b0c5-43f293c296e1",
+      "title": "Infrastructure",
+      "vault": {
+        "fsPath": "infrastructure",
+        "name": "infrastructure"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "infrastructure",
+      "updated": 1621818435562,
+      "created": 1621818435562,
+      "parent": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+      "children": [
+        "1785ee31-4624-447e-93de-f6d699edb153",
+        "elTjXzqYB94zPLOldED4o"
+      ],
+      "data": {},
+      "contentHash": "3a64d15d42eec3c79582600aadd05e3f",
+      "stub": false,
+      "custom": {
+        "stub": true
+      }
+    },
+    "elTjXzqYB94zPLOldED4o": {
+      "id": "elTjXzqYB94zPLOldED4o",
+      "title": "Secret Manager",
+      "vault": {
+        "fsPath": "infrastructure",
+        "name": "infrastructure"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "infrastructure.secret-manager",
+      "updated": 1625883927508,
+      "created": 1625883927508,
+      "parent": "9bb7282d-4ab7-4792-b0c5-43f293c296e1",
+      "children": [
+        "ek0wyOwdKnZslLXN92M1L"
+      ],
+      "data": {},
+      "contentHash": "ada4d89bb271d44a862558cc13d44441",
+      "custom": {}
+    },
+    "ek0wyOwdKnZslLXN92M1L": {
+      "id": "ek0wyOwdKnZslLXN92M1L",
+      "title": "Vault",
+      "vault": {
+        "fsPath": "infrastructure",
+        "name": "infrastructure"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "vault-hashicorp": {
+          "type": "header",
+          "text": "Vault Hashicorp",
+          "value": "vault-hashicorp",
+          "line": 8,
+          "column": 0
+        },
+        "using-vault-for-secrets-with-kubernetes-terraform": {
+          "type": "header",
+          "text": "Using Vault for secrets with kubernetes, terraform",
+          "value": "using-vault-for-secrets-with-kubernetes-terraform",
+          "line": 10,
+          "column": 0
+        },
+        "injecting-secrets-into-kubernetes-pods-via-vault-agent-containers": {
+          "type": "header",
+          "text": "Injecting Secrets into Kubernetes Pods via Vault Agent Containers",
+          "value": "injecting-secrets-into-kubernetes-pods-via-vault-agent-containers",
+          "line": 28,
+          "column": 0
+        },
+        "questions": {
+          "type": "header",
+          "text": "Questions",
+          "value": "questions",
+          "line": 30,
+          "column": 0
+        },
+        "articles-notes": {
+          "type": "header",
+          "text": "Articles Notes",
+          "value": "articles-notes",
+          "line": 45,
+          "column": 0
+        },
+        "vault-agent-kubernetes": {
+          "type": "header",
+          "text": "Vault Agent Kubernetes",
+          "value": "vault-agent-kubernetes",
+          "line": 47,
+          "column": 0
+        }
+      },
+      "fname": "infrastructure.secret-manager.vault",
+      "updated": 1626405550937,
+      "created": 1625883934363,
+      "parent": "elTjXzqYB94zPLOldED4o",
+      "children": [],
+      "data": {},
+      "contentHash": "24d77e59ea3f62d69abb631ab9ebbaf9",
+      "custom": {}
+    },
+    "1785ee31-4624-447e-93de-f6d699edb153": {
+      "id": "1785ee31-4624-447e-93de-f6d699edb153",
+      "title": "Aws",
+      "vault": {
+        "fsPath": "infrastructure",
+        "name": "infrastructure"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "aws": {
+          "type": "header",
+          "text": "AWS",
+          "value": "aws",
+          "line": 8,
+          "column": 0
+        },
+        "references": {
+          "type": "header",
+          "text": "References",
+          "value": "references",
+          "line": 10,
+          "column": 0
+        }
+      },
+      "fname": "infrastructure.aws",
+      "updated": 1625894874346,
+      "created": 1621818435553,
+      "parent": "9bb7282d-4ab7-4792-b0c5-43f293c296e1",
+      "children": [
+        "9AA0EAy3egG_1oYjxcwRd",
+        "244fa2dd-3a6a-4e6e-98b5-f93853d0016a",
+        "ArfhWSYEHx0wmzjIeH5Iz",
+        "zsB7oDeA4IprlJG8GVfNx",
+        "61b56e59-6646-46d9-8a91-61180e616773"
+      ],
+      "data": {},
+      "contentHash": "d742ca93193324ccfba79946eb812038",
+      "custom": {}
+    },
+    "61b56e59-6646-46d9-8a91-61180e616773": {
+      "id": "61b56e59-6646-46d9-8a91-61180e616773",
+      "title": "Security Groups",
+      "vault": {
+        "fsPath": "infrastructure",
+        "name": "infrastructure"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "references": {
+          "type": "header",
+          "text": "References",
+          "value": "references",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "infrastructure.aws.security-groups",
+      "updated": 1621818542851,
+      "created": 1621818516302,
+      "parent": "1785ee31-4624-447e-93de-f6d699edb153",
+      "children": [],
+      "data": {},
+      "contentHash": "a9f92c47d9dc862ba98cdc7b130ef720",
+      "custom": {}
+    },
+    "zsB7oDeA4IprlJG8GVfNx": {
+      "id": "zsB7oDeA4IprlJG8GVfNx",
+      "title": "S3",
+      "vault": {
+        "fsPath": "infrastructure",
+        "name": "infrastructure"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "infrastructure.aws.s3",
+      "updated": 1626029739645,
+      "created": 1626029739645,
+      "parent": "1785ee31-4624-447e-93de-f6d699edb153",
+      "children": [
+        "rJkjiic8vrzBrDbRGWpFv"
+      ],
+      "data": {},
+      "contentHash": "13574f8d990622bfbe09d8ec15cdf32a",
+      "custom": {}
+    },
+    "rJkjiic8vrzBrDbRGWpFv": {
+      "id": "rJkjiic8vrzBrDbRGWpFv",
+      "title": "Static Website",
+      "vault": {
+        "fsPath": "infrastructure",
+        "name": "infrastructure"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "static-website-using-s3": {
+          "type": "header",
+          "text": "Static Website using S3",
+          "value": "static-website-using-s3",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "infrastructure.aws.s3.static-website",
+      "updated": 1626063295458,
+      "created": 1626029750653,
+      "parent": "zsB7oDeA4IprlJG8GVfNx",
+      "children": [],
+      "data": {},
+      "contentHash": "b7d68d6d56e687e13736444fcaddbc46",
+      "custom": {}
+    },
+    "ArfhWSYEHx0wmzjIeH5Iz": {
+      "id": "ArfhWSYEHx0wmzjIeH5Iz",
+      "title": "Eks",
+      "vault": {
+        "fsPath": "infrastructure",
+        "name": "infrastructure"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "elastic-kubernetes-service": {
+          "type": "header",
+          "text": "Elastic kubernetes service",
+          "value": "elastic-kubernetes-service",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "infrastructure.aws.eks",
+      "updated": 1625873531586,
+      "created": 1625873487890,
+      "parent": "1785ee31-4624-447e-93de-f6d699edb153",
+      "children": [],
+      "data": {},
+      "contentHash": "0c0103a9d6cb5708537017a8d800a994",
+      "custom": {}
+    },
+    "244fa2dd-3a6a-4e6e-98b5-f93853d0016a": {
+      "id": "244fa2dd-3a6a-4e6e-98b5-f93853d0016a",
+      "title": "Datadog",
+      "vault": {
+        "fsPath": "infrastructure",
+        "name": "infrastructure"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "datadog": {
+          "type": "header",
+          "text": "Datadog",
+          "value": "datadog",
+          "line": 8,
+          "column": 0
+        },
+        "controlling-cost-by-using-autodiscovery": {
+          "type": "header",
+          "text": "controlling cost by using Autodiscovery",
+          "value": "controlling-cost-by-using-autodiscovery",
+          "line": 10,
+          "column": 0
+        },
+        "setting-up-aws": {
+          "type": "header",
+          "text": "setting up aws",
+          "value": "setting-up-aws",
+          "line": 21,
+          "column": 0
+        }
+      },
+      "fname": "infrastructure.aws.datadog",
+      "updated": 1625873828470,
+      "created": 1622173257348,
+      "parent": "1785ee31-4624-447e-93de-f6d699edb153",
+      "children": [],
+      "data": {},
+      "contentHash": "92d997a2951d521ccf9a70002cd02db6",
+      "custom": {}
+    },
+    "9AA0EAy3egG_1oYjxcwRd": {
+      "id": "9AA0EAy3egG_1oYjxcwRd",
+      "title": "Codebuild",
+      "vault": {
+        "fsPath": "infrastructure",
+        "name": "infrastructure"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "aws-codebuild": {
+          "type": "header",
+          "text": "AWS Codebuild",
+          "value": "aws-codebuild",
+          "line": 8,
+          "column": 0
+        },
+        "related": {
+          "type": "header",
+          "text": "Related",
+          "value": "related",
+          "line": 16,
+          "column": 0
+        },
+        "terraform": {
+          "type": "header",
+          "text": "Terraform",
+          "value": "terraform",
+          "line": 23,
+          "column": 0
+        },
+        "github-webhooks": {
+          "type": "header",
+          "text": "Github webhooks",
+          "value": "github-webhooks",
+          "line": 27,
+          "column": 0
+        },
+        "docs": {
+          "type": "header",
+          "text": "docs",
+          "value": "docs",
+          "line": 31,
+          "column": 0
+        }
+      },
+      "fname": "infrastructure.aws.codebuild",
+      "updated": 1625882707223,
+      "created": 1625873537144,
+      "parent": "1785ee31-4624-447e-93de-f6d699edb153",
+      "children": [],
+      "data": {},
+      "contentHash": "f43d4286e33c2d733bd2a24bb1995409",
+      "custom": {}
+    },
+    "yWa7opDl6kwVzYa8jBw6Y": {
+      "id": "yWa7opDl6kwVzYa8jBw6Y",
+      "title": "Health",
+      "vault": {
+        "fsPath": "health",
+        "name": "health"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "health",
+      "updated": 1624213695483,
+      "created": 1624213695483,
+      "parent": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+      "children": [
+        "GMHM_quuqHO0CGFAstsxB",
+        "Nnf7PoPKwkj1lyCg42rc_"
+      ],
+      "data": {},
+      "contentHash": "dc2cfc20519c5341ea6285628f994654",
+      "custom": {}
+    },
+    "Nnf7PoPKwkj1lyCg42rc_": {
+      "id": "Nnf7PoPKwkj1lyCg42rc_",
+      "title": "Posture",
+      "vault": {
+        "fsPath": "health",
+        "name": "health"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "usefull-info": {
+          "type": "header",
+          "text": "Usefull info",
+          "value": "usefull-info",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "health.posture",
+      "updated": 1624213745714,
+      "created": 1624213703822,
+      "parent": "yWa7opDl6kwVzYa8jBw6Y",
+      "children": [],
+      "data": {},
+      "contentHash": "12dd036166a80523b55bc8cb791f89eb",
+      "custom": {}
+    },
+    "GMHM_quuqHO0CGFAstsxB": {
+      "id": "GMHM_quuqHO0CGFAstsxB",
+      "title": "Keto",
+      "vault": {
+        "fsPath": "health",
+        "name": "health"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {
+        "usefull-links": {
+          "type": "header",
+          "text": "usefull links",
+          "value": "usefull-links",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "health.keto",
+      "updated": 1624213836514,
+      "created": 1624213820654,
+      "parent": "yWa7opDl6kwVzYa8jBw6Y",
+      "children": [],
+      "data": {},
+      "contentHash": "1c25e66fb303f32ee672edbfbeaba71d",
+      "custom": {}
+    },
+    "QYW64J8o1q-RZUAWNuBVz": {
+      "id": "QYW64J8o1q-RZUAWNuBVz",
+      "title": "Architecture",
+      "vault": {
+        "fsPath": "architecture",
+        "name": "architecture"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "architecture",
+      "updated": 1626053329421,
+      "created": 1625624429868,
+      "parent": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+      "children": [
+        "CncD4lvjM818d2ZYKSEEe",
+        "jdAb3SyghdXYGX2mD8yST",
+        "HdG39v7N4jAkuZNG5daH6"
+      ],
+      "data": {},
+      "contentHash": "f1ed87abd70f01ab1d063189c8aa1960",
+      "custom": {}
+    },
+    "HdG39v7N4jAkuZNG5daH6": {
+      "id": "HdG39v7N4jAkuZNG5daH6",
+      "title": "Microservices",
+      "vault": {
+        "fsPath": "architecture",
+        "name": "architecture"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [
+        {
+          "from": {
+            "fname": "root",
+            "vaultName": "vault"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 14,
+              "column": 1,
+              "offset": 460
+            },
+            "end": {
+              "line": 14,
+              "column": 55,
+              "offset": 514
+            },
+            "indent": []
+          },
+          "value": "architecture.microservices"
+        },
+        {
+          "from": {
+            "fname": "architecture.event-driven",
+            "vaultName": "architecture"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 10,
+              "column": 1,
+              "offset": 159
+            },
+            "end": {
+              "line": 10,
+              "column": 55,
+              "offset": 213
+            },
+            "indent": []
+          },
+          "value": "architecture.microservices"
+        }
+      ],
+      "anchors": {
+        "microservices": {
+          "type": "header",
+          "text": "Microservices",
+          "value": "microservices",
+          "line": 8,
+          "column": 0
+        }
+      },
+      "fname": "architecture.microservices",
+      "updated": 1625893694992,
+      "created": 1625891389201,
+      "parent": "QYW64J8o1q-RZUAWNuBVz",
+      "children": [],
+      "data": {},
+      "contentHash": "30b89e476fdeb2c128f08f99c3a15efb",
+      "custom": {}
+    },
+    "jdAb3SyghdXYGX2mD8yST": {
+      "id": "jdAb3SyghdXYGX2mD8yST",
+      "title": "Event Streaming",
+      "vault": {
+        "fsPath": "architecture",
+        "name": "architecture"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "architecture.event-streaming",
+      "updated": 1625624463999,
+      "created": 1625624463999,
+      "parent": "QYW64J8o1q-RZUAWNuBVz",
+      "children": [
+        "1jbRVY0JFbGa9TIoXNoOk"
+      ],
+      "data": {},
+      "contentHash": "342a40599341540bf69fd36f0aba1d7a",
+      "custom": {}
+    },
+    "1jbRVY0JFbGa9TIoXNoOk": {
+      "id": "1jbRVY0JFbGa9TIoXNoOk",
+      "title": "Kafka",
+      "vault": {
+        "fsPath": "architecture",
+        "name": "architecture"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "fname": "architecture.event-streaming.kafka",
+      "updated": 1639371063112,
+      "created": 1625624471921,
+      "parent": "jdAb3SyghdXYGX2mD8yST",
+      "children": [],
+      "data": {},
+      "contentHash": "8e6b0f1ae347643b3a6aa1c3629411ab",
+      "custom": {}
+    },
+    "CncD4lvjM818d2ZYKSEEe": {
+      "id": "CncD4lvjM818d2ZYKSEEe",
+      "title": "Event Driven",
+      "vault": {
+        "fsPath": "architecture",
+        "name": "architecture"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [
+        {
+          "type": "ref",
+          "from": {
+            "fname": "architecture.event-driven",
+            "id": "CncD4lvjM818d2ZYKSEEe",
+            "vaultName": "architecture"
+          },
+          "value": "architecture.microservices",
+          "position": {
+            "start": {
+              "line": 10,
+              "column": 1,
+              "offset": 159
+            },
+            "end": {
+              "line": 10,
+              "column": 55,
+              "offset": 213
+            },
+            "indent": []
+          },
+          "xvault": true,
+          "to": {
+            "fname": "architecture.microservices",
+            "vaultName": "architecture"
+          }
+        },
+        {
+          "type": "ref",
+          "from": {
+            "fname": "architecture.event-driven",
+            "id": "CncD4lvjM818d2ZYKSEEe",
+            "vaultName": "architecture"
+          },
+          "value": "architecture.event-streaming.kafka",
+          "position": {
+            "start": {
+              "line": 14,
+              "column": 1,
+              "offset": 225
+            },
+            "end": {
+              "line": 14,
+              "column": 71,
+              "offset": 295
+            },
+            "indent": []
+          },
+          "xvault": true,
+          "to": {
+            "fname": "architecture.event-streaming.kafka",
+            "anchorHeader": "diagram",
+            "vaultName": "architecture"
+          }
+        }
+      ],
+      "anchors": {
+        "event-driven-summary": {
+          "type": "header",
+          "text": "Event driven Summary",
+          "value": "event-driven-summary",
+          "line": 8,
+          "column": 0
+        },
+        "microservices": {
+          "type": "header",
+          "text": "Microservices",
+          "value": "microservices",
+          "line": 14,
+          "column": 0
+        },
+        "kafka": {
+          "type": "header",
+          "text": "Kafka",
+          "value": "kafka",
+          "line": 18,
+          "column": 0
+        }
+      },
+      "fname": "architecture.event-driven",
+      "updated": 1626063874332,
+      "created": 1625624456217,
+      "parent": "QYW64J8o1q-RZUAWNuBVz",
+      "children": [],
+      "data": {},
+      "contentHash": "14d2039623bc448a7e0c4620ca156401",
+      "custom": {}
+    }
+  },
+  "domains": [
+    {
+      "id": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+      "title": "Welcome",
+      "vault": {
+        "fsPath": "vault",
+        "name": "vault"
+      },
+      "type": "note",
+      "desc": "",
+      "links": [
+        {
+          "type": "ref",
+          "from": {
+            "fname": "root",
+            "id": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+            "vaultName": "vault"
+          },
+          "value": "architecture.microservices",
+          "position": {
+            "start": {
+              "line": 14,
+              "column": 1,
+              "offset": 460
+            },
+            "end": {
+              "line": 14,
+              "column": 55,
+              "offset": 514
+            },
+            "indent": []
+          },
+          "xvault": true,
+          "to": {
+            "fname": "architecture.microservices",
+            "vaultName": "architecture"
+          }
+        }
+      ],
+      "anchors": {
+        "personal-wiki": {
+          "type": "header",
+          "text": "Personal wiki",
+          "value": "personal-wiki",
+          "line": 8,
+          "column": 0
+        },
+        "content-example": {
+          "type": "header",
+          "text": "Content Example",
+          "value": "content-example",
+          "line": 18,
+          "column": 0
+        }
+      },
+      "fname": "root",
+      "updated": 1626063584796,
+      "created": 1621701645107,
+      "parent": null,
+      "children": [
+        "QYW64J8o1q-RZUAWNuBVz",
+        "yWa7opDl6kwVzYa8jBw6Y",
+        "9bb7282d-4ab7-4792-b0c5-43f293c296e1",
+        "47e06771-c344-4012-8428-07fea574a55e",
+        "dc9ce0b8-8551-4aaf-bcc8-309ad1c58b36",
+        "4ad54c56-c118-4c77-b7a7-704b6e57579c",
+        "8a285efb-1044-43b2-b86f-904ad3bf48fc",
+        "3e958243-cf77-44a4-8a90-fef2ec98ad43",
+        "28e19609-7af9-4cfe-8ea3-a7341e6709e8",
+        "d824c890-9817-49b3-ba11-36bc6c166015",
+        "9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8"
+      ],
+      "data": {},
+      "contentHash": "e01bd36ad387507acb1823b37e43ca12",
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      },
+      "body": "\n## Personal wiki\n\n> This is my personal wiki page, where I put ideas diagrams, where I'm researching a topic, you may not found elaborated articles, just notes that I took at some point when studying. Some notes may be outdated, not following best practices, wrong information or you would like to contribute, email me! I'll appreciate it!\n\nMy e-mail: mzavaletavargas@gmail.com\n\nThanks!\n\n[Back to mi website](http://gustavozavaleta.com)\n\n### Content Example\n\n![[dendron://architecture/architecture.microservices]]\n"
+    }
+  ],
+  "noteIndex": {
+    "id": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+    "title": "Welcome",
+    "vault": {
+      "fsPath": "vault",
+      "name": "vault"
+    },
+    "type": "note",
+    "desc": "",
+    "links": [
+      {
+        "type": "ref",
+        "from": {
+          "fname": "root",
+          "id": "23f9dc67-8303-4034-90d3-7371e6cc8996",
+          "vaultName": "vault"
+        },
+        "value": "architecture.microservices",
+        "position": {
+          "start": {
+            "line": 14,
+            "column": 1,
+            "offset": 460
+          },
+          "end": {
+            "line": 14,
+            "column": 55,
+            "offset": 514
+          },
+          "indent": []
+        },
+        "xvault": true,
+        "to": {
+          "fname": "architecture.microservices",
+          "vaultName": "architecture"
+        }
+      }
+    ],
+    "anchors": {
+      "personal-wiki": {
+        "type": "header",
+        "text": "Personal wiki",
+        "value": "personal-wiki",
+        "line": 8,
+        "column": 0
+      },
+      "content-example": {
+        "type": "header",
+        "text": "Content Example",
+        "value": "content-example",
+        "line": 18,
+        "column": 0
+      }
+    },
+    "fname": "root",
+    "updated": 1626063584796,
+    "created": 1621701645107,
+    "parent": null,
+    "children": [
+      "QYW64J8o1q-RZUAWNuBVz",
+      "yWa7opDl6kwVzYa8jBw6Y",
+      "9bb7282d-4ab7-4792-b0c5-43f293c296e1",
+      "47e06771-c344-4012-8428-07fea574a55e",
+      "dc9ce0b8-8551-4aaf-bcc8-309ad1c58b36",
+      "4ad54c56-c118-4c77-b7a7-704b6e57579c",
+      "8a285efb-1044-43b2-b86f-904ad3bf48fc",
+      "3e958243-cf77-44a4-8a90-fef2ec98ad43",
+      "28e19609-7af9-4cfe-8ea3-a7341e6709e8",
+      "d824c890-9817-49b3-ba11-36bc6c166015",
+      "9729bb5d-6c46-4422-bc01-0d4f1a9b3ef8"
+    ],
+    "data": {},
+    "contentHash": "e01bd36ad387507acb1823b37e43ca12",
+    "custom": {
+      "nav_order": 0,
+      "permalink": "/"
+    },
+    "body": "\n## Personal wiki\n\n> This is my personal wiki page, where I put ideas diagrams, where I'm researching a topic, you may not found elaborated articles, just notes that I took at some point when studying. Some notes may be outdated, not following best practices, wrong information or you would like to contribute, email me! I'll appreciate it!\n\nMy e-mail: mzavaletavargas@gmail.com\n\nThanks!\n\n[Back to mi website](http://gustavozavaleta.com)\n\n### Content Example\n\n![[dendron://architecture/architecture.microservices]]\n"
+  },
+  "vaults": [
+    {
+      "fsPath": "architecture",
+      "name": "architecture"
+    },
+    {
+      "fsPath": "health",
+      "name": "health"
+    },
+    {
+      "fsPath": "infrastructure",
+      "name": "infrastructure"
+    },
+    {
+      "fsPath": "books",
+      "name": "books"
+    },
+    {
+      "fsPath": "computer-science",
+      "name": "computer-science"
+    },
+    {
+      "fsPath": "networking",
+      "name": "networking"
+    },
+    {
+      "fsPath": "databases",
+      "name": "databases"
+    },
+    {
+      "fsPath": "personal-growth",
+      "name": "personal-growth"
+    },
+    {
+      "fsPath": "operating-systems",
+      "name": "operating-systems"
+    },
+    {
+      "fsPath": "dev-ops",
+      "name": "dev-ops"
+    },
+    {
+      "fsPath": "programming",
+      "name": "programming"
+    },
+    {
+      "fsPath": "vault",
+      "name": "vault"
+    }
+  ]
+}

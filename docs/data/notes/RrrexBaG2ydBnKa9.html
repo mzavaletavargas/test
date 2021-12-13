@@ -1,0 +1,44 @@
+<h1 id="lambda"><a aria-hidden="true" class="anchor-heading" href="#lambda"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Lambda</h1>
+<h2 id="deploy-ruby-aws-lambda"><a aria-hidden="true" class="anchor-heading" href="#deploy-ruby-aws-lambda"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Deploy ruby AWS Lambda</h2>
+<h2 id="steps"><a aria-hidden="true" class="anchor-heading" href="#steps"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Steps</h2>
+<p>Check this guide: <a href="https://docs.aws.amazon.com/lambda/latest/dg/ruby-package.html">https://docs.aws.amazon.com/lambda/latest/dg/ruby-package.html</a></p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># set path for fetching dependenciess</span>
+bundle config <span class="token builtin class-name">set</span> --local path <span class="token string">'vendor/bundle'</span>
+
+<span class="token comment"># zip the following files/folders</span>
+<span class="token comment"># my_function.rb is in the zip folder root</span>
+
+<span class="token builtin class-name">.</span>
+├── lib
+│   ├── some_service.rb
+│   ├── ohter_file.rb
+│   └── <span class="token punctuation">..</span>.
+├── vendor
+│   └── bundle
+│       ├── ruby
+│       └── other_dependency<span class="token punctuation">..</span>.
+└── my_function.rb
+</code></pre>
+<p><code>my_function.rb</code></p>
+<p><a href="https://docs.aws.amazon.com/lambda/latest/dg/ruby-handler.html">https://docs.aws.amazon.com/lambda/latest/dg/ruby-handler.html</a></p>
+<pre class="language-ruby"><code class="language-ruby"><span class="token keyword">require</span> <span class="token string">'./lib/some_service'</span>
+
+<span class="token keyword">def</span> <span class="token method-definition"><span class="token function">handler</span></span><span class="token punctuation">(</span>event<span class="token punctuation">:</span><span class="token punctuation">,</span> context<span class="token punctuation">:</span><span class="token punctuation">)</span>
+  puts <span class="token constant">Service</span><span class="token punctuation">.</span>sayHi
+  <span class="token punctuation">{</span>
+    <span class="token string">'statusCode'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'200'</span><span class="token punctuation">,</span>
+    <span class="token string">'body'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'OK'</span>
+  <span class="token punctuation">}</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>When setting up your lambda use <code>my_function.hanlder</code>
+Choose the right <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-ruby.html">ruby version</a></p>
+<h2 id="aws-sdk-to-connect-to-vault-using-iam-role"><a aria-hidden="true" class="anchor-heading" href="#aws-sdk-to-connect-to-vault-using-iam-role"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AWS SDK to connect to vault using IAM role</h2>
+<p>Using vault-ruby : <a href="https://github.com/hashicorp/vault-ruby">https://github.com/hashicorp/vault-ruby</a></p>
+<pre class="language-ruby"><code class="language-ruby">  provider_chain <span class="token operator">=</span> <span class="token constant">Aws</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">CredentialProviderChain</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+  credentials <span class="token operator">=</span> provider_chain<span class="token punctuation">.</span>resolve
+  secret_auth <span class="token operator">=</span> <span class="token constant">Vault</span><span class="token punctuation">.</span>auth<span class="token punctuation">.</span>aws_iam<span class="token punctuation">(</span>
+    <span class="token string">"my-role"</span><span class="token punctuation">,</span>
+    credentials
+  <span class="token punctuation">)</span>
+</code></pre>

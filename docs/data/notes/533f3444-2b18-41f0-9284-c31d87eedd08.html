@@ -1,0 +1,15 @@
+<h1 id="multiple-accounts"><a aria-hidden="true" class="anchor-heading" href="#multiple-accounts"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Multiple Accounts</h1>
+<p>macr
+Add multiple github account, same machine to avoid conflicts when pushing or pulling repositories</p>
+<pre class="language-bash"><code class="language-bash">Host me.github.com
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/me_rsa
+
+Host work.github.com
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/work_rsa
+</code></pre>
+<h2 id="reference"><a aria-hidden="true" class="anchor-heading" href="#reference"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Reference</h2>
+<p><a href="https://stackoverflow.com/questions/3225862/multiple-github-accounts-ssh-config">https://stackoverflow.com/questions/3225862/multiple-github-accounts-ssh-config</a></p>

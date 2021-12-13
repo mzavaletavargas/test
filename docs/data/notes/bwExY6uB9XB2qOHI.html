@@ -1,0 +1,113 @@
+<h1 id="ruby"><a aria-hidden="true" class="anchor-heading" href="#ruby"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Ruby</h1>
+<h2 id="stuff-learned-coding-on-ruby"><a aria-hidden="true" class="anchor-heading" href="#stuff-learned-coding-on-ruby"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Stuff learned coding on ruby.</h2>
+<h3 id="basics"><a aria-hidden="true" class="anchor-heading" href="#basics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Basics</h3>
+<p>Start here to get your hands dirty creating your first gem
+<a href="https://guides.rubygems.org/make-your-own-gem/#introduction">Make your own gem - RubyGems Guides</a><a href="https://www.ruby-lang.org/en/downloads/">Download Ruby</a></p>
+<p><a href="https://guides.rubygems.org/rubygems-basics/">RubyGems Basics - RubyGems Guides</a>
+<a href="https://www.techotopia.com/index.php/Ruby_Object_Oriented_Programming">Ruby Object Oriented Programming - Techotopia</a></p>
+<h3 id="gemfile-vs-gemspec"><a aria-hidden="true" class="anchor-heading" href="#gemfile-vs-gemspec"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Gemfile vs Gemspec</h3>
+<p><a href="https://medium.com/@divya.n/gemfile-vs-gemspec-ee72512da246">Gemfile vs Gemspec</a></p>
+<h3 id="error-handling"><a aria-hidden="true" class="anchor-heading" href="#error-handling"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Error handling</h3>
+<pre class="language-ruby"><code class="language-ruby"><span class="token keyword">begin</span>
+  <span class="token comment"># put code at risk of failing here</span>
+<span class="token keyword">rescue</span> <span class="token constant">TypeError</span>
+  <span class="token comment"># take action</span>
+<span class="token keyword">end</span>
+
+<span class="token builtin">Exception</span>
+  <span class="token constant">NoMemoryError</span>
+  <span class="token constant">ScriptError</span>
+    <span class="token constant">LoadError</span>
+    <span class="token constant">NotImplementedError</span>
+    <span class="token constant">SyntaxError</span>
+  <span class="token constant">SecurityError</span>
+  <span class="token constant">SignalException</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token keyword">def</span> <span class="token method-definition"><span class="token function">validate_age</span></span><span class="token punctuation">(</span>age<span class="token punctuation">)</span>
+  <span class="token keyword">raise</span><span class="token punctuation">(</span><span class="token string">"invalid age"</span><span class="token punctuation">)</span> <span class="token keyword">unless</span> <span class="token punctuation">(</span><span class="token number">0.</span><span class="token number">.105</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">include</span><span class="token operator">?</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">begin</span>
+  validate_age<span class="token punctuation">(</span>age<span class="token punctuation">)</span>
+<span class="token keyword">rescue</span> <span class="token constant">RuntimeError</span> <span class="token operator">=</span><span class="token operator">></span> e
+  puts e<span class="token punctuation">.</span>message              <span class="token comment">#=> "invalid age"</span>
+<span class="token keyword">end</span>
+
+</code></pre>
+<h3 id="getters-and-setters"><a aria-hidden="true" class="anchor-heading" href="#getters-and-setters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Getters and setters</h3>
+<p>attr_reader : This accessor generates the automatic Getter method for the given item.
+attr_writer : This accessor generates the automatic Setter method for the given item.
+attr_accessor : This accessor generates the automatic Getter &#x26; Setter method for the given item.</p>
+<pre class="language-ruby"><code class="language-ruby"><span class="token comment"># Ruby Program of accessor getter and setter method</span>
+<span class="token keyword">class</span> <span class="token class-name">CSWebsite</span>
+
+  <span class="token comment"># Constructor to initialize</span>
+  <span class="token comment"># the class with a name</span>
+  <span class="token comment"># instance variable</span>
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">initialize</span></span><span class="token punctuation">(</span>website<span class="token punctuation">,</span> id<span class="token punctuation">)</span>
+    <span class="token variable">@website</span> <span class="token operator">=</span> website
+    <span class="token variable">@id</span> <span class="token operator">=</span> id
+  <span class="token keyword">end</span>
+
+  <span class="token comment"># accessor get and set method</span>
+  attr_accessor <span class="token symbol">:website</span>
+  attr_reader <span class="token symbol">:id</span>
+<span class="token keyword">end</span>
+
+<span class="token comment"># Creating an object of the class</span>
+gfg <span class="token operator">=</span> <span class="token constant">CSWebsite</span><span class="token punctuation">.</span><span class="token keyword">new</span> <span class="token string">"www.geeksforgeeks.org"</span><span class="token punctuation">,</span> <span class="token number">12</span>
+puts gfg<span class="token punctuation">.</span>website
+puts gfg<span class="token punctuation">.</span>id
+</code></pre>
+<p>Source: <a href="https://www.geeksforgeeks.org/ruby-getters-and-setters-method/">Ruby getters and setters Method - GeeksforGeeks</a></p>
+<h2 id="operators"><a aria-hidden="true" class="anchor-heading" href="#operators"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Operators</h2>
+<p><a href="https://www.tutorialspoint.com/ruby/ruby_operators.htm">Ruby - Operators - Tutorialspoint</a></p>
+<h3 id="vault-sample"><a aria-hidden="true" class="anchor-heading" href="#vault-sample"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Vault sample</h3>
+<p><a href="https://gist.github.com/NaokiIshimura/60056e73dfb7b42bf00527c08a3628cd">Vault Ruby</a></p>
+<h3 id="depency-injection"><a aria-hidden="true" class="anchor-heading" href="#depency-injection"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Depency Injection</h3>
+<p><a href="https://medium.com/@Bakku1505/introduction-to-dependency-injection-in-ruby-dc238655a278">Introduction to dependency injection in Ruby</a></p>
+<p>Other options: <a href="https://github.com/dry-rb/dry-container">dry-rb/dry-container</a></p>
+<h3 id="unit-test"><a aria-hidden="true" class="anchor-heading" href="#unit-test"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Unit test</h3>
+<p><a href="https://github.com/seattlerb/minitest">seattlerb/minitest</a></p>
+<p><a href="https://stackoverflow.com/questions/7211086/how-do-i-stub-things-in-minitest">How do I stub things in MiniTest?</a></p>
+<p><a href="https://www.rubydoc.info/gems/minitest/5.13.0/Minitest/Mock#expect-instance_method">https://www.rubydoc.info/gems/minitest/5.13.0/Minitest/Mock#expect-instance_method</a></p>
+<p><a href="https://www.rubydoc.info/gems/minitest/5.13.0/Minitest/Test/LifecycleHooks">LifeCycles hooks minitest</a></p>
+<p><a href="https://docs.ruby-lang.org/en/2.1.0/MiniTest/Assertions.html#method-i-assert_throws">Assert throws</a></p>
+<p><a href="https://medium.com/@gilroman/mocking-and-stubbing-with-the-minitest-framework-6c8b1b9e8cc2">Mocking and Stubbing with the Minitest Framework</a></p>
+<h3 id="linting"><a aria-hidden="true" class="anchor-heading" href="#linting"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Linting</h3>
+<p>Rubocop a good tool for analizing code and formatting</p>
+<p><a href="https://github.com/rubocop/rubocop">GitHub - rubocop/rubocop: A Ruby static code analyzer and formatter, based on the community Ruby style guide.</a></p>
+<p>Installation: <a href="https://docs.rubocop.org/rubocop/index.html">https://docs.rubocop.org/rubocop/index.html</a></p>
+<h3 id="vs-code-extensions"><a aria-hidden="true" class="anchor-heading" href="#vs-code-extensions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>VS code extensions</h3>
+<p><a href="https://betterprogramming.pub/code-like-a-pro-tooling-to-supercharge-vs-code-for-ruby-bf2ae61df5e3">The Best VS Code Extensions for Anyone Working in Ruby</a></p>
+<h3 id="return-vs-put"><a aria-hidden="true" class="anchor-heading" href="#return-vs-put"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>return vs put</h3>
+<p>Source: <a href="https://launchschool.com/books/ruby/read/methods">Learning Ruby methods and how you should use them</a></p>
+<p>Ruby methods ALWAYS return the evaluated result of the last line of the expression unless an explicit return comes before it.</p>
+<pre class="language-ruby"><code class="language-ruby"><span class="token keyword">def</span> <span class="token method-definition"><span class="token function">add_three</span></span><span class="token punctuation">(</span>number<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> number <span class="token operator">+</span> <span class="token number">3</span>
+  number <span class="token operator">+</span> <span class="token number">4</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>When you place a return in the middle of the add_three method definition, it just returns the evaluated result of number + 3, which is 7, without executing the next line.</p>
+<pre class="language-ruby"><code class="language-ruby"><span class="token keyword">def</span> <span class="token method-definition"><span class="token function">add_three</span></span><span class="token punctuation">(</span>number<span class="token punctuation">)</span>
+  number <span class="token operator">+</span> <span class="token number">3</span>
+<span class="token keyword">end</span>
+</code></pre>
+<h3 id="string-replacement"><a aria-hidden="true" class="anchor-heading" href="#string-replacement"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>String replacement</h3>
+<p><a href="https://www.techotopia.com/index.php/Ruby_String_Replacement,_Substitution_and_Insertion">https://www.techotopia.com/index.php/Ruby_String_Replacement,_Substitution_and_Insertion</a></p>
+<h3 id="publish-gems"><a aria-hidden="true" class="anchor-heading" href="#publish-gems"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Publish gems</h3>
+<p><a href="https://guides.rubygems.org/publishing/">Publishing your gem - RubyGems Guides</a></p>
+<p>Options => <a href="https://gemfury.com/">https://gemfury.com/</a></p>
+<h2 id="usefull-resources"><a aria-hidden="true" class="anchor-heading" href="#usefull-resources"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Usefull resources</h2>
+<p><a href="https://www.rubyguides.com/2019/01/ruby-environment-variables/">How To Use Environment Variables in Ruby</a>
+<a href="https://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/objinitialization.html">Object initialization</a>
+<a href="http://ruby-for-beginners.rubymonstas.org/bonus/string_interpolation.html">String interpolation | Ruby for Beginners</a>
+<a href="https://www.tutorialspoint.com/ruby/ruby_methods.htm">Ruby - Methods - Tutorialspoint</a>
+<a href="https://launchschool.com/books/ruby/read/methods">Learning Ruby methods and how you should use them</a>
+<a href="https://www.shortcutfoo.com/app/dojos/ruby-arrays/cheatsheet">Ruby Arrays Cheat Sheet | ShortcutFoo</a></p>
+<hr>
+<h2 id="children"><a aria-hidden="true" class="anchor-heading" href="#children"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Children</h2>
+<ol>
+<li><a href="/notes/RrrexBaG2ydBnKa9">Lambda</a></li>
+</ol>

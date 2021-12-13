@@ -1,0 +1,265 @@
+<h1 id="databases"><a aria-hidden="true" class="anchor-heading" href="#databases"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Databases</h1>
+<h2 id="introduction"><a aria-hidden="true" class="anchor-heading" href="#introduction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Introduction</h2>
+<ul>
+<li>NoSql database</li>
+<li>Unlimited Concurrent Read/Write</li>
+<li>DAX for improve speed</li>
+</ul>
+<h2 id="basic-relational-concepts"><a aria-hidden="true" class="anchor-heading" href="#basic-relational-concepts"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Basic relational concepts</h2>
+<ul>
+<li>Data is a collection.</li>
+<li>Database organize of this collection.</li>
+<li>Rows/Columns.</li>
+<li>Primary key identify each row.</li>
+<li>Foreign key reference data from other tables.</li>
+<li>Scale adding ram cpu, etc.</li>
+</ul>
+<h3 id="normalization"><a aria-hidden="true" class="anchor-heading" href="#normalization"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Normalization</h3>
+<ul>
+<li>
+<p>Organize data</p>
+</li>
+<li>
+<p>Eliminate redundant data</p>
+</li>
+<li>
+<p>Advantages</p>
+<ul>
+<li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>name</th><th>courseId1</th><th>courseName1</th><th>courseId2</th><th>courseName2</th></tr></thead><tbody><tr><td>foo</td><td>3</td><td>Math</td><td>4</td><td>Science</td></tr><tr><td>bar</td><td>3</td><td>Math</td><td></td><td></td></tr><tr><td>test</td><td>4</td><td>Science</td><td>3</td><td>Math</td></tr></tbody></table>
+</li>
+<li>
+<p>1NF: deleting repeating groups, single value attribute</p>
+<ul>
+<li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>name</th><th>courseId</th><th>courseName</th></tr></thead><tbody><tr><td>foo</td><td>3</td><td>Math</td></tr><tr><td>foo</td><td>4</td><td>Science</td></tr><tr><td>bar</td><td>3</td><td>Math</td></tr><tr><td>test</td><td>4</td><td>Science</td></tr><tr><td>test</td><td>3</td><td>Math</td></tr></tbody></table>
+</li>
+</ul>
+</li>
+<li>
+<p>2NF: deleting redundant data</p>
+<ul>
+<li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>studentId</th><th>studentName</th></tr></thead><tbody><tr><td>1</td><td>foo</td></tr><tr><td>2</td><td>bar</td></tr><tr><td>3</td><td>test</td></tr></tbody></table>
+</li>
+<li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>courseId</th><th>courseName</th></tr></thead><tbody><tr><td>3</td><td>Math</td></tr><tr><td>4</td><td>Science</td></tr><tr><td>3</td><td>test</td></tr></tbody></table>
+</li>
+<li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>relationId</th><th>courseId</th><th>employeId</th></tr></thead><tbody><tr><td>0001</td><td>3</td><td>1</td></tr><tr><td>0002</td><td>4</td><td>1</td></tr><tr><td>0003</td><td>3</td><td>2</td></tr><tr><td>0004</td><td>3</td><td>3</td></tr><tr><td>0005</td><td>4</td><td>3</td></tr></tbody></table>
+</li>
+</ul>
+</li>
+<li>
+<p>3NF: not transitive dependencies</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Downside:</p>
+<ul>
+<li>Computing</li>
+<li>SQL queries complex</li>
+</ul>
+</li>
+</ul>
+<h3 id="nosql-basic-concepts"><a aria-hidden="true" class="anchor-heading" href="#nosql-basic-concepts"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>NoSQL Basic Concepts</h3>
+<ul>
+<li>Support unstructured data</li>
+<li>Big data apps</li>
+<li>scale horizontally adding more machines, partitions</li>
+<li>Object Based APIs for interaction</li>
+</ul>
+<h2 id="types-of-nosql"><a aria-hidden="true" class="anchor-heading" href="#types-of-nosql"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Types of NoSQL</h2>
+<ul>
+<li>Columnar database
+<ul>
+<li>Analytics</li>
+<li>loaded from disk</li>
+<li>redshif</li>
+</ul>
+</li>
+<li>Key-value store
+<ul>
+<li>Socual networking</li>
+<li>Media</li>
+<li>fast access</li>
+<li>redis, dynamodb</li>
+</ul>
+</li>
+<li>Graph Database
+<ul>
+<li>trees</li>
+<li>Neo4j</li>
+</ul>
+</li>
+<li>Document Database
+<ul>
+<li>Json or objects</li>
+<li>kasandra</li>
+<li>mongodb</li>
+<li>couchdb</li>
+</ul>
+</li>
+</ul>
+<h2 id="acid"><a aria-hidden="true" class="anchor-heading" href="#acid"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ACID</h2>
+<ul>
+<li>Atomicity: transaction can execute completely or not at all.</li>
+<li>Consistency: data written should be valid according to all defined rules.</li>
+<li>Isolation: Although there is high concurrency, each transactions should be treated 1 by 1</li>
+<li>Durability: once data has been committed should remain even having system failures</li>
+</ul>
+<hr>
+<h2 id="children"><a aria-hidden="true" class="anchor-heading" href="#children"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Children</h2>
+<ol>
+<li><a href="/notes/3e389eed-da91-4a54-bd83-2645161e58e0">Dynamodb</a></li>
+<li><a href="/notes/83ea6a26-e3cd-4214-b35d-26c04710621e">Postgres</a></li>
+</ol>

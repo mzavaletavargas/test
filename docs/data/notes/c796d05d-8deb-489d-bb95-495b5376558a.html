@@ -1,0 +1,45 @@
+<h1 id="security"><a aria-hidden="true" class="anchor-heading" href="#security"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Security</h1>
+<h2 id="avoid-80-port"><a aria-hidden="true" class="anchor-heading" href="#avoid-80-port"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Avoid 80 port</h2>
+<p>Avoid running our Node.js app on port 80
+In most cases is not a good idea to start our app on port 80.</p>
+<h3 id="why"><a aria-hidden="true" class="anchor-heading" href="#why"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Why?</h3>
+<p>On linux environments root access is needed to use the ports &#x3C;= 1024</p>
+<h3 id="what-is-the-main-problem"><a aria-hidden="true" class="anchor-heading" href="#what-is-the-main-problem"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>What is the main problem?</h3>
+<p>We are exposed, attackers can find the way to run commands for them using root privileges.</p>
+<p>Posible Solutions:</p>
+<p>A reverse proxy like nginx</p>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Nginx</span></div>
+<a href="/notes/5eb04dc2-7759-4fa7-845a-48043ffe2382" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="conclusion"><a aria-hidden="true" class="anchor-heading" href="#conclusion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Conclusion</h2>
+<p>NGINX: Definitely solve more of the issues regarding to security, cache, ssl, load balancing, reverse proxy and so on. Is a great option to be used combined with PM2 or Cluster Module</p>
+<h2 id="aditional-information"><a aria-hidden="true" class="anchor-heading" href="#aditional-information"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Aditional Information</h2>
+<p><a href="https://github.com/mzavaletavargas/going-live">https://github.com/mzavaletavargas/going-live</a></p>
+</div></div><p></p><p></p>
+<h1 id="aditional-information-1"><a aria-hidden="true" class="anchor-heading" href="#aditional-information-1"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Aditional information</h1>
+<ul>
+<li>
+<p><a href="http://www.nikola-breznjak.com/blog/javascript/nodejs/using-nginx-as-a-reverse-proxy-in-front-of-your-node-js-application/">http://www.nikola-breznjak.com/blog/javascript/nodejs/using-nginx-as-a-reverse-proxy-in-front-of-your-node-js-application/</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/16770673/using-node-js-only-vs-using-node-js-with-apache-nginx">https://stackoverflow.com/questions/16770673/using-node-js-only-vs-using-node-js-with-apache-nginx</a></p>
+</li>
+<li>
+<p><a href="https://www.reddit.com/r/node/comments/2rjsty/why_not_run_on_port_80/">https://www.reddit.com/r/node/comments/2rjsty/why_not_run_on_port_80/</a></p>
+</li>
+<li>
+<p><a href="https://blog.risingstack.com/node-js-security-tips/">https://blog.risingstack.com/node-js-security-tips/</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode">https://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode</a></p>
+</li>
+<li>
+<p><a href="https://hashnode.com/post/10-things-you-shouldnt-do-while-running-nodejs-in-production-cisab2fyu0s9oth5341faywcw">https://hashnode.com/post/10-things-you-shouldnt-do-while-running-nodejs-in-production-cisab2fyu0s9oth5341faywcw</a></p>
+</li>
+</ul>

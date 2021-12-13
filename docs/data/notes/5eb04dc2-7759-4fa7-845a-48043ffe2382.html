@@ -1,0 +1,100 @@
+<h1 id="nginx"><a aria-hidden="true" class="anchor-heading" href="#nginx"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Nginx</h1>
+<h2 id="what-is-it"><a aria-hidden="true" class="anchor-heading" href="#what-is-it"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>What is it?</h2>
+<p>NGINX is a web server which can also be used as a reverse proxy, software load balancer, mail proxy and HTTP cache.</p>
+<p>Nginx uses an asynchronous event-driven approach, rather than threads, to handle requests.[22] Nginx's modular event-driven architecture can provide more predictable performance under high loads.</p>
+<p>Definition by: <a href="https://en.wikipedia.org/wiki/Nginx">https://en.wikipedia.org/wiki/Nginx</a></p>
+<p><a href="http://nginx.org/en/docs/beginners_guide.html">http://nginx.org/en/docs/beginners_guide.html</a></p>
+<h2 id="why-do-we-need-this-web-server"><a aria-hidden="true" class="anchor-heading" href="#why-do-we-need-this-web-server"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Why do we need this web server?</h2>
+<ul>
+<li>Higher performance serving static files</li>
+<li>SSL/TLS termination</li>
+<li>Be a first layer for security.</li>
+</ul>
+<p><a href="https://www.nginx.com/resources/glossary/application-server-vs-web-server/">https://www.nginx.com/resources/glossary/application-server-vs-web-server/</a>
+<a href="https://www.quora.com/When-using-node-js-do-you-still-need-Nginx-or-Apache">When using node.js, do you still need Nginx or Apache?</a></p>
+<h3 id="avoid-running-our-nodejs-app-on-port-80"><a aria-hidden="true" class="anchor-heading" href="#avoid-running-our-nodejs-app-on-port-80"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Avoid running our Node.js app on port 80</h3>
+<p>On linux environments root access is needed to use the ports &#x3C;= 1024</p>
+<p>We are exposed, attackers can find the way to run commands for them using root privileges.</p>
+<p>Use a web server that has reverse proxy instead, in other words use NGINX.</p>
+<h2 id="reverse-proxy"><a aria-hidden="true" class="anchor-heading" href="#reverse-proxy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Reverse proxy</h2>
+<p>Reverse Proxy get all the incoming request, do a bunch of operations for us, and response back to the client.</p>
+<p><a href="https://www.linode.com/docs/web-servers/nginx/use-nginx-reverse-proxy/">Use NGINX as a Reverse Proxy</a></p>
+<p><a href="https://medium.com/@sportans300/nginx-reverse-proxy-with-https-466daa4da4fc">Jenkins with NGINX - Reverse proxy with https</a></p>
+<h2 id="load-balancer"><a aria-hidden="true" class="anchor-heading" href="#load-balancer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Load Balancer</h2>
+<p>Distributes workload among our servers preventing overloading, continue serving to clients even if one of the nodes shut down, increase server capacity.</p>
+<p>Comparation load balancer performance, cluster module, iptables, nginx
+<a href="https://medium.com/@fermads/node-js-process-load-balancing-comparing-cluster-iptables-and-nginx-6746aaf38272">https://medium.com/@fermads/node-js-process-load-balancing-comparing-cluster-iptables-and-nginx-6746aaf38272</a></p>
+<p><a href="https://github.com/fermads/node.js-process-load-balancing">https://github.com/fermads/node.js-process-load-balancing</a></p>
+<p><a href="http://nginx.org/en/docs/beginners_guide.html">How to load Balancing NodeJs apps using Nginx?</a></p>
+<pre><code>Reverse proxy servers and load balancers are components in a client-server computing architecture. Both act as intermediaries in the communication between the clients and servers, performing functions that improve efficiency. They can be implemented as dedicated, purpose-built devices, but increasingly in modern web architectures they are software applications that run on commodity hardware.
+</code></pre>
+<h2 id="differences"><a aria-hidden="true" class="anchor-heading" href="#differences"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Differences</h2>
+<p><a href="https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/">What is a Reverse Proxy vs. Load Balancer?</a></p>
+<h3 id="algorithm"><a aria-hidden="true" class="anchor-heading" href="#algorithm"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Algorithm</h3>
+<p>Basic Round robin Scheduling
+<a href="https://en.wikipedia.org/wiki/Round-robin_scheduling">https://en.wikipedia.org/wiki/Round-robin_scheduling</a></p>
+<h2 id="example-with-node"><a aria-hidden="true" class="anchor-heading" href="#example-with-node"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Example with Node</h2>
+<pre class="language-json"><code class="language-json">...
+http <span class="token punctuation">{</span>
+  ...
+    upstream http_servers <span class="token punctuation">{</span>
+       server <span class="token number">127.0</span>.<span class="token number">0.1</span><span class="token operator">:</span><span class="token number">8081</span>;
+       server <span class="token number">127.0</span>.<span class="token number">0.1</span><span class="token operator">:</span><span class="token number">8082</span>;
+       server <span class="token number">127.0</span>.<span class="token number">0.1</span><span class="token operator">:</span><span class="token number">8083</span>;
+       server <span class="token number">127.0</span>.<span class="token number">0.1</span><span class="token operator">:</span><span class="token number">8084</span>;
+     <span class="token punctuation">}</span>
+     …
+     server <span class="token punctuation">{</span>
+       listen<span class="token operator">:</span> <span class="token number">8080</span>
+       server_name  localhost;
+       …
+       …
+location / <span class="token punctuation">{</span>
+   	  proxy_set_header   X-Real-IP $remote_addr;
+  proxy_set_header   Host      $http_host;
+  proxy_pass         http<span class="token operator">:</span><span class="token comment">//http_servers;</span>
+<span class="token punctuation">}</span>
+       <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>master.js</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> cp <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"child_process"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> os <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"os"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Master running 
+  on pid: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span><span class="token property-access">pid</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&#x3C;</span> os<span class="token punctuation">.</span><span class="token method function property-access">cpus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  cp<span class="token punctuation">.</span><span class="token method function property-access">fork</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">./child</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span> env<span class="token operator">:</span> <span class="token punctuation">{</span> id<span class="token operator">:</span> i <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>child.js</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token number">808</span> <span class="token operator">+</span> process<span class="token punctuation">.</span><span class="token property-access">env</span><span class="token punctuation">.</span><span class="token property-access">id</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token method function property-access">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span><span class="token property-access">url</span> <span class="token operator">===</span> <span class="token string">"/"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// blocking</span>
+    <span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&#x3C;</span> <span class="token number">100000000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+      res<span class="token punctuation">.</span><span class="token method function property-access">end</span><span class="token punctuation">(</span><span class="token string">"okay"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token method function property-access">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+server<span class="token punctuation">.</span><span class="token method function property-access">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Child Server on port: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, pid: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span><span class="token property-access">pid</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="conclusion"><a aria-hidden="true" class="anchor-heading" href="#conclusion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Conclusion</h2>
+<p>NGINX: Definitely solve more of the issues regarding to security, cache, ssl, load balancing, reverse proxy and so on. Is a great option to be used combined with PM2 or Cluster Module</p>
+<h2 id="aditional-information"><a aria-hidden="true" class="anchor-heading" href="#aditional-information"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Aditional Information</h2>
+<p><a href="https://github.com/mzavaletavargas/going-live">https://github.com/mzavaletavargas/going-live</a></p>
+<hr>
+<h2 id="backlinks"><a aria-hidden="true" class="anchor-heading" href="#backlinks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Backlinks</h2>
+<ul>
+<li><a href="/notes/55c570f1-f3bd-41dd-9279-34f8d623c0df">Nginx Example (programming)</a></li>
+<li><a href="/notes/c796d05d-8deb-489d-bb95-495b5376558a">Security (programming)</a></li>
+</ul>

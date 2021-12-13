@@ -1,0 +1,71 @@
+<h1 id="kubernetes-logging"><a aria-hidden="true" class="anchor-heading" href="#kubernetes-logging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Kubernetes Logging</h1>
+<h1 id="spike-kubernetes-logging"><a aria-hidden="true" class="anchor-heading" href="#spike-kubernetes-logging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>[SPIKE] Kubernetes Logging</h1>
+<p>Spike about logging from Kubernetes to other services. Check wich tools, tendencies, compatibility.</p>
+<h2 id="podcast"><a aria-hidden="true" class="anchor-heading" href="#podcast"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Podcast</h2>
+<p><a href="https://open.spotify.com/episode/3DvlI6SBdTn7yAd4UoNc4K?si=puy9i7eUTjiFTBIyqFbk_A">Fluent Bit: Lightweight Logging for Cloud Native Applications - Eduardo Silva</a></p>
+<p><a href="https://open.spotify.com/episode/6pKuVLowNYLshWA4DjXIw9?si=DUmeWZZ9RwizoIFlvHmszw">Logging with Loki</a></p>
+<p><a href="https://open.spotify.com/episode/66pNYv1filMAlVTdRg2qHe?si=EHQvzEJ1QYa0GM6vektMEA">Building Datadog with Alexis Le Quoc</a></p>
+<ul>
+<li><a href="https://softwareengineeringdaily.com/wp-content/uploads/2018/04/SED575-Building-Datadog.pdf">Transcript</a></li>
+</ul>
+<p><a href="https://open.spotify.com/episode/7rVsxtJ3GKS1MQWZQeXc07?si=9w5w5HgVRHqvhe9yhRIzlg">Monitoring Kubernetes  With LLan Rabinobitch</a></p>
+<h2 id="blogs"><a aria-hidden="true" class="anchor-heading" href="#blogs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Blogs</h2>
+<p><a href="https://medium.com/hashmapinc/application-logging-simplified-in-kubernetes-part-1-5ba603a1744b">Application Logging Simplified in Kubernetes </a></p>
+<p><a href="https://www.datadoghq.com/blog/fluentbit-integration-announcement/">Fluent bit with data dog </a></p>
+<p><a href="https://echorand.me/posts/fluentbit-kubernetes/">Fluent bit kubernets </a></p>
+<h2 id="data-collector"><a aria-hidden="true" class="anchor-heading" href="#data-collector"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Data Collector</h2>
+<p>Is important for getting information and redirected to a service like datadog, elasticsearch etc.</p>
+<p>Some options:</p>
+<ul>
+<li>Fluentd pod: <a href="https://hub.docker.com/r/fluent/fluentd/">https://hub.docker.com/r/fluent/fluentd/</a></li>
+<li>Fluent Bit: <a href="https://fluentbit.io/">https://fluentbit.io/</a></li>
+<li>Loki: <a href="https://github.com/grafana/loki">https://github.com/grafana/loki</a></li>
+</ul>
+<p>I tried Fluent bit and it's working great, collecting information from every pod as deamon set. A DeamonSet let's you get information inside every pod, without affecting performance too much.</p>
+<h3 id="fluent-bit"><a aria-hidden="true" class="anchor-heading" href="#fluent-bit"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Fluent Bit</h3>
+<p>Tutorial for kubernetes: <a href="https://docs.fluentbit.io/manual/installation/kubernetes">https://docs.fluentbit.io/manual/installation/kubernetes</a></p>
+<pre class="language-bash"><code class="language-bash">$ kubectl create namespace logging
+$ kubectl create -f https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/fluent-bit-service-account.yaml
+$ kubectl create -f https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/fluent-bit-role.yaml
+$ kubectl create -f https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/fluent-bit-role-binding.yaml
+</code></pre>
+<p>important to consider <code>Match</code> wich is related with the tags that you defined as <code>Input</code> </p>
+<pre class="language-yaml"><code class="language-yaml">$ config_map.yaml
+
+<span class="token key atrule">output-datadog.conf</span><span class="token punctuation">:</span> <span class="token punctuation">|</span>
+<span class="token punctuation">[</span>OUTPUT<span class="token punctuation">]</span>
+  Name        datadog
+  Match       backend
+  apikey      $<span class="token punctuation">{</span>FLUENT_DATADOG_API_KEY<span class="token punctuation">}</span>
+  dd_service  backend
+  dd_tags     container<span class="token punctuation">:</span>backend<span class="token punctuation">,</span> env<span class="token punctuation">:</span>staging
+  dd_source         fluent<span class="token punctuation">-</span>bit
+  dd_message_key    log_processed
+</code></pre>
+<p>DeamonSet generic </p>
+<pre><code>$ kubectl create -f https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/output/elasticsearch/fluent-bit-configmap.yaml
+</code></pre>
+<h2 id="logging"><a aria-hidden="true" class="anchor-heading" href="#logging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Logging</h2>
+<p>Prometheus vs Datadog: <a href="https://www.bluematador.com/blog/how-to-monitor-your-kubernetes-cluster-prometheus-vs-datadog">https://www.bluematador.com/blog/how-to-monitor-your-kubernetes-cluster-prometheus-vs-datadog</a></p>
+<p>Datadog</p>
+<h2 id="roadblocks"><a aria-hidden="true" class="anchor-heading" href="#roadblocks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Roadblocks</h2>
+<ul>
+<li>Input and ouputs references didn't match</li>
+</ul>
+<h2 id="ideas"><a aria-hidden="true" class="anchor-heading" href="#ideas"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Ideas</h2>
+<p>Elasticseach like hammer for a spike</p>
+<p>Loki focus on logs and it's like prometheus. compared with elasticsearch that focus on any kind of data that you store.</p>
+<h2 id="references"><a aria-hidden="true" class="anchor-heading" href="#references"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>References</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=B2IS-XS-cc0">https://www.youtube.com/watch?v=B2IS-XS-cc0</a> [Fluent Bit explained | Fluent Bit vs Fluentd][TechWorld with Nana]</li>
+<li><a href="https://docs.fluentbit.io/manual/pipeline/outputs/datadog">https://docs.fluentbit.io/manual/pipeline/outputs/datadog</a></li>
+<li><a href="https://www.datadoghq.com/blog/fluentbit-integration-announcement/">https://www.datadoghq.com/blog/fluentbit-integration-announcement/</a></li>
+<li><a href="https://docs.datadoghq.com/integrations/fluentbit/">https://docs.datadoghq.com/integrations/fluentbit/</a></li>
+<li><a href="https://dev.to/amitsaha/how-to-set-up-log-forwarding-in-a-kubernetes-cluster-using-fluent-bit-3bgk">https://dev.to/amitsaha/how-to-set-up-log-forwarding-in-a-kubernetes-cluster-using-fluent-bit-3bgk</a></li>
+<li><a href="https://github.com/DataDog/trace-examples/blob/98626d924f82666de60d6b2d6a65d87eebebdff1/opentelemetry/k8s-collector.yml#L181">https://github.com/DataDog/trace-examples/blob/98626d924f82666de60d6b2d6a65d87eebebdff1/opentelemetry/k8s-collector.yml#L181</a></li>
+</ul>
+<hr>
+<h2 id="backlinks"><a aria-hidden="true" class="anchor-heading" href="#backlinks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Backlinks</h2>
+<ul>
+<li><a href="/notes/3c4e65d2-d0ca-4450-8073-dc1a39bddc29">Datadog (operating-systems)</a></li>
+</ul>

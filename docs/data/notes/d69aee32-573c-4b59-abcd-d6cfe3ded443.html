@@ -1,0 +1,87 @@
+<h1 id="clusters"><a aria-hidden="true" class="anchor-heading" href="#clusters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Clusters</h1>
+<h2 id="pm2"><a aria-hidden="true" class="anchor-heading" href="#pm2"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PM2</h2>
+<ul>
+<li>Process Manager</li>
+<li>Forever alive</li>
+<li>Monitorin</li>
+<li>Load Balancer</li>
+<li>Centralized Logs</li>
+<li>Not optimal compared with native approachs</li>
+</ul>
+<h3 id="installation"><a aria-hidden="true" class="anchor-heading" href="#installation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Installation</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g pm2
+
+</code></pre>
+<h3 id="usefull-comands"><a aria-hidden="true" class="anchor-heading" href="#usefull-comands"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Usefull Comands</h3>
+<pre class="language-bash"><code class="language-bash">pm2 start index.js // Start the app, restart <span class="token keyword">if</span> needed.
+
+pm2 <span class="token function">ls</span>  // show the current apps available
+pm2 stop app // Stop app
+pm2 delete app // Remove the app
+
+pm2 monit // Show the process list, global logs, and <span class="token function">more</span>
+pm2 log // centralized logs
+pm2 start index.js -i max // Create a cluster with all CPUS
+
+</code></pre>
+<p>More: <a href="https://devhints.io/pm2">https://devhints.io/pm2</a></p>
+<h2 id="cluster-module"><a aria-hidden="true" class="anchor-heading" href="#cluster-module"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Cluster Module</h2>
+<p>Node.js allows to create child processes to use multiple CPU cores and handle multiple tasks in parallel.
+It uses by the default the round-robin distribution to distribute connections across the workers.</p>
+<p>Example: <a href="https://stackabuse.com/setting-up-a-node-js-cluster/">Setting up a Node.js Cluster
+</a></p>
+<p>master.js</p>
+<pre class="language-javacript"><code class="language-javacript">const cluster = require('cluster');
+const os = require('os')
+
+if (cluster.isMaster) {
+ console.log(`Master running on pid: ${process.pid}`)
+
+ for (let i = 0; i &#x3C; os.cpus().length; i++) {
+   cluster.fork();
+ }
+
+ cluster.on('exit', (worker, code, signal) => {
+   if (code != 0 &#x26;&#x26; !worker.exitedAfterDisconnect) {
+     	console.log(`Worker ${worker.id}
+crashed, starting a new one`);
+     cluster.fork();
+   }
+ })
+} else {
+ require('./child')
+}
+</code></pre>
+<p>child.js</p>
+<pre class="language-javacript"><code class="language-javacript">const http = require('http');
+
+const server = http.createServer((req, res) => {
+ if ( req.url === '/') {
+   // blocking
+   for (let i = 0; i &#x3C; 100000000; i++) { }
+   setTimeout(() => {
+     res.end('okay');
+   }, 0)
+ } else {
+   res.end()
+ }
+});
+
+server.listen(8080, () => {
+ console.log(`Child Server running on pid: ${process.pid}`)
+});
+
+setTimeout(() => {
+ process.exit(1) // death by random timeout
+}, Math.random() * 20000);
+</code></pre>
+<h2 id="aditional-information"><a aria-hidden="true" class="anchor-heading" href="#aditional-information"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Aditional Information</h2>
+<ul>
+<li><a href="https://nodejs.org/api/cluster.html">https://nodejs.org/api/cluster.html</a></li>
+<li><a href="https://github.com/mcollina/autocannon">https://github.com/mcollina/autocannon</a></li>
+<li><a href="https://flaviocopes.com/node-request-data/">https://flaviocopes.com/node-request-data/</a></li>
+<li><a href="https://medium.com/tech-tajawal/clustering-in-nodejs-utilizing-multiple-processor-cores-75d78aeb0f4f">https://medium.com/tech-tajawal/clustering-in-nodejs-utilizing-multiple-processor-cores-75d78aeb0f4f</a></li>
+<li><a href="https://medium.com/the-andela-way/scaling-out-with-node-clusters-1dca4a39a2a">https://medium.com/the-andela-way/scaling-out-with-node-clusters-1dca4a39a2a</a></li>
+<li><a href="https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a">https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a</a></li>
+<li><a href="http://www.acuriousanimal.com/2017/08/12/understanding-the-nodejs-cluster-module.html">http://www.acuriousanimal.com/2017/08/12/understanding-the-nodejs-cluster-module.html</a></li>
+</ul>

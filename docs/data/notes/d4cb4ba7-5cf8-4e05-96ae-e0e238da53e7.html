@@ -1,0 +1,23 @@
+<h1 id="scope"><a aria-hidden="true" class="anchor-heading" href="#scope"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Scope</h1>
+<h2 id="global-scope"><a aria-hidden="true" class="anchor-heading" href="#global-scope"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Global Scope</h2>
+<p>Context created and execution time.</p>
+<h2 id="execution-context"><a aria-hidden="true" class="anchor-heading" href="#execution-context"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Execution context</h2>
+<p>Depending where we are calling our function it will have an scope called <code>execution context</code> that is pushed onto the <code>callstack</code> and will be deleted when there a <code>return</code> statement or a closing bracket <code>}</code></p>
+<h2 id="lexical-scope"><a aria-hidden="true" class="anchor-heading" href="#lexical-scope"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Lexical Scope</h2>
+<p>Is it said when an <code>execution context</code> can access to the variables that are defined in the <code>calling context</code></p>
+<h2 id="clousure"><a aria-hidden="true" class="anchor-heading" href="#clousure"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Clousure</h2>
+<p>Is a technique that store all the variables of the <code>enclosing scope</code> when a function is created.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">incrementer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> counter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+  <span class="token keyword control-flow">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    counter<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"counter: "</span> <span class="token operator">+</span> counter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> func <span class="token operator">=</span> <span class="token function">incrementer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// counter: 1</span>
+<span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// counter: 2</span>
+</code></pre>
