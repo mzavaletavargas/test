@@ -2,135 +2,124 @@ version: 4
 useFMTitle: true
 useNoteTitleForLink: true
 site:
-    copyAssets: true
-    siteHierarchies:
-        - root
-    siteRootDir: docs
-    usePrettyRefs: true
-    title: Gustavo's Wiki
-    description: Personal knowledge space
-    duplicateNoteBehavior:
-        action: useVault
-        payload:
-            - vault
-            - programming
-            - dev-ops
-            - operating-systems
-            - personal-growth
-            - databases
-            - networking
-            - computer-science
-            - books
-            - infrastructure
-            - health
-            - architecture
-    siteUrl: 'https://wiki.gustavozavaleta.com'
-    siteLastModified: true
-    gh_edit_branch: main
+  copyAssets: true
+  siteHierarchies:
+    - root
+  siteRootDir: docs
+  usePrettyRefs: true
+  title: Gustavo's Wiki
+  description: Personal knowledge space
+  duplicateNoteBehavior:
+    action: useVault
+    payload:
+      - vault
+      - programming
+      - dev-ops
+      - operating-systems
+      - personal-growth
+      - databases
+      - networking
+      - computer-science
+      - books
+      - infrastructure
+      - health
+      - architecture
+  siteUrl: "https://mzavaletavargas.github.io"
+  assetsPrefix: "/wiki"
+  siteLastModified: true
+  gh_edit_branch: main
 dev:
-    previewV2Enabled: false
-    enablePreviewV2: true
+  previewV2Enabled: false
+  enablePreviewV2: true
 commands:
-    lookup:
-        note:
-            selectionMode: extract
-            confirmVaultOnCreate: false
-            leaveTrace: false
-            bubbleUpCreateNew: true
-            fuzzThreshold: 0.2
-    insertNote:
-        initialValue: templates
-    insertNoteLink:
-        aliasMode: none
-        enableMultiSelect: false
-    insertNoteIndex:
-        enableMarker: false
-    randomNote: {}
+  lookup:
+    note:
+      selectionMode: extract
+      confirmVaultOnCreate: false
+      leaveTrace: false
+      bubbleUpCreateNew: true
+      fuzzThreshold: 0.2
+  insertNote:
+    initialValue: templates
+  insertNoteLink:
+    aliasMode: none
+    enableMultiSelect: false
+  insertNoteIndex:
+    enableMarker: false
+  randomNote: {}
 workspace:
-    dendronVersion: 0.72.0
-    vaults:
-        -
-            fsPath: architecture
-            name: architecture
-        -
-            fsPath: health
-            name: health
-        -
-            fsPath: infrastructure
-            name: infrastructure
-        -
-            fsPath: books
-            name: books
-        -
-            fsPath: computer-science
-            name: computer-science
-        -
-            fsPath: networking
-            name: networking
-        -
-            fsPath: databases
-            name: databases
-        -
-            fsPath: personal-growth
-            name: personal-growth
-        -
-            fsPath: operating-systems
-            name: operating-systems
-        -
-            fsPath: dev-ops
-            name: dev-ops
-        -
-            fsPath: programming
-            name: programming
-        -
-            fsPath: vault
-            name: vault
-    journal:
-        dailyDomain: daily
-        name: journal
-        dateFormat: y.MM.dd
-        addBehavior: childOfDomain
-    scratch:
-        name: scratch
-        dateFormat: y.MM.dd.HHmmss
-        addBehavior: asOwnDomain
-    graph:
-        zoomSpeed: 1
-    enableAutoCreateOnDefinition: false
-    enableXVaultWikiLink: false
-    enableRemoteVaultInit: true
-    workspaceVaultSyncMode: noCommit
-    enableAutoFoldFrontmatter: false
-    maxPreviewsCached: 10
-    maxNoteLength: 204800
-    task:
-        name: ''
-        dateFormat: ''
-        addBehavior: childOfCurrent
-        statusSymbols:
-            '': ' '
-            wip: w
-            done: x
-            assigned: a
-            moved: m
-            blocked: b
-            delegated: l
-            dropped: d
-            pending: 'y'
-        prioritySymbols:
-            H: high
-            M: medium
-            L: low
-        todoIntegration: false
-        createTaskSelectionType: selection2link
-    enableUserTags: true
-    enableHashTags: true
-    enableEditorDecorations: true
+  dendronVersion: 0.72.0
+  vaults:
+    - fsPath: architecture
+      name: architecture
+    - fsPath: health
+      name: health
+    - fsPath: infrastructure
+      name: infrastructure
+    - fsPath: books
+      name: books
+    - fsPath: computer-science
+      name: computer-science
+    - fsPath: networking
+      name: networking
+    - fsPath: databases
+      name: databases
+    - fsPath: personal-growth
+      name: personal-growth
+    - fsPath: operating-systems
+      name: operating-systems
+    - fsPath: dev-ops
+      name: dev-ops
+    - fsPath: programming
+      name: programming
+    - fsPath: vault
+      name: vault
+  journal:
+    dailyDomain: daily
+    name: journal
+    dateFormat: y.MM.dd
+    addBehavior: childOfDomain
+  scratch:
+    name: scratch
+    dateFormat: y.MM.dd.HHmmss
+    addBehavior: asOwnDomain
+  graph:
+    zoomSpeed: 1
+  enableAutoCreateOnDefinition: false
+  enableXVaultWikiLink: false
+  enableRemoteVaultInit: true
+  workspaceVaultSyncMode: noCommit
+  enableAutoFoldFrontmatter: false
+  maxPreviewsCached: 10
+  maxNoteLength: 204800
+  task:
+    name: ""
+    dateFormat: ""
+    addBehavior: childOfCurrent
+    statusSymbols:
+      "": " "
+      wip: w
+      done: x
+      assigned: a
+      moved: m
+      blocked: b
+      delegated: l
+      dropped: d
+      pending: "y"
+    prioritySymbols:
+      H: high
+      M: medium
+      L: low
+    todoIntegration: false
+    createTaskSelectionType: selection2link
+  enableUserTags: true
+  enableHashTags: true
+  enableEditorDecorations: true
 preview:
-    enableFMTitle: true
-    enableNoteTitleForLink: true
-    enableMermaid: true
-    enablePrettyRefs: true
-    enableKatex: true
+  enableFMTitle: true
+  enableNoteTitleForLink: true
+  enableMermaid: true
+  enablePrettyRefs: true
+  enableKatex: true
 mermaid: true
 useKatex: true
