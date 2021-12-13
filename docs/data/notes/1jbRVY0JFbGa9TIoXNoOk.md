@@ -2,7 +2,7 @@
 
 ## diagram
 
-![](wiki/assets/images/2021-07-09-23-25-02.png)
+![](assets/images/2021-07-09-23-25-02.png)
 
 ## Getting started
 

@@ -8,7 +8,7 @@ Getting version number from file:
 
 ## Related
 
-![Node Pipeline Architecture](wiki/assets/images/2021-07-09-21-05-11.png)
+![Node Pipeline Architecture](assets/images/2021-07-09-21-05-11.png)
 
 [Build specification reference for CodeBuild - AWS CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html)
 [Available runtimes - AWS CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/available-runtimes.html)

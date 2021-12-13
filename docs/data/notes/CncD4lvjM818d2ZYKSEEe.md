@@ -2,7 +2,7 @@
 
 Relationship with microservices, event-driven architecture and kafka.
 
-![](wiki/assets/images/2021-07-09-23-27-01.png)
+![](assets/images/2021-07-09-23-27-01.png)
 
 ## Microservices
 
