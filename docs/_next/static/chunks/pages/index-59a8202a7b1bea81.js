@@ -391,7 +391,7 @@
                 );
               var t;
               m.info({ ctx: "updateNoteBody:fetch:pre", id: S }),
-                fetch("wiki/data/notes/".concat(S, ".html")).then(
+                fetch("data/notes/".concat(S, ".html")).then(
                   ((t = i().mark(function t(e) {
                     var n;
                     return i().wrap(function (t) {
